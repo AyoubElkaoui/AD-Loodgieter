@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Script from "next/script";
 import { GoogleTagManager } from '@next/third-parties/google';
+import WhatsAppButton from "@/components/WhatsappButton";
 
 export const metadata = {
   title: 'Ad Loodgietersbedrijf',
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
     <body className="bg-gray-50 text-gray-800">
     <Navbar/>
     <main className="container max-w-full mx-auto max-sm:w-full max-sm:max-w-screen-sm">{children}</main>
+    <WhatsAppButton />
     <Footer/>
     </body>
     </html>
