@@ -4,7 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import {sendGTMEvent} from "@next/third-parties/google";
+
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,20 +20,25 @@ export default function Navbar() {
       {/* Spoed Bovenbalk */}
       <div className="bg-dGrey py-2 px-4 text-center text-white">
         <p className="font-bold text-sm sm:text-base">
-          Spoed? Bel ons op of klik op het nummer hiernaast of{' '}
-          <a
+          Spoed? Bel ons op of klik hier <FontAwesomeIcon
+          icon={faArrowRight}
+          style={{ color: '#ffffff', fontWeight: 900 }}
+          className="mr-2"
+        />
+          {' '}
+          <Link
             href="tel:+31640961848"
             className="hover:bg-white hover:text-black hover:p-1 hover:rounded transition"
             onClick={() =>
-              gtag('event', 'click', {
-                event_category: 'Button',
-                event_label: 'Spoed knop - Navbar',
-                value: 1,
+              sendGTMEvent({
+                event: 'buttonClicked',
+                category: 'Link',
+                label: 'Contact knop - Navbar spoed',
               })
             }
           >
             +31 6 40 96 18 48
-          </a>
+          </Link>
         </p>
       </div>
 

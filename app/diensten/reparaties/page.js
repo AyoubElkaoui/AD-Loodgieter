@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faTools, faClock, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTools, faClock, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 export default function ReparatiesPage() {
   return (
@@ -59,6 +60,13 @@ export default function ReparatiesPage() {
             <Link
               href="/contact"
               className="bg-blue-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 transition"
+              onClick={() =>
+                sendGTMEvent({
+                  event: 'buttonClicked',
+                  category: 'Link',
+                  label: 'Contact knop - Reparaties',
+                })
+              }
             >
               Neem contact op
             </Link>
@@ -119,45 +127,6 @@ export default function ReparatiesPage() {
         </div>
       </section>
 
-      {/* Extra Informatie Sectie */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Veelgestelde vragen over Reparaties</h2>
-            <p className="text-gray-600 mb-4">
-              Heeft u vragen over onze reparatiediensten? Hier zijn enkele van de meest gestelde vragen door onze klanten:
-            </p>
-            <ul className="list-disc list-inside text-gray-600">
-              <li>Wat zijn de kosten voor een reparatie?</li>
-              <li>Hoe snel kunnen jullie een reparatie uitvoeren?</li>
-              <li>Welke garanties bieden jullie?</li>
-            </ul>
-            <p className="text-gray-600 mt-4">
-              Neem contact met ons op als u meer specifieke vragen heeft of een afspraak wilt maken.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
-          >
-            <Image
-              src="/loodgieter-repareren.jpg"
-              alt="FAQ over Reparaties"
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-6 text-center">
@@ -175,10 +144,10 @@ export default function ReparatiesPage() {
               href="/contact"
               className="bg-green-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition"
               onClick={() =>
-                gtag('event', 'click', {
-                  event_category: 'Button',
-                  event_label: 'Contact knop - reparaties',
-                  value: 1,
+                sendGTMEvent({
+                  event: 'buttonClicked',
+                  category: 'Link',
+                  label: 'Contact knop - Reparaties',
                 })
               }
             >

@@ -71,6 +71,11 @@ export default function ContactForm() {
 
       if (response.ok) {
         setStatus('Bericht succesvol verzonden!');
+        sendGTMEvent({
+          event: 'formSubmitted',
+          category: 'Form',
+          label: 'Contact Form',
+        });
         setFormData({
           name: '',
           email: '',
@@ -82,12 +87,6 @@ export default function ContactForm() {
         });
         setFiles([]);
 
-        // Google Analytics Event
-        gtag('event', 'submit', {
-          event_category: 'Form',
-          event_label: 'Contact Form Ingevuld',
-          value: 1,
-        });
       } else {
         const { error } = await response.json();
         setStatus(error || 'Fout bij het verzenden van het bericht.');

@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import ContactForm from '@/components/ContactForm';
+import {sendGTMEvent} from "@next/third-parties/google";
+import Link from "next/link";
 
 const contactDetails = [
     {
@@ -79,9 +81,16 @@ export default function ContactPage() {
                                 >
                                     <FontAwesomeIcon icon={detail.icon} className="text-blue-500 text-2xl"/>
                                     <span className="font-bold text-gray-800 mr-2">{detail.title}:</span>
-                                    <a href={detail.link} className="hover:underline">
+                                    <Link href={detail.link} className="hover:underline"
+                                       onClick={() =>
+                                         sendGTMEvent({
+                                             event: 'buttonClicked',
+                                             category: 'Link',
+                                             label: 'Contact knop - Contact gegevens',
+                                         })
+                                       }>
                                         {detail.content}
-                                    </a>
+                                    </Link>
                                 </motion.li>
                               ))}
                           </ul>

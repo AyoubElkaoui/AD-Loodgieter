@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTools, faClock, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 export default function AfvoerOntstoppenPage() {
   return (
@@ -175,10 +176,10 @@ export default function AfvoerOntstoppenPage() {
               href="/contact"
               className="bg-green-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition"
               onClick={() =>
-                gtag('event', 'click', {
-                  event_category: 'Button',
-                  event_label: 'Contact knop - Afvoer',
-                  value: 1,
+                sendGTMEvent({
+                  event: 'buttonClicked',
+                  category: 'Link',
+                  label: 'Contact knop - Afvoer ontstoppen',
                 })
               }
             >

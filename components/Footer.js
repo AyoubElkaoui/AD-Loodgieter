@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { sendGTMEvent } from '@next/third-parties/google';
 
+
+
 export default function Footer() {
     return (
       <footer className="bg-gray-900 text-white py-8 sm:py-10 max-sm:p-8">
@@ -23,13 +25,13 @@ export default function Footer() {
                       <li>
                           <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-green-500" />
                           <Link href="mailto:info@adloodgietersbedrijf.nl"
-                             onClick={() =>
-                               gtag('event', 'click', {
-                                   event_category: 'Button',
-                                   event_label: 'Mail knop - Footer',
-                                   value: 1,
-                               })
-                             }>
+                                onClick={() =>
+                                  sendGTMEvent({
+                                      event: 'buttonClicked',
+                                      category: 'Link',
+                                      label: 'Contact knop - email Footer',
+                                  })
+                                }>
                               info@adloodgietersbedrijf.nl</Link>
                       </li>
                       <li>

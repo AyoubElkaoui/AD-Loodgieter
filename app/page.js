@@ -7,6 +7,7 @@ import { faCheckCircle, faToilet, faShower, faSink, faWrench, faWater, faHandHol
 import { motion } from 'framer-motion';
 import ContactForm from '../components/ContactForm';
 import FAQSection from '../components/FAQ/FAQSection';
+import {sendGTMEvent} from "@next/third-parties/google";
 
 export default function Home() {
     return (
@@ -42,10 +43,10 @@ export default function Home() {
                       <Link href="tel:+31640961848"
                             className="bg-green-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-green-600 transition"
                             onClick={() =>
-                              gtag('event', 'click', {
-                                  event_category: 'Button',
-                                  event_label: 'Spoed bellen - Homepage',
-                                  value: 1,
+                              sendGTMEvent({
+                                  event: 'buttonClicked',
+                                  category: 'Link',
+                                  label: 'Contact knop - Spoed bellen Home',
                               })
                             }>
                           Spoed? Bel Nu
@@ -53,12 +54,12 @@ export default function Home() {
                       <Link href="/contact"
                             className="bg-blue-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-blue-600 transition"
                             onClick={() =>
-                            gtag('event', 'click', {
-                              event_category: 'Button',
-                              event_label: 'Contact knop - Homepage',
-                              value: 1,
+                              sendGTMEvent({
+                                  event: 'buttonClicked',
+                                  category: 'Link',
+                                  label: 'Contact knop - Home',
                               })
-                          }>
+                            }>
                           Neem contact op
                       </Link>
                   </div>
