@@ -81,6 +81,13 @@ export default function ContactForm() {
           message: '',
         });
         setFiles([]);
+
+        // Google Analytics Event
+        gtag('event', 'submit', {
+          event_category: 'Form',
+          event_label: 'Contact Form Ingevuld',
+          value: 1,
+        });
       } else {
         const { error } = await response.json();
         setStatus(error || 'Fout bij het verzenden van het bericht.');

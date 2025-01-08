@@ -40,11 +40,25 @@ export default function Home() {
                       verstoppingen tot lekkages: wij lossen het op.</p>
                   <div className="flex space-x-4 justify-center">
                       <Link href="tel:+31640961848"
-                            className="bg-green-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-green-600 transition">
+                            className="bg-green-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-green-600 transition"
+                            onClick={() =>
+                              gtag('event', 'click', {
+                                  event_category: 'Button',
+                                  event_label: 'Spoed bellen - Homepage',
+                                  value: 1,
+                              })
+                            }>
                           Spoed? Bel Nu
                       </Link>
                       <Link href="/contact"
-                            className="bg-blue-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-blue-600 transition">
+                            className="bg-blue-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-blue-600 transition"
+                            onClick={() =>
+                            gtag('event', 'click', {
+                              event_category: 'Button',
+                              event_label: 'Contact knop - Homepage',
+                              value: 1,
+                              })
+                          }>
                           Neem contact op
                       </Link>
                   </div>

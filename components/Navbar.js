@@ -18,10 +18,17 @@ export default function Navbar() {
       {/* Spoed Bovenbalk */}
       <div className="bg-dGrey py-2 px-4 text-center text-white">
         <p className="font-bold text-sm sm:text-base">
-          Spoed? Bel ons op{' '}
+          Spoed? Bel ons op of klik op het nummer hiernaast of{' '}
           <a
             href="tel:+31640961848"
             className="hover:bg-white hover:text-black hover:p-1 hover:rounded transition"
+            onClick={() =>
+              gtag('event', 'click', {
+                event_category: 'Button',
+                event_label: 'Spoed knop - Navbar',
+                value: 1,
+              })
+            }
           >
             +31 6 40 96 18 48
           </a>

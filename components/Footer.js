@@ -12,11 +12,27 @@ export default function Footer() {
                   <ul className="space-y-2 text-sm sm:text-base">
                       <li>
                           <FontAwesomeIcon icon={faPhoneAlt} className="mr-2 text-green-500" />
-                          <a href="tel:+31640961848">+31 6 40 96 18 48</a>
+                          <a href="tel:+31640961848"
+                             onClick={() =>
+                               gtag('event', 'click', {
+                                   event_category: 'Button',
+                                   event_label: 'Bel knop - Footer',
+                                   value: 1,
+                               })
+                             }>
+                              +31 6 40 96 18 48</a>
                       </li>
                       <li>
                           <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-green-500" />
-                          <a href="mailto:info@adloodgietersbedrijf.nl">info@adloodgietersbedrijf.nl</a>
+                          <a href="mailto:info@adloodgietersbedrijf.nl"
+                             onClick={() =>
+                               gtag('event', 'click', {
+                                   event_category: 'Button',
+                                   event_label: 'Mail knop - Footer',
+                                   value: 1,
+                               })
+                             }>
+                              info@adloodgietersbedrijf.nl</a>
                       </li>
                       <li>
                           <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 text-green-500" />

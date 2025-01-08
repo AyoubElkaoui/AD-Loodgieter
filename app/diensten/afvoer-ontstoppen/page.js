@@ -174,6 +174,13 @@ export default function AfvoerOntstoppenPage() {
             <Link
               href="/contact"
               className="bg-green-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition"
+              onClick={() =>
+                gtag('event', 'click', {
+                  event_category: 'Button',
+                  event_label: 'Contact knop - Afvoer',
+                  value: 1,
+                })
+              }
             >
               Neem contact op
             </Link>
