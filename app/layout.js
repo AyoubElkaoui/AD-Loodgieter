@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { GoogleTagManager } from '@next/third-parties/google';
 import WhatsAppButton from "@/components/WhatsappButton";
 import Head from "next/head";
+import Link from "next/link";
 
 export const metadata = {
   title: 'Ad Loodgietersbedrijf',
@@ -36,11 +37,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="nl">
     <Head>
-      <link rel="preload" href="/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+      <Link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        as="style"
+      />
     </Head>
-    <GoogleTagManager gtmId="GTM-57S9L8VS" />
+    <GoogleTagManager gtmId="GTM-57S9L8VS"/>
     <body className="bg-gray-50 text-gray-800">
-    <Navbar />
+    <Navbar/>
     <main className="container max-w-full mx-auto max-sm:w-full max-sm:max-w-screen-sm">
       {children}
     </main>
