@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.adloodgietersbedrijf.nl/sitemap.xml
