@@ -5,9 +5,14 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faToilet, faShower, faSink, faWrench, faWater, faHandHoldingWater } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
-import ContactForm from '../components/ContactForm';
-import FAQSection from '../components/FAQ/FAQSection';
+// import ContactForm from '../components/ContactForm';
+// import FAQSection from '../components/FAQ/FAQSection';
 import {sendGTMEvent} from "@next/third-parties/google";
+import dynamic from 'next/dynamic';
+
+// Dynamisch importeren
+const FAQSection = dynamic(() => import('../components/FAQ/FAQSection'), { ssr: false });
+const ContactForm = dynamic(() => import('../components/ContactForm'), { ssr: false });
 
 export default function Home() {
     return (
@@ -20,13 +25,14 @@ export default function Home() {
                 animate={{scale: 1}}
                 transition={{duration: 1.5}}
               >
-                  <Image
-                    src="/plumber-working-on-pipes.jpg"
-                    alt="Hero Background"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
+                <Image
+                  src="/plumber-working-on-pipes.jpg"
+                  alt="Hero Background"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
               </motion.div>
               <div className="absolute inset-0 bg-black bg-opacity-70"></div>
               <motion.div
@@ -39,7 +45,7 @@ export default function Home() {
                       Uw betrouwbare loodgieter in Nederland</h1>
                   <p className="text-base sm:text-lg px-2">Wij staan dag en nacht klaar voor al uw loodgietersproblemen. Van
                       verstoppingen tot lekkages: wij lossen het op.</p>
-                  <div className="flex space-x-4 justify-center">
+                  <div className="flex space-x-4 justify-center p-4">
                       <Link href="tel:+31640961848"
                             className="bg-green-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-green-600 transition"
                             onClick={() =>

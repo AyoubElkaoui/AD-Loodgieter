@@ -5,6 +5,7 @@ import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg
 import ContactForm from '@/components/ContactForm';
 import {sendGTMEvent} from "@next/third-parties/google";
 import Link from "next/link";
+import Image from "next/image";
 
 const contactDetails = [
     {
@@ -39,7 +40,7 @@ export default function ContactPage() {
                     animate={{ scale: 1 }}
                     transition={{ duration: 1.5 }}
                   >
-                      <img
+                      <Image
                         src="/front-view-man-working-as-plumber.jpg"
                         alt="Neem contact op"
                         className="object-cover w-full h-full"

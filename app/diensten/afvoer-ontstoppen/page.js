@@ -23,6 +23,7 @@ export default function AfvoerOntstoppenPage() {
               src="/riool-afvoer-ontstoppen.jpg"
               alt="Afvoer Ontstoppen"
               fill
+              priority
               className="object-cover"
             />
           </motion.div>
@@ -75,6 +76,7 @@ export default function AfvoerOntstoppenPage() {
               src="/ontstoppingsveer.jpg"
               alt="Verstopte Afvoer"
               fill
+              priority
               className="object-cover"
             />
           </motion.div>
@@ -153,6 +155,7 @@ export default function AfvoerOntstoppenPage() {
               src="/afvoer-verstopping.jpg"
               alt="FAQ over Afvoer Ontstoppen"
               fill
+              priority
               className="object-cover"
             />
           </motion.div>

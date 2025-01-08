@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { GoogleTagManager } from '@next/third-parties/google';
 import WhatsAppButton from "@/components/WhatsappButton";
+import Head from "next/head";
 
 export const metadata = {
   title: 'Ad Loodgietersbedrijf',
@@ -27,12 +28,16 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@adloodgieter',
   },
+
 };
 
 
 export default function RootLayout({ children }) {
   return (
     <html lang="nl">
+    <Head>
+      <link rel="preload" href="/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    </Head>
     <GoogleTagManager gtmId="GTM-57S9L8VS" />
     <body className="bg-gray-50 text-gray-800">
     <Navbar />
