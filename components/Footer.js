@@ -2,6 +2,7 @@
 import { faPhoneAlt, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 export default function Footer() {
     return (
@@ -15,11 +16,7 @@ export default function Footer() {
                           <FontAwesomeIcon icon={faPhoneAlt} className="mr-2 text-green-500" />
                           <Link href="tel:+31640961848"
                              onClick={() =>
-                               gtag('event', 'click', {
-                                   event_category: 'Button',
-                                   event_label: 'Bel knop - Footer',
-                                   value: 1,
-                               })
+                             sendGTMEvent({ event: 'buttonClicked', value:'phone button'})
                              }>
                               +31 6 40 96 18 48</Link>
                       </li>
