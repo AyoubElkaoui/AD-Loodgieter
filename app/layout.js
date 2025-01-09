@@ -7,29 +7,21 @@ import Head from "next/head";
 import Link from "next/link";
 
 export const metadata = {
-  title: 'Ad Loodgietersbedrijf',
-  description: 'Professionele loodgietersdiensten in regio Utrecht.',
+  title: 'Loodgieter Maarssen | Uw loodgieter in Maarssen en Nederland',
+  description: 'AD Loodgietersbedrijf is uw betrouwbare loodgieter voor Maarssen en omgeving. Wij lossen lekkages, verstoppingen en installaties op, snel en professioneel.',
   openGraph: {
-    title: 'Ad Loodgietersbedrijf',
-    description: 'Uw betrouwbare loodgieters in Utrecht en omstreken.',
+    title: 'Loodgieter Maarssen | AD Loodgietersbedrijf',
+    description: 'Uw betrouwbare loodgieters in Maarssen, Utrecht, en heel Nederland.',
     url: 'https://www.adloodgietersbedrijf.nl',
-    siteName: 'Ad Loodgietersbedrijf',
     images: [
       {
-        url: 'https://www.adloodgietersbedrijf.nl/images/og-image.jpg',
+        url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Ad Loodgietersbedrijf Open Graph Image',
+        alt: 'Ad Loodgietersbedrijf Logo',
       },
     ],
-    locale: 'nl_NL',
-    type: 'website',
   },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@adloodgieter',
-  },
-
 };
 
 
@@ -46,7 +38,7 @@ export default function RootLayout({ children }) {
     <GoogleTagManager gtmId="GTM-57S9L8VS"/>
     <body className="bg-gray-50 text-gray-800">
     <Navbar/>
-    <main className="container max-w-full mx-auto max-sm:w-full max-sm:max-w-screen-sm">
+    <main className="container max-w-full mx-auto max-sm:max-w-screen-sm">
       {children}
     </main>
     <WhatsAppButton />
