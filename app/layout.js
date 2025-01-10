@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
     <GoogleTagManager gtmId="GTM-57S9L8VS"/>
     <body className="bg-gray-50 text-gray-800">
     <Navbar/>
-    <main className="container max-w-full mx-auto max-sm:max-w-screen-sm">
+    <main className="container max-w-full mx-auto max-sm:max-w-screen-sm max-sm:max-h-screen-sm">
       {children}
     </main>
     <WhatsAppButton />

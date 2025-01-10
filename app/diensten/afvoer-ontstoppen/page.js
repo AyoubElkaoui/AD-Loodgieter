@@ -20,7 +20,7 @@ export default function AfvoerOntstoppenPage() {
             className="absolute inset-0"
           >
             <Image
-              src="/riool-afvoer-ontstoppen.jpg"
+              src="/riool-afvoer-ontstoppen.webp"
               alt="Afvoer Ontstoppen"
               fill
               priority
@@ -73,7 +73,7 @@ export default function AfvoerOntstoppenPage() {
             className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/ontstoppingsveer.jpg"
+              src="/ontstoppingsveer.webp"
               alt="Verstopte Afvoer"
               fill
               priority
@@ -152,7 +152,7 @@ export default function AfvoerOntstoppenPage() {
             className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/afvoer-verstopping.jpg"
+              src="/afvoer-verstopping.webp"
               alt="FAQ over Afvoer Ontstoppen"
               fill
               priority

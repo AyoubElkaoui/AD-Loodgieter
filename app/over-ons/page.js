@@ -17,7 +17,7 @@ export default function AboutUs() {
             transition={{duration: 1.5}}
           >
             <Image
-              src="/plumbing-tools.jpg"
+              src="/plumbing-tools.webp"
               alt="Plumbing Tools Background"
               fill
               className="object-cover"
@@ -69,7 +69,7 @@ export default function AboutUs() {
             transition={{duration: 1}}
           >
             <Image
-              src="/man-installs-heating-system-house-checks-pipes-with-wrench.jpg"
+              src="/man-installs-heating-system-house-checks-pipes-with-wrench.webp"
               alt="Ons team"
               width={600}
               height={400}

@@ -20,7 +20,7 @@ export default function ReparatiesPage() {
             className="absolute inset-0"
           >
             <Image
-              src="/loodgieter-reparatie.jpg"
+              src="/loodgieter-reparatie.webp"
               alt="Reparaties"
               fill
               className="object-cover"
@@ -79,7 +79,7 @@ export default function ReparatiesPage() {
             className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/reparatie.jpg"
+              src="/reparatie.webp"
               alt="Reparatie Gereedschap"
               fill
               className="object-cover"

@@ -20,7 +20,7 @@ export default function InstallatiesPage() {
             className="absolute inset-0"
           >
             <Image
-              src="/loodgieter-installeren.jpg"
+              src="/loodgieter-installeren.webp"
               alt="Installaties"
               fill
               className="object-cover"
@@ -75,7 +75,7 @@ export default function InstallatiesPage() {
             className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/installatie.jpg"
+              src="/installatie.webp"
               alt="Installatie Werk"
               fill
               className="object-cover"
@@ -153,7 +153,7 @@ export default function InstallatiesPage() {
             className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/loodgieter-afvoer-installeren.jpg"
+              src="/loodgieter-afvoer-installeren.webp"
               alt="FAQ over Installaties"
               fill
               className="object-cover"

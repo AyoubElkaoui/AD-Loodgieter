@@ -20,7 +20,7 @@ export default function LekkagesOplossenPage() {
             className="absolute inset-0"
           >
             <Image
-              src="/lekkage-oplossen.jpg"
+              src="/lekkage-oplossen.webp"
               alt="Lekkages Oplossen"
               fill
               className="object-cover"
@@ -72,7 +72,7 @@ export default function LekkagesOplossenPage() {
             className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/Loodgieter-lekkage-vrouw.jpg"
+              src="/Loodgieter-lekkage-vrouw.webp"
               alt="Lekkagedetectie"
               fill
               className="object-cover"
@@ -150,7 +150,7 @@ export default function LekkagesOplossenPage() {
             className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/Lekkage-installatie.jpg"
+              src="/Lekkage-installatie.webp"
               alt="FAQ over lekkages"
               fill
               className="object-cover"

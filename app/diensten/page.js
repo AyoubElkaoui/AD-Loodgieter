@@ -12,31 +12,31 @@ const services = [
   {
     title: 'WC Ontstoppen',
     description: 'Last van een verstopt toilet? Wij zorgen voor snelle en effectieve ontstopping, 24/7 bereikbaar.',
-    image: '/ontstoppen-wc-loodgieter.jpg',
+    image: '/ontstoppen-wc-loodgieter.webp',
     link: '/diensten/wc-ontstoppen',
   },
   {
     title: 'Afvoer Ontstoppen',
     description: 'Laat uw verstopte afvoer grondig reinigen door onze ervaren loodgieters.',
-    image: '/wc-ontstoppen.jpg',
+    image: '/wc-ontstoppen.webp',
     link: '/diensten/afvoer-ontstoppen',
   },
   {
     title: 'Lekkages Oplossen',
     description: 'Detectie en reparatie van lekkages om verdere schade te voorkomen.',
-    image: '/Lekkage-installatie.jpg',
+    image: '/Lekkage-installatie.webp',
     link: '/diensten/lekkages-oplossen',
   },
   {
     title: 'Installaties',
     description: 'Professionele installatie van sanitair en loodgieterssystemen op maat.',
-    image: '/loodgieter-staand.jpg',
+    image: '/loodgieter-staand.webp',
     link: '/diensten/installaties',
   },
   {
     title: 'Reparaties',
     description: 'Snelle en vakkundige reparaties aan leidingen en verwarmingssystemen.',
-    image: '/reparatie-loodgieter.jpg',
+    image: '/reparatie-loodgieter.webp',
     link: '/diensten/reparaties',
   },
 ];
@@ -61,7 +61,7 @@ export default function DienstenPage() {
             transition={{duration: 1.5}}
           >
             <Image
-              src="/loodgieter-werken-aan-afvoer.jpg"
+              src="/loodgieter-werken-aan-afvoer.webp"
               alt="Loodgietersdiensten in Utrecht en omgeving"
               fill
               className="object-cover"

@@ -41,7 +41,7 @@ export default function ContactPage() {
                     transition={{ duration: 1.5 }}
                   >
                       <Image
-                        src="/front-view-man-working-as-plumber.jpg"
+                        src="/front-view-man-working-as-plumber.webp"
                         alt="Neem contact op"
                         className="object-cover w-full h-full"
                       />

@@ -20,7 +20,7 @@ export default function DienstPage() {
             className="absolute inset-0"
           >
             <Image
-              src="/wc-ontstoppen.jpg"
+              src="/wc-ontstoppen.webp"
               alt="WC Ontstoppen"
               fill
               className="object-cover"
@@ -77,7 +77,7 @@ export default function DienstPage() {
             className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/toilet-problem.jpg"
+              src="/toilet-problem.webp"
               alt="Toilet probleem"
               fill
               className="object-cover"
@@ -155,7 +155,7 @@ export default function DienstPage() {
             className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/faq-toilet.jpg"
+              src="/faq-toilet.webp"
               alt="FAQ over WC Ontstoppen"
               fill
               className="object-cover"
