@@ -59,15 +59,15 @@ export default function BlogPost({ params }) {
     fetchParams();
   }, [params]);
 
-  if (!blog) {
-    return <p className="text-center text-lg font-semibold py-12">Laden...</p>;
-  }
+  // if (!blog) {
+  //   return <p className="text-center text-lg font-semibold py-12">Laden...</p>;
+  // }
 
   return (
     <main className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className="relative bg-gray-50 text-gray-800">
-        {blog.image ? (
+        {blog?.image ? (
           <Parallax speed={-10}>
             <motion.div
               className="relative h-[70vh] overflow-hidden"
@@ -86,7 +86,6 @@ export default function BlogPost({ params }) {
                 <h1 className="text-white text-5xl font-bold px-4 text-center md:text-left max-w-[50%] mx-auto max-sm:text-3xl">
                   {blog.title}
                 </h1>
-
               </div>
             </motion.div>
           </Parallax>
@@ -96,7 +95,7 @@ export default function BlogPost({ params }) {
           </div>
         )}
         {/* Highlight Section */}
-        {blog.highlight && (
+        {blog?.highlight && (
           <section className="relative z-10 -mt-6 lg:-mt-10">
             <motion.div
               className="container mx-auto px-4 lg:px-8"
@@ -122,7 +121,7 @@ export default function BlogPost({ params }) {
           transition={{ duration: 1, delay: 0.3 }}
           className="prose prose-lg mx-auto max-w-full"
         >
-          <PortableText value={blog.content} />
+          <PortableText value={blog?.content} />
         </motion.div>
       </section>
 
