@@ -75,7 +75,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/blofs" className="hover:text-blue-400 transition">
+              <Link href="/blogs" className="hover:text-blue-400 transition">
                 Blogs
               </Link>
             </li>
