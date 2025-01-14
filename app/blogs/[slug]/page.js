@@ -21,8 +21,6 @@ export default function BlogPost({ params }) {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
-    nextArrow: <CustomNextArrow />,
-    prevArrow: <CustomPrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -41,7 +39,6 @@ export default function BlogPost({ params }) {
     ],
   };
 
-
   useEffect(() => {
     async function fetchParams() {
       const resolvedParams = await params;
@@ -59,9 +56,14 @@ export default function BlogPost({ params }) {
     fetchParams();
   }, [params]);
 
-  // if (!blog) {
-  //   return <p className="text-center text-lg font-semibold py-12">Laden...</p>;
-  // }
+  if (!blog) {
+    return (
+      <div className="container mx-auto px-6 py-12 text-center">
+        <h1 className="text-4xl font-bold text-gray-800 mb-6">Blog niet gevonden</h1>
+        <p className="text-lg text-gray-600">Deze blog bestaat niet of is verwijderd.</p>
+      </div>
+    );
+  }
 
   return (
     <main className="bg-gray-50 text-gray-800">
@@ -83,7 +85,7 @@ export default function BlogPost({ params }) {
               />
               <div className="absolute inset-0 bg-black bg-opacity-50"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-white text-5xl font-bold px-4 text-center md:text-left max-w-[50%] mx-auto max-sm:text-3xl">
+                <h1 className="text-white text-5xl font-bold px-4 text-center max-w-[50%] mx-auto max-sm:text-3xl">
                   {blog.title}
                 </h1>
               </div>
@@ -94,35 +96,40 @@ export default function BlogPost({ params }) {
             <span className="text-gray-500 text-xl">Geen afbeelding beschikbaar</span>
           </div>
         )}
-        {/* Highlight Section */}
-        {blog?.highlight && (
-          <section className="relative z-10 -mt-6 lg:-mt-10">
-            <motion.div
-              className="container mx-auto px-4 lg:px-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="bg-dGrey text-white rounded-lg shadow-lg py-4 px-6 text-center md:py-6 md:px-8">
-                <p className="text-white text-base md:text-lg lg:text-xl font-semibold leading-relaxed">
-                  {blog.highlight}
-                </p>
-              </div>
-            </motion.div>
-          </section>
-        )}
       </section>
+
+      {/* Highlight Section */}
+      {blog?.highlight && (
+        <section className="relative z-10 -mt-6 lg:-mt-10">
+          <motion.div
+            className="container mx-auto px-4 lg:px-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="bg-dGrey text-white rounded-lg shadow-lg py-4 px-6 text-center md:py-6 md:px-8">
+              <p className="text-white text-base md:text-lg lg:text-xl font-semibold leading-relaxed">
+                {blog.highlight}
+              </p>
+            </div>
+          </motion.div>
+        </section>
+      )}
 
       {/* Blog Content */}
       <section className="container mx-auto px-6 lg:px-12 py-12 space-y-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="prose prose-lg mx-auto max-w-full"
-        >
-          <PortableText value={blog?.content} />
-        </motion.div>
+        {blog?.content ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="prose prose-lg mx-auto max-w-full"
+          >
+            <PortableText value={blog.content} />
+          </motion.div>
+        ) : (
+          <p className="text-gray-600">Geen content beschikbaar voor deze blog.</p>
+        )}
       </section>
 
       {/* Call-to-Action Section */}
@@ -131,26 +138,26 @@ export default function BlogPost({ params }) {
           <div className="container mx-auto px-6 text-center bg-dGrey text-white rounded-lg shadow-md max-w-[90%] md:max-w-4xl">
             <motion.h2
               className="text-2xl md:text-3xl font-bold mb-4 py-4"
-              initial={{opacity: 0, y: -20}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 1}}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
             >
               {blog.cta.title}
             </motion.h2>
             <motion.p
               className="mb-6 text-base md:text-lg"
-              initial={{opacity: 0, y: 20}}
-              animate={{opacity: 1, y: 0}}
-              transition={{duration: 1, delay: 0.2}}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
             >
               {blog.cta.description}
             </motion.p>
             <motion.a
               href={blog.cta.buttonLink}
-              className="bg-green-500 hover:bg-green-600 text-white  py-3 px-6 rounded-full font-semibold transition-all transform hover:scale-105 shadow-md"
-              initial={{opacity: 0, scale: 0.9}}
-              animate={{opacity: 1, scale: 1}}
-              transition={{duration: 0.5}}
+              className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-full font-semibold transition-all transform hover:scale-105 shadow-md"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
             >
               {blog.cta.buttonLabel}
             </motion.a>
@@ -164,8 +171,8 @@ export default function BlogPost({ params }) {
         <Slider {...sliderSettings}>
           {otherBlogs.map((otherBlog) => (
             <div key={otherBlog._id} className="p-8">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col card">
-                {otherBlog.image ? (
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                {otherBlog?.image ? (
                   <Image
                     src={urlFor(otherBlog.image).url()}
                     alt={otherBlog.title}
@@ -179,11 +186,11 @@ export default function BlogPost({ params }) {
                   </div>
                 )}
                 <div className="p-4 flex-1 flex flex-col">
-                  <h3 className="card-title">{otherBlog.title}</h3>
-                  <p className="text-gray-600 card-content">{otherBlog.highlight}</p>
+                  <h3 className="font-bold text-lg mb-2">{otherBlog.title}</h3>
+                  <p className="text-gray-600">{otherBlog.highlight}</p>
                   <Link
                     href={`/blogs/${otherBlog.slug.current}`}
-                    className="text-blue-500 font-semibold hover:underline card-footer"
+                    className="text-blue-500 font-semibold hover:underline"
                   >
                     Lees meer
                   </Link>
@@ -196,21 +203,3 @@ export default function BlogPost({ params }) {
     </main>
   );
 }
-
-const CustomPrevArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="absolute z-10 left-[-60px] top-1/2 transform -translate-y-1/2 bg-dGrey text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-blue-800 transition-all max-sm:left-[-20px]"
-  >
-    &#8592;
-  </button>
-);
-
-const CustomNextArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="absolute z-10 right-[-60px] top-1/2 transform -translate-y-1/2 bg-dGrey text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-blue-800 transition-all max-sm:right-[-20px]"
-  >
-    &#8594;
-  </button>
-);
