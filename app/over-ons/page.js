@@ -54,7 +54,7 @@ export default function AboutUs() {
           >
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Wie zijn wij?</h2>
             <p className="text-gray-600 mb-4">
-              AD-Loodgietersbedrijf combineert meer dan 25 jaar vakmanschap met een passie voor klanttevredenheid. Wij
+              AD-Loodgietersbedrijf combineert meer dan 10+ jaar vakmanschap met een passie voor klanttevredenheid. Wij
               bieden een breed scala aan loodgietersdiensten, van spoedklussen tot geplande renovaties.
             </p>
             <p className="text-gray-600 mb-6">
