@@ -41,9 +41,13 @@ export default function ContactPage() {
                     transition={{ duration: 1.5 }}
                   >
                       <Image
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="(max-width: 768px) 40vw, (max-width: 1200px) 50vw, 33vw"
                         src="/front-view-man-working-as-plumber.webp"
                         alt="Neem contact op"
-                        className="object-cover w-full h-full"
+
                       />
                   </motion.div>
               </div>

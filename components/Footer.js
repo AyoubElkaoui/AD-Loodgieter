@@ -8,7 +8,7 @@ import { sendGTMEvent } from '@next/third-parties/google';
 
 export default function Footer() {
     return (
-      <footer className="bg-gray-900 text-white py-8 sm:py-10 max-sm:p-8">
+      <footer className="bg-dGrey text-white py-8 sm:py-10 max-sm:p-8">
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Contactgegevens */}
               <div>
@@ -36,7 +36,7 @@ export default function Footer() {
                       </li>
                       <li>
                           <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 text-green-500" />
-                          Utrecht, Nederland
+                          Maarssen, Nederland
                       </li>
                   </ul>
               </div>

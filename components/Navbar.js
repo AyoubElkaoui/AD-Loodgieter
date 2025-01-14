@@ -75,6 +75,11 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
+              <Link href="/blofs" className="hover:text-blue-400 transition">
+                Blogs
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="hover:text-blue-400 transition">
                 Contact
               </Link>
@@ -113,6 +118,11 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
+                <Link href="/blogs" className="hover:text-blue-400 transition" onClick={toggleMenu}>
+                  Blogs
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-blue-400 transition" onClick={toggleMenu}>
                   Contact
                 </Link>
@@ -147,7 +157,7 @@ export default function Navbar() {
               style={{ color: '#64bb46', fontWeight: 900 }}
               className="mr-2"
             />
-            25 jaar ervaring
+            10+ jaar ervaring
           </p>
           <p className="flex items-center text-sm sm:text-base font-bold">
             <FontAwesomeIcon
@@ -155,7 +165,7 @@ export default function Navbar() {
               style={{ color: '#64bb46', fontWeight: 900 }}
               className="mr-2"
             />
-            Alle soorten verstoppingen
+            Alle soorten loodgieter diensten
           </p>
         </div>
       </div>

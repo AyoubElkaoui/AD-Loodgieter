@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import ContactForm from '../../components/ContactForm';
+import FAQSection from "@/components/FAQ/FAQSection";
 
 export default function AboutUs() {
   return (
@@ -80,7 +81,7 @@ export default function AboutUs() {
       </section>
 
       {/* Dynamische Timeline Sectie */}
-      <section className="py-16 bg-whit max-sm:p-8e">
+      <section className="py-16 bg-white max-sm:p-8e">
         <div className="container mx-auto text-center">
           <motion.h2
             className="text-3xl font-bold text-gray-800 mb-8"
@@ -124,26 +125,9 @@ export default function AboutUs() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-100 max-sm:p-8">
+      <section className="py-16 bg-gray-50 max-sm:p-8">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Veelgestelde Vragen</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {Array.from({length: 4}, (_, i) => (
-              <motion.div
-                key={i}
-                className="bg-white rounded-lg shadow-md p-6"
-                initial={{opacity: 0, y: 50}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{duration: 0.5, delay: i * 0.2}}
-              >
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Vraag {i + 1}: Wat is uw aanpak?</h3>
-                <p className="text-gray-600">
-                  Wij garanderen dat een ervaren loodgieter binnen 30 minuten op locatie is, ongeacht het tijdstip.
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <FAQSection />
         </div>
       </section>
 

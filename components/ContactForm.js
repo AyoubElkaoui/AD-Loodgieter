@@ -1,5 +1,7 @@
 'use client';
+
 import { useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ export default function ContactForm() {
     message: '',
   });
   const [files, setFiles] = useState([]);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
   const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
@@ -40,8 +43,12 @@ export default function ContactForm() {
     )
       return 'Huisnummer toevoeging bevat ongeldige tekens.';
     if (!phoneRegex.test(formData.phone)) return 'Telefoonnummer moet exact 10 cijfers bevatten.';
-    if (!formData.message || formData.message.length > 500) return 'Bericht mag niet leeg zijn en moet minder dan 500 tekens bevatten.';
+    if (!recaptchaToken) return 'reCAPTCHA verificatie is verplicht.';
     return null;
+  };
+
+  const handleRecaptchaChange = (token) => {
+    setRecaptchaToken(token);
   };
 
   const handleSubmit = async (e) => {
@@ -63,6 +70,8 @@ export default function ContactForm() {
       formDataToSend.append('files', file);
     });
 
+    formDataToSend.append('recaptchaToken', recaptchaToken);
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -71,11 +80,6 @@ export default function ContactForm() {
 
       if (response.ok) {
         setStatus('Bericht succesvol verzonden!');
-        sendGTMEvent({
-          event: 'formSubmitted',
-          category: 'Form',
-          label: 'Contact Form',
-        });
         setFormData({
           name: '',
           email: '',
@@ -86,7 +90,7 @@ export default function ContactForm() {
           message: '',
         });
         setFiles([]);
-
+        setRecaptchaToken(null);
       } else {
         const { error } = await response.json();
         setStatus(error || 'Fout bij het verzenden van het bericht.');
@@ -153,6 +157,7 @@ export default function ContactForm() {
             className="col-span-2 p-3 rounded bg-gray-800 border border-gray-700"
           />
         </div>
+
         <div className="mt-4">
           <label className="block text-sm mb-2">Wilt u foto&#39;s toevoegen?</label>
           <input
@@ -164,14 +169,23 @@ export default function ContactForm() {
           />
           <p className="text-xs mt-2">Max. bestandsgrootte: 256 MB.</p>
         </div>
+
         <textarea
           name="message"
           placeholder="Uw bericht"
           value={formData.message}
           onChange={handleChange}
           className="w-full mt-4 p-3 rounded bg-gray-800 border border-gray-700"
-          rows="4"
+          rows={4}
         />
+
+        <div className="mt-4">
+          <ReCAPTCHA
+            sitekey="6LfXJLQqAAAAACOeBooM6RH4-91EaxFxcxlXSSwh" // Gebruik jouw Site Key
+            onChange={handleRecaptchaChange}
+          />
+        </div>
+
         <button
           type="submit"
           className="w-full bg-green-500 text-white font-semibold py-3 rounded-lg mt-4 hover:bg-green-600 transition"

@@ -13,11 +13,27 @@ export async function POST(req) {
     const phone = data.get('phone');
     const message = data.get('message');
     const files = data.getAll('files');
+    const recaptchaToken = data.get('recaptchaToken');
+
+    // reCAPTCHA validatie
+    const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        secret: process.env.RECAPTCHA_SECRET_KEY, // reCAPTCHA secret key
+        response: recaptchaToken,
+      }),
+    });
+    const recaptchaResult = await recaptchaResponse.json();
+
+    if (!recaptchaResult.success) {
+      throw new Error('reCAPTCHA validatie mislukt. Probeer het opnieuw.');
+    }
 
     // Server-side validatie
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const postalCodeRegex = /^[1-9][0-9]{3}\s?[A-Za-z]{2}$/; // Bijv. 1234 AB
-    const phoneRegex = /^[0-9]{10}$/; // Exact 10 cijfers
+    const postalCodeRegex = /^[1-9][0-9]{3}\s?[A-Za-z]{2}$/;
+    const phoneRegex = /^[0-9]{10}$/;
 
     if (!name || name.trim().length === 0) {
       throw new Error('Naam is verplicht.');
@@ -53,17 +69,18 @@ export async function POST(req) {
       })
     );
 
+    // Nodemailer configuratie
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'elkaoui.a@gmail.com',
-        pass: 'swmd xzsk zebd apyg',
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     const mailOptions = {
       from: email,
-      to: 'elkaoui.a@gmail.com',
+      to: process.env.EMAIL_TO,
       subject: `Nieuw contactformulier van ${name}`,
       text: `Naam: ${name}\nEmail: ${email}\nTelefoon: ${phone}\nPostcode: ${postalCode} \nHuisnummer: ${houseNumber} ${houseNumberAddition}\n\nBericht:\n${message}`,
       attachments: attachments,

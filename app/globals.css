@@ -1,9 +1,64 @@
 @import '@fortawesome/fontawesome-svg-core/styles.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');*/
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-arrow {
+    z-index: 50;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slick-prev {
+    left: -45px !important; /* Pijl buiten de kaarten */
+}
+
+.slick-next {
+    right: -45px !important; /* Pijl buiten de kaarten */
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #2563eb;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #1d4ed8;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%; /* Maximale hoogte */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Zorgt dat lange titels niet doorlopen */
+}
+
+.card-content {
+    flex-grow: 1; /* Zorgt dat de beschrijving de resterende ruimte opvult */
+    margin-bottom: 16px;
+}
+
+.card-footer {
+    margin-top: auto; /* Plaatst de knop altijd onderaan */
+}
+
+
 
 body {
     @apply font-sans;
@@ -20,4 +75,33 @@ img {
 }
 #iframe-page {
     margin-left: -10px;
+}
+
+.prose {
+    line-height: 1.8;
+    color: #374151;
+}
+
+.prose-lg {
+    font-size: 1.125rem; /* iets kleiner dan standaard */
+    line-height: 1.75rem;
+}
+
+.prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.prose a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.prose img {
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+@font-face {
+    font-display: swap;
 }

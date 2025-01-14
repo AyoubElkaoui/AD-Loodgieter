@@ -7,6 +7,23 @@ import { faCheckCircle, faToilet, faShower, faSink, faWrench, faWater, faHandHol
 import { motion } from 'framer-motion';
 import {sendGTMEvent} from "@next/third-parties/google";
 import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
+import DiscountPopup from "@/components/PopUp";
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return isMobile;
+}
 
 
 // Dynamisch importeren
@@ -14,6 +31,7 @@ const FAQSection = dynamic(() => import('../components/FAQ/FAQSection'), { ssr: 
 const ContactForm = dynamic(() => import('../components/ContactForm'), { ssr: false });
 
 export default function Home() {
+  const isMobile = useIsMobile();
   return (
     <>
       <script
@@ -50,17 +68,17 @@ export default function Home() {
           }),
         }}
       />
-
+      <DiscountPopup />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden px-4 sm:px-8">
         <motion.div
           className="absolute inset-0"
-          initial={{scale: 1.1}}
-          animate={{scale: 1}}
+          initial={isMobile ? null : {scale: 1.1}}
+          animate={isMobile ? null : {scale: 1}}
           transition={{duration: 1.5}}
         >
           <Image
-            src="/plumber-working-on-pipes.webp"
+            src="/loodgieter-toilet-gereedschap.jpg"
             alt="Loodgieter bezig met leidingen repareren in Maarssen"
             fill
             className="object-cover"
@@ -89,7 +107,7 @@ export default function Home() {
                       label: 'Contact knop - Spoed bellen Home',
                     })
                   }>
-                Spoed? Bel Nu - Zsm op locatie!
+              Bel direct: 24/7 service!
             </Link>
             <Link href="/contact"
                   className="bg-blue-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-blue-600 transition"
@@ -129,18 +147,18 @@ export default function Home() {
                                 className="text-blue-500 hover:underline">wc-ontstopping</Link>, <Link
               href="/diensten/lekkages-oplossen" className="text-blue-500 hover:underline">lekkageherstel</Link>, of
               een <Link href="/diensten/installaties"
-                        className="text-blue-500 hover:underline">installatie</Link> nodig heeft, wij staan zsm voor uw deur.
+                        className="text-blue-500 hover:underline">installatie</Link> nodig heeft, wij staan zsm voor uw
+              deur.
             </p>
             <Link href="/over-ons" className="text-blue-500 font-semibold hover:underline">
               Lees meer over ons
             </Link>
           </div>
           <motion.div
-            className="relative"
-            initial={{opacity: 0, scale: 0.8}}
-            whileInView={{opacity: 1, scale: 1}}
-            viewport={{once: true}}
-            transition={{duration: 1}}
+            className="inset-0"
+            initial={isMobile ? null : {scale: 1.1}}
+            animate={isMobile ? null : {scale: 1}}
+            transition={{duration: 1.5}}
           >
             <Image
               src="/loodgieter-toilet.webp"
@@ -148,6 +166,7 @@ export default function Home() {
               width={600}
               height={400}
               className="rounded-lg shadow-md"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </motion.div>
         </div>
@@ -315,6 +334,7 @@ export default function Home() {
       <section className="py-16 bg-gray-900 text-white max-sm:p-8">
         <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
           <motion.div
+            className="pr-8"
             initial={{opacity: 0, x: -50}}
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true}}
