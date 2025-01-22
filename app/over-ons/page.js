@@ -7,13 +7,6 @@ import FAQSection from "@/components/FAQ/FAQSection";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faClock, faLeaf, faPhone, faCogs, faSmile } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import { client, usePreviewSubscription } from '../sanity.client';
-const query = `*[_type == "post"] {
-  title,
-  slug,
-  body,
-  publishedAt
-}`;
 
 export default function AboutUs() {
   return (
