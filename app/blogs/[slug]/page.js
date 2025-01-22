@@ -1,205 +1,150 @@
-'use client';
+import { client, urlFor } from "@/sanity/lib/client";
+import { PortableText } from "@portabletext/react";
+import { PortableTextComponents } from "@/lib/portableTextConfig";
+import Image from "next/image";
+import Link from "next/link";
+import Head from "next/head";
 
-import { useEffect, useState } from 'react';
-import { PortableText } from '@portabletext/react';
-import { client, urlFor } from '@/sanity/lib/client';
-import { motion } from 'framer-motion';
-import { Parallax } from 'react-scroll-parallax';
-import Image from 'next/image';
-import Link from 'next/link';
-import Slider from 'react-slick';
+const SingleBlogPage = async ({ params }) => {
+  const { slug } = params;
 
-export default function BlogPost({ params }) {
-  const [slug, setSlug] = useState('');
-  const [blog, setBlog] = useState(null);
-  const [otherBlogs, setOtherBlogs] = useState([]);
-
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
+  const blog = await client.fetch(
+    `*[_type == "post" && slug.current == $slug][0] {
+      title,
+      metaTitle,
+      metaDescription,
+      mainImage,
+      body,
+      publishedAt,
+      author->{
+        name,
+        image
       },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+      categories[]->{
+        title
+      }
+    }`,
+    { slug }
+  );
 
-  useEffect(() => {
-    async function fetchParams() {
-      const resolvedParams = await params;
-      setSlug(resolvedParams.slug);
-
-      const query = `*[_type == "blog" && slug.current == $slug][0]`;
-      const fetchedBlog = await client.fetch(query, { slug: resolvedParams.slug });
-      setBlog(fetchedBlog);
-
-      const otherQuery = `*[_type == "blog" && slug.current != $slug] | order(publishedAt desc)`;
-      const fetchedOtherBlogs = await client.fetch(otherQuery, { slug: resolvedParams.slug });
-      setOtherBlogs(fetchedOtherBlogs);
-    }
-
-    fetchParams();
-  }, [params]);
+  const relatedBlogs = await client.fetch(
+    `*[_type == "post" && slug.current != $slug][0...3] {
+      title,
+      slug,
+      mainImage
+    }`,
+    { slug }
+  );
 
   if (!blog) {
     return (
-      <div className="container mx-auto px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-6">Blog niet gevonden</h1>
-        <p className="text-lg text-gray-600">Deze blog bestaat niet of is verwijderd.</p>
+      <div className="text-center py-20">
+        <h1 className="text-4xl font-bold text-gray-800">Post niet gevonden</h1>
       </div>
     );
   }
 
   return (
-    <main className="bg-gray-50 text-gray-800">
-      {/* Hero Section */}
-      <section className="relative bg-gray-50 text-gray-800">
-        {blog?.image ? (
-          <Parallax speed={-10}>
-            <motion.div
-              className="relative h-[70vh] overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <Image
-                src={urlFor(blog.image).url()}
-                alt={blog.title || 'Hero Image'}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-white text-5xl font-bold px-4 text-center max-w-[50%] mx-auto max-sm:text-3xl">
+    <>
+      <Head>
+        <title>{blog.metaTitle || blog.title}</title>
+        <meta name="description" content={blog.metaDescription || "Default description"} />
+      </Head>
+      <section className="pb-16 pt-12 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="flex flex-col-reverse lg:flex-row gap-10">
+            {/* Sidebar */}
+            <aside className="lg:w-1/4">
+              {/* CTA */}
+              <div className="bg-gray-900 text-white rounded-lg p-6 mb-6 shadow-md">
+                <h3 className="text-xl font-semibold mb-4">
+                  Hulp nodig bij een loodgietersprobleem?
+                </h3>
+                <p className="mb-4">
+                  Neem contact met ons op voor direct advies of hulp van onze experts.
+                </p>
+                <a
+                  href="/contact"
+                  className="bg-green-500 text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-blue-100 transition"
+                >
+                  Neem contact op
+                </a>
+              </div>
+
+              {/* Categorieën */}
+              <div className="sticky top-20 bg-white shadow-md rounded-lg p-6 mb-6">
+                <h4 className="text-xl font-semibold mb-4">Categorieën</h4>
+                <ul>
+                  {blog.categories?.map((category, index) => (
+                    <li
+                      key={index}
+                      className="mb-2 text-gray-600 hover:text-blue-500 transition-all duration-300"
+                    >
+                      {category.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Gerelateerde Blogs */}
+              <div className="bg-white shadow-lg rounded-xl p-8">
+                <h4 className="text-2xl font-bold text-blue-700 mb-6">Gerelateerde Blogs</h4>
+                <ul className="space-y-6"> {/* Verticaal onder elkaar */}
+                  {relatedBlogs.map(function (relatedBlog) {
+                    return (
+                      <li key={relatedBlog.slug.current}
+                          className="flex items-center bg-gray-100 hover:bg-gray-200 rounded-lg shadow-md p-4 transition-all">
+                        <Link href={`/blogs/${relatedBlog.slug.current}`} className="flex items-center">
+                          <div>
+                          <Image
+                            src={urlFor(relatedBlog.mainImage).url()}
+                            alt={relatedBlog.title}
+                            width="100"
+                            height="100"
+                            className="w-full h-36 object-cover rounded-md mr-4"
+                          />
+                            <h5 className="text-lg font-semibold text-gray-800 hover:text-blue-600 transition">
+                              {relatedBlog.title}
+                            </h5>
+                          </div>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </aside>
+
+            {/* Hoofdinhoud */}
+            <div className="lg:w-3/4">
+              <div className="bg-white shadow-md rounded-lg p-8">
+                <h1 className="text-3xl font-bold text-gray-800 mb-6">
                   {blog.title}
                 </h1>
-              </div>
-            </motion.div>
-          </Parallax>
-        ) : (
-          <div className="relative h-[70vh] bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-500 text-xl">Geen afbeelding beschikbaar</span>
-          </div>
-        )}
-      </section>
-
-      {/* Highlight Section */}
-      {blog?.highlight && (
-        <section className="relative z-10 -mt-6 lg:-mt-10">
-          <motion.div
-            className="container mx-auto px-4 lg:px-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="bg-dGrey text-white rounded-lg shadow-lg py-4 px-6 text-center md:py-6 md:px-8">
-              <p className="text-white text-base md:text-lg lg:text-xl font-semibold leading-relaxed">
-                {blog.highlight}
-              </p>
-            </div>
-          </motion.div>
-        </section>
-      )}
-
-      {/* Blog Content */}
-      <section className="container mx-auto px-6 lg:px-12 py-12 space-y-8">
-        {blog?.content ? (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="prose prose-lg mx-auto max-w-full"
-          >
-            <PortableText value={blog.content} />
-          </motion.div>
-        ) : (
-          <p className="text-gray-600">Geen content beschikbaar voor deze blog.</p>
-        )}
-      </section>
-
-      {/* Call-to-Action Section */}
-      {blog?.cta && (
-        <section className="py-12">
-          <div className="container mx-auto px-6 text-center bg-dGrey text-white rounded-lg shadow-md max-w-[90%] md:max-w-4xl">
-            <motion.h2
-              className="text-2xl md:text-3xl font-bold mb-4 py-4"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              {blog.cta.title}
-            </motion.h2>
-            <motion.p
-              className="mb-6 text-base md:text-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              {blog.cta.description}
-            </motion.p>
-            <motion.a
-              href={blog.cta.buttonLink}
-              className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-full font-semibold transition-all transform hover:scale-105 shadow-md"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {blog.cta.buttonLabel}
-            </motion.a>
-          </div>
-        </section>
-      )}
-
-      {/* Related Blogs Section */}
-      <section className="container mx-auto px-6 lg:px-12 py-12">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800">Andere blogs</h2>
-        <Slider {...sliderSettings}>
-          {otherBlogs.map((otherBlog) => (
-            <div key={otherBlog._id} className="p-8">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                {otherBlog?.image ? (
+                {blog.mainImage && (
                   <Image
-                    src={urlFor(otherBlog.image).url()}
-                    alt={otherBlog.title}
-                    width={400}
-                    height={250}
-                    className="object-cover w-full h-48"
+                    src={urlFor(blog.mainImage).url()}
+                    alt={blog.title}
+                    width={800}
+                    height={400}
+                    className="rounded-lg mb-6"
                   />
-                ) : (
-                  <div className="bg-gray-200 w-full h-48 flex items-center justify-center">
-                    <span className="text-gray-500">Geen afbeelding</span>
-                  </div>
                 )}
-                <div className="p-4 flex-1 flex flex-col">
-                  <h3 className="font-bold text-lg mb-2">{otherBlog.title}</h3>
-                  <p className="text-gray-600">{otherBlog.highlight}</p>
-                  <Link
-                    href={`/blogs/${otherBlog.slug.current}`}
-                    className="text-blue-500 font-semibold hover:underline"
-                  >
-                    Lees meer
-                  </Link>
-                </div>
+                <PortableText
+                  value={blog.body}
+                  components={PortableTextComponents} // Gebruik van de componentconfiguratie
+                />
+                <p className="text-sm text-gray-500 mt-6">
+                  Gepubliceerd op:{" "}
+                  {new Date(blog.publishedAt).toLocaleDateString()}
+                </p>
               </div>
             </div>
-          ))}
-        </Slider>
+          </div>
+        </div>
       </section>
-    </main>
+    </>
   );
-}
+};
+
+export default SingleBlogPage;

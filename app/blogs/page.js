@@ -1,56 +1,80 @@
-import { getBlogs, urlFor } from '@/sanity/lib/client';
-import Link from 'next/link';
-import Image from 'next/image';
+import { client, urlFor } from "@/sanity/lib/client";
+import Link from "next/link";
+import Image from "next/image";
 
-export default async function BlogIndex() {
-  const blogs = await getBlogs();
+const BlogPage = async () => {
+  const blogs = await client.fetch(`
+    *[_type == "post"] | order(publishedAt desc) {
+      title,
+      slug,
+      mainImage,
+      categories[]->{
+        title
+      },
+      publishedAt
+    }
+  `);
 
   return (
-    <div className="container mx-auto px-6 py-12">
-      {/* Introductietekst */}
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Welkom bij onze Blogs</h1>
-        <p className="text-lg text-gray-600">
-          Ontdek een breed scala aan onderwerpen, van loodgietertips en gidsen tot interessante inzichten over ons
-          vakgebied. Laat je inspireren en blijf op de hoogte van de laatste ontwikkelingen!
-        </p>
-      </div>
-
-      {/* Blog Lijst */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogs.map((blog) => (
-          <div
-            key={blog.slug.current}
-            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-          >
-            {/* Blog Afbeelding */}
-            {blog.image ? (
-              <Image
-                src={urlFor(blog.image).url()}
-                alt={blog.title}
-                width={400}
-                height={250}
-                className="object-cover w-full h-48"
-              />
-            ) : (
-              <div className="bg-gray-200 w-full h-48 flex items-center justify-center">
-                <span className="text-gray-500">Geen afbeelding beschikbaar</span>
+    <>
+      {/* Blog Grid Start */}
+      <section className="py-16 lg:py-20 xl:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-12">
+            Onze Blogs
+          </h1>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {blogs.map((blog) => (
+              <div
+                key={blog.slug.current}
+                className="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg"
+              >
+                {/* Blog Afbeelding */}
+                {blog.mainImage ? (
+                  <Image
+                    src={urlFor(blog.mainImage).url()}
+                    alt={blog.title}
+                    width={400}
+                    height={250}
+                    className="object-cover w-full h-48"
+                  />
+                ) : (
+                  <div className="bg-gray-200 w-full h-48 flex items-center justify-center">
+                    <span className="text-gray-500">Geen afbeelding beschikbaar</span>
+                  </div>
+                )}
+                {/* Blog Content */}
+                <div className="p-6">
+                  <h2 className="text-2xl font-semibold text-gray-800 mb-3 hover:text-blue-500 transition-colors">
+                    {blog.title}
+                  </h2>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Gepubliceerd op: {new Date(blog.publishedAt).toLocaleDateString()}
+                  </p>
+                  <div className="mb-4">
+                    {blog.categories?.map((category, index) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full mr-2"
+                      >
+                        {category.title}
+                      </span>
+                    ))}
+                  </div>
+                  <Link href={`/blogs/${blog.slug.current}`}>
+                    <span className="text-blue-500 font-semibold hover:underline block">
+                      Lees meer →
+                    </span>
+                  </Link>
+                </div>
               </div>
-            )}
-
-            {/* Blog Content */}
-            <div className="p-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-2">{blog.title}</h2>
-              <p className="text-gray-600 mb-4 line-clamp-3">
-                {blog.content ? blog.content[0]?.children[0]?.text || 'Geen inhoud beschikbaar' : 'Geen inhoud beschikbaar'}
-              </p>
-              <Link href={`/blogs/${blog.slug.current}`}>
-                <span className="text-blue-500 font-semibold hover:underline">Lees meer →</span>
-              </Link>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      </section>
+      {/* Blog Grid End */}
+    </>
   );
-}
+};
+
+export default BlogPage;

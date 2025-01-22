@@ -48,6 +48,26 @@ const whyChooseUsData = [
   { icon: faSmile, title: 'Tevreden Klanten', text: 'Hoge klanttevredenheid staat voorop.' },
 ];
 
+export const metadata = {
+  title: 'Diensten - AD Loodgietersbedrijf - Utrecht & Omgeving',
+  description: 'Ontdek onze professionele loodgietersdiensten. Van wc-ontstopping tot lekkageherstel en installaties in Utrecht, Amersfoort, Nieuwegein en omgeving.',
+  keywords: 'loodgietersdiensten, wc ontstoppen, afvoer ontstoppen, lekkages oplossen, installaties, Utrecht, Amersfoort, Nieuwegein',
+  openGraph: {
+    title: 'Diensten - AD Loodgietersbedrijf - Utrecht & Omgeving',
+    description: 'Ontdek onze professionele loodgietersdiensten. Van wc-ontstopping tot lekkageherstel en installaties in Utrecht, Amersfoort, Nieuwegein en omgeving.',
+    url: 'https://adloodgietersbedrijf.nl/diensten',
+    type: 'website',
+    images: [
+      {
+        url: '/loodgieter-werken-aan-afvoer.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Loodgietersdiensten in Utrecht en omgeving',
+      },
+    ],
+  },
+};
+
 export default function DienstenPage() {
   return (
     <>

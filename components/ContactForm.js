@@ -104,7 +104,7 @@ export default function ContactForm() {
   return (
     <div className="bg-gray-900 text-white p-8 rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold mb-4">Neem contact op</h2>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
+      <form onSubmit={handleSubmit} encType="multipart/form-data" id="contact-form">
         <div className="grid grid-cols-2 gap-4">
           <input
             type="text"
@@ -181,7 +181,7 @@ export default function ContactForm() {
 
         <div className="mt-4">
           <ReCAPTCHA
-            sitekey="6LfXJLQqAAAAACOeBooM6RH4-91EaxFxcxlXSSwh" // Gebruik jouw Site Key
+            sitekey="6LeuzQspAAAAABTVjZ4ttQbHB2mmwuykgmUH41Uv" // Gebruik jouw Site Key
             onChange={handleRecaptchaChange}
           />
         </div>

@@ -25,8 +25,17 @@ export default function DiscountPopup() {
     >
       <div
         onClick={(e) => e.stopPropagation()} // Voorkom sluiten bij klik op de popup zelf
-        className="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center"
+        className="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center relative"
       >
+        {/* Kruisje rechtsboven */}
+        <button
+          onClick={() => setShowPopup(false)}
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+          aria-label="Sluiten"
+        >
+          &times;
+        </button>
+
         <h2 className="text-xl font-bold mb-4">Speciaal Aanbod!</h2>
         <p className="text-gray-700 mb-6">
           Ontvang <span className="font-bold text-green-500">20% korting</span> op uw eerste afspraak! Neem nu contact

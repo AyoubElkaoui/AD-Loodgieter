@@ -50,7 +50,7 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="Ad Loodgietersbedrijf Logo"
-              width={100}
+              width={120}
               height={100}
               className="mr-2 w-16 h-16 md:w-20 md:h-20"
             />

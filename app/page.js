@@ -68,18 +68,18 @@ export default function Home() {
           }),
         }}
       />
-      <DiscountPopup />
+      <DiscountPopup/>
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden px-4 sm:px-8">
         <motion.div
           className="absolute inset-0"
-          initial={isMobile ? null : {scale: 1.1}}
-          animate={isMobile ? null : {scale: 1}}
+          initial={{scale: 1.1}}
+          animate={{scale: 1}}
           transition={{duration: 1.5}}
         >
           <Image
             src="/loodgieter-toilet-gereedschap.jpg"
-            alt="Loodgieter bezig met leidingen repareren in Maarssen"
+            alt="Betrouwbare loodgieter in Maarssen bezig met leidingen"
             fill
             className="object-cover"
             priority
@@ -94,30 +94,19 @@ export default function Home() {
           transition={{duration: 1}}
         >
           <h1 className="text-4xl sm:text-3xl font-bold mb-4 break-words">
-            Uw betrouwbare loodgieter in Nederland</h1>
-          <p className="text-base sm:text-lg px-2">Wij staan dag en nacht klaar voor al uw loodgietersproblemen. Van
-            verstoppingen tot lekkages: wij lossen het op.</p>
+            Betrouwbare Loodgieter in Maarssen en Regio Utrecht
+          </h1>
+          <p className="text-base sm:text-lg px-2">
+            Wij staan dag en nacht klaar voor al uw loodgietersproblemen. Van verstoppingen tot lekkages: snelle service
+            gegarandeerd.
+          </p>
           <div className="flex space-x-4 justify-center p-4">
             <Link href="tel:+31640961848"
-                  className="bg-green-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-green-600 transition"
-                  onClick={() =>
-                    sendGTMEvent({
-                      event: 'buttonClicked',
-                      category: 'Link',
-                      label: 'Contact knop - Spoed bellen Home',
-                    })
-                  }>
+                  className="bg-green-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-green-600 transition">
               Bel direct: 24/7 service!
             </Link>
             <Link href="/contact"
-                  className="bg-blue-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-blue-600 transition"
-                  onClick={() =>
-                    sendGTMEvent({
-                      event: 'buttonClicked',
-                      category: 'Link',
-                      label: 'Contact knop - Home',
-                    })
-                  }>
+                  className="bg-blue-500 py-3 px-6 rounded-lg text-white font-semibold hover:bg-blue-600 transition">
               Neem contact op
             </Link>
           </div>

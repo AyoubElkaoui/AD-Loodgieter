@@ -15,6 +15,16 @@ const builder = createImageUrlBuilder(client);
 
 export const urlFor = (source) => builder.image(source);
 
+// export const previewClient = createClient({
+//   projectId,
+//   dataset,
+//   apiVersion,
+//   useCdn: false, // Gebruik nooit CDN voor previews
+//   token: process.env.SANITY_API_TOKEN, // Voeg je Sanity API-token toe
+// });
+// export const usePreviewSubscription = createPreviewSubscriptionHook(previewClient);
+
+
 export async function getBlogs() {
   const query = `*[_type == "blog"]{title, slug, content, publishedAt, image}`;
   return await client.fetch(query);
