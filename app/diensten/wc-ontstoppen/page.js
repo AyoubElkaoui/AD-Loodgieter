@@ -192,12 +192,3 @@ export default function DienstPage() {
   );
 }
 
-import Head from 'next/head';
-
-export const metadata = {
-  title: 'WC Ontstoppen - AD Loodgietersbedrijf',
-  description: 'Snel en professioneel uw toilet weer vrij van verstoppingen in Utrecht, Amersfoort, Nieuwegein en omgeving. Ontdek onze 24/7 spoedservice met moderne technieken.',
-  keywords: 'WC Ontstoppen, loodgieter Utrecht, toilet verstopping, afvoer reinigen, spoed service, Amersfoort, Nieuwegein, moderne loodgieterstechnieken',
-};
-
-
