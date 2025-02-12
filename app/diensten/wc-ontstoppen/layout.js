@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 export const metadata = {
   title: 'WC Ontstoppen - AD Loodgietersbedrijf',
-  description: 'Snel en professioneel uw toilet weer vrij van verstoppingen in Utrecht, Amersfoort, Nieuwegein en omgeving.',
-  keywords: 'WC Ontstoppen, loodgieter Utrecht, verstopping oplossen, Utrecht, Amersfoort, Nieuwegein',
+  description: 'Snel en professioneel uw toilet weer vrij van verstoppingen in Utrecht, Amersfoort, Nieuwegein en omgeving. Ontdek onze 24/7 spoedservice met moderne technieken.',
+  keywords: 'WC Ontstoppen, loodgieter Utrecht, loodgieter Maarssen, toilet verstopping, afvoer reinigen, spoed service, Loodgieter Amersfoort, Loodgieter Nieuwegein, moderne loodgieterstechnieken',
 };
 
 export default function Layout({ children }) {
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
               "@context": "https://schema.org",
               "@type": "Service",
               "name": "WC Ontstoppen",
-              "description": "Snel en professioneel uw toilet weer vrij van verstoppingen in Utrecht en omgeving.",
+              "description": "Snel en professioneel uw toilet weer vrij van verstoppingen in Utrecht en omgeving met 24/7 spoedservice en moderne reinigingstechnieken.",
               "provider": {
                 "@type": "LocalBusiness",
                 "name": "AD-Loodgietersbedrijf",
@@ -28,11 +28,11 @@ export default function Layout({ children }) {
                   "streetAddress": "Spechtenkamp 334",
                   "addressLocality": "Maarssen",
                   "postalCode": "3607 KT",
-                  "addressCountry": "NL",
-                },
+                  "addressCountry": "NL"
+                }
               },
               "areaServed": ["Utrecht", "Amersfoort", "Nieuwegein"],
-              "serviceType": "WC Ontstoppen",
+              "serviceType": "WC Ontstoppen"
             }),
           }}
         />

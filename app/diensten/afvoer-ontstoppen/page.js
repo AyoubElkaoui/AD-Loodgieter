@@ -21,7 +21,7 @@ export default function AfvoerOntstoppenPage() {
           >
             <Image
               src="/riool-afvoer-ontstoppen.webp"
-              alt="Afvoer Ontstoppen"
+              alt="Afvoer Ontstoppen – Professionele reiniging en onderhoud"
               fill
               priority
               className="object-cover"
@@ -37,7 +37,7 @@ export default function AfvoerOntstoppenPage() {
         >
           <h1 className="text-5xl font-bold mb-4">Afvoer Ontstoppen</h1>
           <p className="text-lg max-w-2xl mx-auto">
-            Laat uw verstopte afvoer snel en professioneel reinigen door onze experts.
+            Laat uw verstopte afvoer snel, grondig en duurzaam reinigen door onze gespecialiseerde experts.
           </p>
         </motion.div>
       </section>
@@ -51,12 +51,14 @@ export default function AfvoerOntstoppenPage() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Waarom kiezen voor onze afvoerdiensten?</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Waarom kiezen voor onze afvoerdiensten?
+            </h2>
             <p className="text-gray-600 mb-4">
-              Een verstopte afvoer kan zorgen voor veel ongemak en nare geuren. Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> bieden wij een snelle en grondige oplossing. Onze experts gebruiken geavanceerde technieken om uw afvoer weer perfect te laten werken.
+              Een verstopte afvoer kan leiden tot overstromingen, nare geuren en structurele schade aan uw pand. Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> zetten wij onze uitgebreide expertise in om verstoppingen snel en grondig te verhelpen. Wij maken gebruik van geavanceerde reinigingstechnieken, zoals hogedrukreiniging en roterende afvoerspiralen, om hardnekkige verstoppingen effectief op te lossen.
             </p>
             <p className="text-gray-600 mb-4">
-              Wij staan <strong>24/7 voor u klaar</strong> in regio Utrecht, Amersfoort en omgeving om uw problemen snel op te lossen.
+              Onze service is 24/7 beschikbaar in regio Utrecht, Amersfoort, Nieuwegein en omstreken, zodat u altijd kunt rekenen op een directe interventie en een duurzame oplossing.
             </p>
             <Link
               href="/contact"
@@ -74,7 +76,7 @@ export default function AfvoerOntstoppenPage() {
           >
             <Image
               src="/ontstoppingsveer.webp"
-              alt="Verstopte Afvoer"
+              alt="Verstopte afvoer – professionele reiniging"
               fill
               priority
               className="object-cover"
@@ -92,17 +94,17 @@ export default function AfvoerOntstoppenPage() {
               {
                 icon: faClock,
                 title: 'Snel Ter Plaatse',
-                text: 'Binnen korte tijd aanwezig om uw probleem op te lossen.'
+                text: 'Onze experts zijn binnen korte tijd ter plaatse om de verstopping grondig te verhelpen.',
               },
               {
                 icon: faTools,
                 title: 'Moderne Technieken',
-                text: 'Gebruik van de nieuwste apparatuur voor een grondige reiniging.'
+                text: 'Wij maken gebruik van de nieuwste apparatuur en innovatieve reinigingsmethoden voor optimale resultaten.',
               },
               {
                 icon: faShieldAlt,
                 title: 'Duurzame Oplossingen',
-                text: 'Langdurige resultaten zonder zorgen.'
+                text: 'Wij leveren langdurige en energiezuinige oplossingen, zodat u zich geen zorgen hoeft te maken over toekomstige verstoppingen.',
               },
             ].map((item, index) => (
               <motion.div
@@ -133,15 +135,21 @@ export default function AfvoerOntstoppenPage() {
           >
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Veelgestelde vragen over afvoer ontstoppen</h2>
             <p className="text-gray-600 mb-4">
-              Heeft u vragen over onze diensten? Hier zijn enkele van de meest gestelde vragen door onze klanten:
+              Heeft u vragen over onze afvoerdiensten? Hier beantwoorden wij enkele van de meest gestelde vragen, zodat u precies weet wat u kunt verwachten.
             </p>
             <ul className="list-disc list-inside text-gray-600">
-              <li>Welke methoden gebruiken jullie om een afvoer te ontstoppen?</li>
-              <li>Hoeveel kost het ontstoppen van een afvoer?</li>
-              <li>Kunnen jullie dezelfde dag nog helpen?</li>
+              <li>
+                <strong>Welke methoden gebruiken jullie?</strong> Wij zetten moderne technieken in, zoals hogedrukreiniging en roterende afvoerspiralen, voor een grondige reiniging.
+              </li>
+              <li>
+                <strong>Wat zijn de kosten?</strong> De tarieven zijn afhankelijk van de complexiteit van de verstopping, maar wij hanteren altijd transparante prijzen zonder verrassingen.
+              </li>
+              <li>
+                <strong>Kunnen jullie dezelfde dag nog helpen?</strong> Ja, met onze 24/7 spoedservice zijn wij vaak binnen enkele uren op locatie.
+              </li>
             </ul>
             <p className="text-gray-600 mt-4">
-              Neem contact met ons op als u meer specifieke vragen heeft of een afspraak wilt maken.
+              Neem gerust contact met ons op voor meer informatie of een vrijblijvende offerte.
             </p>
           </motion.div>
           <motion.div
@@ -173,7 +181,7 @@ export default function AfvoerOntstoppenPage() {
           >
             <h2 className="text-3xl font-bold mb-6">Heeft u een verstopte afvoer?</h2>
             <p className="text-lg mb-6">
-              Neem vandaag nog contact met ons op en wij zorgen ervoor dat uw probleem snel en professioneel wordt opgelost.
+              Neem vandaag nog contact met ons op en laat onze experts uw probleem snel en professioneel oplossen.
             </p>
             <Link
               href="/contact"
@@ -194,3 +202,5 @@ export default function AfvoerOntstoppenPage() {
     </>
   );
 }
+
+

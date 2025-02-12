@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 export const metadata = {
   title: 'Installaties - AD Loodgietersbedrijf',
-  description: 'Professionele installatie van sanitair en loodgieterssystemen in Utrecht, Amersfoort, Nieuwegein en omgeving.',
-  keywords: 'Installaties, loodgieter Utrecht, sanitair installatie, Utrecht, Amersfoort, Nieuwegein',
+  description: 'Professionele installatie van sanitair en complete loodgieterssystemen op maat in Utrecht, Amersfoort, Nieuwegein en omgeving. Ervaar hoogwaardige kwaliteit en duurzame oplossingen.',
+  keywords: 'Installaties, loodgieter Utrecht, sanitair installatie, loodgieterssystemen, maatwerk, duurzame installaties, Amersfoort, Nieuwegein',
 };
 
 export default function Layout({ children }) {
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
               "@context": "https://schema.org",
               "@type": "Service",
               "name": "Installaties",
-              "description": "Professionele installatie van sanitair en loodgieterssystemen in Utrecht en omgeving.",
+              "description": "Professionele installatie van sanitair en complete loodgieterssystemen in Utrecht, Amersfoort en Nieuwegein, uitgevoerd met hoogwaardige materialen en moderne technieken.",
               "provider": {
                 "@type": "LocalBusiness",
                 "name": "AD-Loodgietersbedrijf",
@@ -28,11 +28,11 @@ export default function Layout({ children }) {
                   "streetAddress": "Spechtenkamp 334",
                   "addressLocality": "Maarssen",
                   "postalCode": "3607 KT",
-                  "addressCountry": "NL",
+                  "addressCountry": "NL"
                 },
               },
               "areaServed": ["Utrecht", "Amersfoort", "Nieuwegein"],
-              "serviceType": "Installaties",
+              "serviceType": "Installaties"
             }),
           }}
         />

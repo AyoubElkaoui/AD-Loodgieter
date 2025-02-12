@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 export const metadata = {
   title: 'Reparaties - AD Loodgietersbedrijf',
-  description: 'Snelle en vakkundige reparaties aan leidingen en verwarmingssystemen in Utrecht, Amersfoort, Nieuwegein en omgeving.',
-  keywords: 'Reparaties, loodgieter Utrecht, leidingen repareren, Utrecht, Amersfoort, Nieuwegein',
+  description: 'Snelle en vakkundige reparaties aan leidingen en verwarmingssystemen in Utrecht, Amersfoort, Nieuwegein en omgeving. Ontdek onze 24/7 spoedservice met duurzame oplossingen.',
+  keywords: 'Reparaties, loodgieter Utrecht, leidingen repareren, verwarmingssystemen, spoed reparatie, Amersfoort, Nieuwegein, duurzame reparatie',
 };
 
 export default function Layout({ children }) {
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
               "@context": "https://schema.org",
               "@type": "Service",
               "name": "Reparaties",
-              "description": "Snelle en vakkundige reparaties aan leidingen en verwarmingssystemen in Utrecht en omgeving.",
+              "description": "Snelle en vakkundige reparaties aan leidingen en verwarmingssystemen in Utrecht en omgeving, uitgevoerd door gecertificeerde professionals met duurzame oplossingen.",
               "provider": {
                 "@type": "LocalBusiness",
                 "name": "AD-Loodgietersbedrijf",
@@ -28,11 +28,11 @@ export default function Layout({ children }) {
                   "streetAddress": "Spechtenkamp 334",
                   "addressLocality": "Maarssen",
                   "postalCode": "3607 KT",
-                  "addressCountry": "NL",
-                },
+                  "addressCountry": "NL"
+                }
               },
               "areaServed": ["Utrecht", "Amersfoort", "Nieuwegein"],
-              "serviceType": "Reparaties",
+              "serviceType": "Reparaties"
             }),
           }}
         />

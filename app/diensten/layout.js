@@ -2,8 +2,10 @@ import Head from 'next/head';
 
 export const metadata = {
   title: 'Diensten - AD Loodgietersbedrijf - Utrecht & Omgeving',
-  description: 'Ontdek onze professionele loodgietersdiensten. Van wc-ontstopping tot lekkageherstel en installaties in Utrecht, Amersfoort, Nieuwegein en omgeving.',
-  keywords: 'loodgietersdiensten, wc ontstoppen, afvoer ontstoppen, lekkages oplossen, installaties, Utrecht, Amersfoort, Nieuwegein',
+  description:
+    'Ontdek onze professionele loodgietersdiensten. Van wc-ontstopping tot lekkageherstel, afvoer ontstoppen, installaties en reparaties in Utrecht, Amersfoort, Nieuwegein en omgeving. Snelle en duurzame oplossingen door ervaren loodgieters.',
+  keywords:
+    'loodgietersdiensten, wc ontstoppen, afvoer ontstoppen, lekkages oplossen, installaties, reparaties, spoed service, Utrecht, Amersfoort, Nieuwegein, duurzame oplossingen, 24/7 loodgieter',
 };
 
 export default function Layout({ children }) {
@@ -19,7 +21,8 @@ export default function Layout({ children }) {
               "@type": "LocalBusiness",
               "name": "AD-Loodgietersbedrijf",
               "url": "https://adloodgietersbedrijf.nl",
-              "description": "Professionele loodgietersdiensten in Utrecht, Amersfoort, Nieuwegein en omgeving.",
+              "description":
+                "Professionele loodgietersdiensten in Utrecht, Amersfoort, Nieuwegein en omgeving. Wij bieden spoedservice, preventief onderhoud, installaties en reparaties met duurzame oplossingen.",
               "telephone": "+31640961848",
               "address": {
                 "@type": "PostalAddress",

@@ -21,7 +21,7 @@ export default function DienstPage() {
           >
             <Image
               src="/wc-ontstoppen.webp"
-              alt="WC Ontstoppen"
+              alt="WC Ontstoppen - Professionele en snelle service"
               fill
               className="object-cover"
             />
@@ -36,7 +36,7 @@ export default function DienstPage() {
         >
           <h1 className="text-5xl font-bold mb-4">WC Ontstoppen</h1>
           <p className="text-lg max-w-2xl mx-auto">
-            Laat uw verstopt toilet professioneel en snel ontstoppen door onze experts.
+            Laat uw verstopt toilet snel en professioneel ontstoppen door onze gecertificeerde experts, met innovatieve technieken en 24/7 spoedservice.
           </p>
         </motion.div>
       </section>
@@ -52,15 +52,10 @@ export default function DienstPage() {
           >
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Waarom uw toilet laten ontstoppen?</h2>
             <p className="text-gray-600 mb-4">
-              Een verstopt toilet kan zorgen voor ongemak en schade. Bij <span
-              className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> begrijpen
-              wij het belang van een snelle en efficiënte oplossing. Onze experts hebben jarenlange
-              ervaring in het ontstoppen van toiletten en maken gebruik van moderne technieken om het
-              probleem veilig en grondig op te lossen.
+              Een verstopt toilet kan niet alleen voor ernstig ongemak zorgen, maar ook leiden tot schade en onhygiënische situaties. Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> begrijpen wij dat snelle en efficiënte interventie essentieel is. Onze gespecialiseerde loodgieters maken gebruik van moderne hogedrukreiniging, mechanische reiniging en camera-inspecties om de verstopping nauwkeurig te lokaliseren en grondig te verhelpen.
             </p>
             <p className="text-gray-600 mb-4">
-              Wij zijn <strong>24/7 beschikbaar</strong>  in regio Utrecht, Amersfoort en omstreken, zodat u altijd op
-              ons kunt rekenen, ongeacht het tijdstip.
+              Door tijdig een verstopping te verhelpen, voorkomt u niet alleen verdere waterschade, maar verhoogt u ook de levensduur van uw sanitairsystemen. Onze service is 24/7 beschikbaar in regio Utrecht, Amersfoort, Nieuwegein en omstreken, zodat u altijd op ons kunt rekenen, ongeacht het tijdstip.
             </p>
             <Link
               href="/contact"
@@ -78,7 +73,7 @@ export default function DienstPage() {
           >
             <Image
               src="/toilet-problem.webp"
-              alt="Toilet probleem"
+              alt="Verstopt toilet - snelle en efficiënte ontstopping"
               fill
               className="object-cover"
             />
@@ -95,17 +90,17 @@ export default function DienstPage() {
               {
                 icon: faClock,
                 title: '24/7 Beschikbaarheid',
-                text: 'Wij zijn altijd bereikbaar voor spoedklussen.'
+                text: 'Wij bieden altijd een spoedservice, dag en nacht, zodat u nooit lang hoeft te wachten op professionele hulp.',
               },
               {
                 icon: faTools,
                 title: 'Professionele Service',
-                text: 'Gecertificeerde loodgieters met ervaring.'
+                text: 'Onze gecertificeerde loodgieters beschikken over jarenlange ervaring en maken gebruik van bewezen technieken voor optimale resultaten.',
               },
               {
                 icon: faShieldAlt,
                 title: 'Moderne Technieken',
-                text: 'Wij maken gebruik van de nieuwste apparatuur.'
+                text: 'Wij maken gebruik van de nieuwste apparatuur, zoals hogedrukreiniging en camera-inspectie, om de verstopping grondig en duurzaam te verhelpen.',
               },
             ].map((item, index) => (
               <motion.div
@@ -136,15 +131,15 @@ export default function DienstPage() {
           >
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Veelgestelde vragen over WC Ontstoppen</h2>
             <p className="text-gray-600 mb-4">
-              Heeft u vragen over onze ontstoppingsdiensten? Hier zijn enkele van de meest gestelde vragen door onze klanten:
+              Heeft u vragen over onze ontstoppingsdiensten? Wij beantwoorden de meest gestelde vragen zodat u precies weet wat u kunt verwachten.
             </p>
             <ul className="list-disc list-inside text-gray-600">
-              <li>Hoe lang duurt het om een toilet te ontstoppen?</li>
-              <li>Welke technieken gebruiken jullie voor ontstopping?</li>
-              <li>Wat zijn de kosten voor een toilet ontstopping?</li>
+              <li><strong>Hoe lang duurt het?</strong> Onze interventies duren doorgaans minder dan 30 minuten, afhankelijk van de aard van de verstopping.</li>
+              <li><strong>Welke technieken gebruiken jullie?</strong> Wij maken gebruik van hogedrukreiniging, mechanische reiniging en camera-inspecties om de oorzaak van de verstopping nauwkeurig te lokaliseren en te verhelpen.</li>
+              <li><strong>Wat zijn de kosten?</strong> De kosten zijn afhankelijk van de complexiteit van de klus. Wij hanteren duidelijke en transparante tarieven zonder verrassingen.</li>
             </ul>
             <p className="text-gray-600 mt-4">
-              Neem contact met ons op als u meer specifieke vragen heeft of een afspraak wilt maken.
+              Heeft u aanvullende vragen of wilt u direct een afspraak maken? Neem dan gerust contact met ons op.
             </p>
           </motion.div>
           <motion.div
@@ -156,14 +151,13 @@ export default function DienstPage() {
           >
             <Image
               src="/faq-toilet.webp"
-              alt="FAQ over WC Ontstoppen"
+              alt="Veelgestelde vragen over WC Ontstoppen"
               fill
               className="object-cover"
             />
           </motion.div>
         </div>
       </section>
-
 
       {/* Contact Section */}
       <section className="py-16 bg-gray-900 text-white">
@@ -176,7 +170,7 @@ export default function DienstPage() {
           >
             <h2 className="text-3xl font-bold mb-6">Heeft u een verstopt toilet?</h2>
             <p className="text-lg mb-6">
-              Neem vandaag nog contact met ons op en wij zorgen ervoor dat uw probleem snel wordt opgelost.
+              Neem vandaag nog contact met ons op. Ons deskundige team staat 24/7 klaar om uw probleem snel en professioneel op te lossen met de nieuwste technologieën.
             </p>
             <Link
               href="/contact"
@@ -197,3 +191,13 @@ export default function DienstPage() {
     </>
   );
 }
+
+import Head from 'next/head';
+
+export const metadata = {
+  title: 'WC Ontstoppen - AD Loodgietersbedrijf',
+  description: 'Snel en professioneel uw toilet weer vrij van verstoppingen in Utrecht, Amersfoort, Nieuwegein en omgeving. Ontdek onze 24/7 spoedservice met moderne technieken.',
+  keywords: 'WC Ontstoppen, loodgieter Utrecht, toilet verstopping, afvoer reinigen, spoed service, Amersfoort, Nieuwegein, moderne loodgieterstechnieken',
+};
+
+

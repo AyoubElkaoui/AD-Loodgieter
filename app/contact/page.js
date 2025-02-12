@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import ContactForm from '@/components/ContactForm';
-import {sendGTMEvent} from "@next/third-parties/google";
+import { sendGTMEvent } from '@next/third-parties/google';
 import Link from "next/link";
 import Image from "next/image";
 
@@ -46,8 +46,7 @@ export default function ContactPage() {
                         priority
                         sizes="(max-width: 768px) 40vw, (max-width: 1200px) 50vw, 33vw"
                         src="/front-view-man-working-as-plumber.webp"
-                        alt="Neem contact op"
-
+                        alt="Neem contact op – Professionele loodgietersdiensten"
                       />
                   </motion.div>
               </div>
@@ -60,7 +59,7 @@ export default function ContactPage() {
               >
                   <h1 className="text-5xl font-bold mb-4">Neem Contact Met Ons Op</h1>
                   <p className="text-lg max-w-2xl mx-auto">
-                      Wij staan 24/7 voor u klaar in Maarssen en omgeving. Heeft u een vraag of wilt u een afspraak maken? Neem contact met ons op!
+                      Wij staan 24/7 voor u klaar in Maarssen en omgeving. Heeft u vragen over onze professionele loodgietersdiensten of wilt u een afspraak maken? Neem contact met ons op voor direct advies en snelle service.
                   </p>
               </motion.div>
           </section>
@@ -72,28 +71,31 @@ export default function ContactPage() {
                       <div>
                           <h2 className="text-3xl font-bold text-gray-800 mb-6">Onze Contactgegevens</h2>
                           <p className="text-lg text-gray-600 mb-8">
-                              Heeft u een vraag of wilt u direct een afspraak maken? Neem gerust contact met ons op via onderstaande gegevens.
+                              Heeft u een vraag, wilt u direct een afspraak maken of behoefte aan advies? Neem gerust contact met ons op via de onderstaande gegevens.
                           </p>
                           <ul className="space-y-6">
                               {contactDetails.map((detail, index) => (
                                 <motion.li
                                   key={index}
                                   className="flex items-center space-x-4 text-lg text-gray-600"
-                                  initial={{opacity: 0, x: -50}}
-                                  whileInView={{opacity: 1, x: 0}}
-                                  viewport={{once: true}}
-                                  transition={{duration: 0.5, delay: index * 0.2}}
+                                  initial={{ opacity: 0, x: -50 }}
+                                  whileInView={{ opacity: 1, x: 0 }}
+                                  viewport={{ once: true }}
+                                  transition={{ duration: 0.5, delay: index * 0.2 }}
                                 >
-                                    <FontAwesomeIcon icon={detail.icon} className="text-blue-500 text-2xl"/>
+                                    <FontAwesomeIcon icon={detail.icon} className="text-blue-500 text-2xl" />
                                     <span className="font-bold text-gray-800 mr-2">{detail.title}:</span>
-                                    <Link href={detail.link} className="hover:underline"
-                                       onClick={() =>
-                                         sendGTMEvent({
-                                             event: 'buttonClicked',
-                                             category: 'Link',
-                                             label: 'Contact knop - Contact gegevens',
-                                         })
-                                       }>
+                                    <Link
+                                      href={detail.link}
+                                      className="hover:underline"
+                                      onClick={() =>
+                                        sendGTMEvent({
+                                            event: 'buttonClicked',
+                                            category: 'Link',
+                                            label: 'Contact knop - Contact gegevens',
+                                        })
+                                      }
+                                    >
                                         {detail.content}
                                     </Link>
                                 </motion.li>
@@ -141,7 +143,7 @@ export default function ContactPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                       >
-                          Vul onderstaand formulier in en wij nemen zo snel mogelijk contact met u op.
+                          Vul onderstaand formulier in en wij nemen zo snel mogelijk contact met u op voor deskundig advies en een vrijblijvende offerte.
                       </motion.p>
                   </div>
                   <ContactForm />
@@ -150,3 +152,5 @@ export default function ContactPage() {
       </>
     );
 }
+
+

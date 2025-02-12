@@ -10,7 +10,7 @@ import ParallaxWrapper from '@/components/ParallaxWrapper';
 export const metadata = {
   title: 'Loodgieter Maarssen | 24/7 Spoedservice & Installaties',
   description: 'Uw betrouwbare loodgieter voor Maarssen en omgeving. Wij lossen lekkages, verstoppingen en installaties snel en professioneel op. Bel nu!',
-  keywords: 'loodgieter, Maarssen, Utrecht, lekkages, ontstoppingen, installaties, 24/7 spoedservice',
+  keywords: 'loodgieter, Maarssen, Utrecht, lekkages, ontstoppingen, installaties, 24/7 spoedservice, cv-ketel onderhoud, waterleiding reparatie, sanitair installatie, lekkage opsporen, afvoer ontstoppen, spoed loodgieter, badkamer renovatie, riool ontstoppen, kraan vervangen, verwarmingsmonteur, daklekkage, loodgieter Utrecht, loodgietersbedrijf',
   icons: {
     icon: '/favicon.ico',
   },

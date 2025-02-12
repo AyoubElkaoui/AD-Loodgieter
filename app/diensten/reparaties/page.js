@@ -21,7 +21,7 @@ export default function ReparatiesPage() {
           >
             <Image
               src="/loodgieter-reparatie.webp"
-              alt="Reparaties"
+              alt="Reparaties – Snelle en vakkundige service voor uw leidingen en verwarmingssystemen"
               fill
               className="object-cover"
             />
@@ -36,7 +36,7 @@ export default function ReparatiesPage() {
         >
           <h1 className="text-5xl font-bold mb-4">Reparaties</h1>
           <p className="text-lg max-w-2xl mx-auto">
-            Snelle en vakkundige reparaties aan leidingen en verwarmingssystemen.
+            Snelle, vakkundige en duurzame reparaties aan leidingen en verwarmingssystemen, uitgevoerd door gecertificeerde professionals.
           </p>
         </motion.div>
       </section>
@@ -50,12 +50,14 @@ export default function ReparatiesPage() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Waarom kiezen voor onze reparaties?</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Waarom kiezen voor onze reparaties?
+            </h2>
             <p className="text-gray-600 mb-4">
-              Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> bieden wij hoogwaardige reparaties voor al uw loodgietersproblemen. Of het nu gaat om lekkende kranen, kapotte leidingen of defecte verwarmingssystemen, wij zorgen ervoor dat alles snel en effectief wordt gerepareerd.
+              Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> leveren wij hoogwaardige reparaties voor al uw loodgietersproblemen. Of het nu gaat om lekkende kranen, kapotte leidingen of defecte verwarmingssystemen, onze gecertificeerde experts zorgen voor een snelle en effectieve oplossing. We maken gebruik van moderne technieken zoals precisie-instrumenten en innovatieve materialen, zodat uw systemen weer optimaal en veilig werken.
             </p>
             <p className="text-gray-600 mb-4">
-              Onze ervaren loodgieters gebruiken de beste technieken en materialen om ervoor te zorgen dat uw systemen optimaal blijven werken. Wij staan 24/7 klaar in regio Utrecht, Amersfoort en omgeving.
+              Onze reparatieservice is 24/7 beschikbaar in regio Utrecht, Amersfoort, Nieuwegein en omgeving. Wij garanderen niet alleen een directe respons bij spoedgevallen, maar ook duurzame en kostenbesparende oplossingen op de lange termijn.
             </p>
             <Link
               href="/contact"
@@ -80,7 +82,7 @@ export default function ReparatiesPage() {
           >
             <Image
               src="/reparatie.webp"
-              alt="Reparatie Gereedschap"
+              alt="Reparatie Gereedschap – Vakkundige reparatie van leidingen en verwarmingssystemen"
               fill
               className="object-cover"
             />
@@ -97,17 +99,17 @@ export default function ReparatiesPage() {
               {
                 icon: faClock,
                 title: '24/7 Beschikbaarheid',
-                text: 'Altijd bereikbaar voor spoedgevallen.'
+                text: 'Altijd bereikbaar voor spoedgevallen, zodat uw reparatie snel wordt gestart, ongeacht het tijdstip.',
               },
               {
                 icon: faTools,
                 title: 'Deskundige Reparaties',
-                text: 'Reparaties uitgevoerd door gecertificeerde professionals.'
+                text: 'Onze gecertificeerde professionals voeren reparaties uit met moderne technieken en hoogwaardige materialen.',
               },
               {
                 icon: faShieldAlt,
                 title: 'Duurzame Oplossingen',
-                text: 'Wij garanderen langdurige resultaten.'
+                text: 'Wij garanderen langdurige en energiezuinige reparaties, zodat uw systemen optimaal blijven functioneren.',
               },
             ].map((item, index) => (
               <motion.div
@@ -138,7 +140,7 @@ export default function ReparatiesPage() {
           >
             <h2 className="text-3xl font-bold mb-6">Heeft u een reparatie nodig?</h2>
             <p className="text-lg mb-6">
-              Neem vandaag nog contact met ons op en wij zorgen ervoor dat uw probleem snel en professioneel wordt opgelost.
+              Neem vandaag nog contact met ons op en laat onze experts uw probleem snel en professioneel oplossen. Wij staan klaar met een 24/7 spoedservice en een op maat gemaakte oplossing voor elk technisch probleem.
             </p>
             <Link
               href="/contact"
@@ -159,3 +161,5 @@ export default function ReparatiesPage() {
     </>
   );
 }
+
+

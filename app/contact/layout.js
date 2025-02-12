@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 export const metadata = {
   title: 'Contact - AD Loodgietersbedrijf',
-  description: 'Neem contact op met AD Loodgietersbedrijf voor al uw vragen over loodgietersdiensten in Utrecht, Amersfoort, Nieuwegein en omgeving.',
-  keywords: 'Contact, loodgieters Utrecht, AD Loodgietersbedrijf, Utrecht, Amersfoort, Nieuwegein, Loodgieter maarssen',
+  description: 'Neem contact op met AD Loodgietersbedrijf voor al uw vragen over professionele loodgietersdiensten in Utrecht, Amersfoort, Nieuwegein en omgeving.',
+  keywords: 'Contact, loodgieters Utrecht, AD Loodgietersbedrijf, Loodgieter Utrecht, Loodgieter Amersfoort, Loodgieter Nieuwegein, Loodgieter maarssen',
 };
 
 export default function Layout({ children }) {
@@ -26,16 +26,16 @@ export default function Layout({ children }) {
                   "telephone": "+31640961848",
                   "contactType": "Customer Service",
                   "areaServed": ["Utrecht", "Amersfoort", "Nieuwegein"],
-                  "availableLanguage": ["Dutch", "English"],
+                  "availableLanguage": ["Dutch", "English"]
                 },
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Spechtenkamp 334",
                   "addressLocality": "Maarssen",
                   "postalCode": "3607 KT",
-                  "addressCountry": "NL",
-                },
-              },
+                  "addressCountry": "NL"
+                }
+              }
             }),
           }}
         />

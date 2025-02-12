@@ -30,3 +30,18 @@ export async function getBlogs() {
   return await client.fetch(query);
 }
 
+export async function getLandingPage(slug) {
+  const query = `*[_type == "landingPage" && slug.current == $slug][0]{
+    title,
+    content[]{..., _type == "image" => {"imageUrl": asset->url}},
+    ctaText,
+    ctaUrl,
+    "featuredImage": featuredImage.asset->url,
+    services[]->{
+      title,
+      slug
+    }
+  }`;
+  return await client.fetch(query, { slug });
+}
+

@@ -21,7 +21,7 @@ export default function LekkagesOplossenPage() {
           >
             <Image
               src="/lekkage-oplossen.webp"
-              alt="Lekkages Oplossen"
+              alt="Lekkages Oplossen – Snelle detectie en reparatie"
               fill
               className="object-cover"
             />
@@ -36,7 +36,7 @@ export default function LekkagesOplossenPage() {
         >
           <h1 className="text-5xl font-bold mb-4">Lekkages Oplossen</h1>
           <p className="text-lg max-w-2xl mx-auto">
-            Detectie en reparatie van lekkages om verdere schade te voorkomen.
+            Laat lekkages snel en professioneel detecteren en herstellen om verdere schade en hoge herstelkosten te voorkomen.
           </p>
         </motion.div>
       </section>
@@ -50,12 +50,14 @@ export default function LekkagesOplossenPage() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Waarom kiezen voor onze lekkagediensten?</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Waarom kiezen voor onze lekkagediensten?
+            </h2>
             <p className="text-gray-600 mb-4">
-              Lekkages kunnen grote schade veroorzaken aan uw woning of bedrijfspand. Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> zorgen wij voor een snelle en grondige oplossing. Onze experts sporen de oorzaak van de lekkage op en herstellen deze met precisie.
+              Lekkages kunnen ernstige schade veroorzaken aan zowel uw woning als bedrijfspand. Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> zetten wij onze jarenlange expertise in om lekkages met precisie op te sporen en te herstellen. Wij gebruiken geavanceerde detectietechnieken, zoals thermische beeldvorming en druktesten, om zelfs verborgen lekkages snel te lokaliseren.
             </p>
             <p className="text-gray-600 mb-4">
-              Wij zijn <strong>24/7 beschikbaar</strong> in regio Utrecht, Amersfoort en omgeving, zodat u ons altijd kunt bereiken voor hulp.
+              Onze service garandeert niet alleen een directe interventie bij noodgevallen, maar zorgt er ook voor dat toekomstige problemen worden voorkomen. Met onze 24/7 beschikbaarheid in regio Utrecht, Amersfoort, Nieuwegein en omstreken bent u verzekerd van een snelle en duurzame oplossing.
             </p>
             <Link
               href="/contact"
@@ -73,7 +75,7 @@ export default function LekkagesOplossenPage() {
           >
             <Image
               src="/Loodgieter-lekkage-vrouw.webp"
-              alt="Lekkagedetectie"
+              alt="Lekkagedetectie en reparatie in uitvoering"
               fill
               className="object-cover"
             />
@@ -90,17 +92,17 @@ export default function LekkagesOplossenPage() {
               {
                 icon: faClock,
                 title: 'Snelle Reactie',
-                text: 'Binnen korte tijd op locatie voor spoedreparaties.'
+                text: 'Binnen enkele minuten op locatie, zelfs bij acute lekkages.',
               },
               {
                 icon: faTools,
                 title: 'Geavanceerde Apparatuur',
-                text: 'Wij gebruiken moderne technologie voor lekkagedetectie.'
+                text: 'Wij maken gebruik van de nieuwste technologieën voor nauwkeurige lekkagedetectie.',
               },
               {
                 icon: faShieldAlt,
                 title: 'Duurzame Reparaties',
-                text: 'Langdurige oplossingen voor uw lekkageproblemen.'
+                text: 'Langdurige en energiezuinige oplossingen die toekomstige lekkages voorkomen.',
               },
             ].map((item, index) => (
               <motion.div
@@ -131,15 +133,15 @@ export default function LekkagesOplossenPage() {
           >
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Veelgestelde vragen over lekkages</h2>
             <p className="text-gray-600 mb-4">
-              Heeft u vragen over onze lekkagediensten? Hier zijn enkele van de meest gestelde vragen door onze klanten:
+              Heeft u vragen over onze lekkagediensten? Hier beantwoorden wij de meest gestelde vragen zodat u precies weet wat u kunt verwachten.
             </p>
             <ul className="list-disc list-inside text-gray-600">
-              <li>Hoe detecteren jullie een lekkage?</li>
-              <li>Wat zijn de kosten voor lekkagedetectie en reparatie?</li>
-              <li>Hoe snel kunnen jullie ter plaatse zijn?</li>
+              <li><strong>Hoe detecteren jullie een lekkage?</strong> Wij maken gebruik van geavanceerde detectietechnieken zoals thermische beeldvorming en druktesten.</li>
+              <li><strong>Wat zijn de kosten?</strong> Onze tarieven zijn transparant en afhankelijk van de complexiteit van de klus, zodat u nooit voor verrassingen komt te staan.</li>
+              <li><strong>Hoe snel kunnen jullie ter plaatse zijn?</strong> Met onze 24/7 spoedservice zijn wij binnen enkele minuten op locatie, zelfs in acute situaties.</li>
             </ul>
             <p className="text-gray-600 mt-4">
-              Neem contact met ons op als u meer specifieke vragen heeft of een afspraak wilt maken.
+              Voor meer informatie of specifieke vragen kunt u altijd contact met ons opnemen.
             </p>
           </motion.div>
           <motion.div
@@ -151,7 +153,7 @@ export default function LekkagesOplossenPage() {
           >
             <Image
               src="/Lekkage-installatie.webp"
-              alt="FAQ over lekkages"
+              alt="Installatie en reparatie van lekkages"
               fill
               className="object-cover"
             />
@@ -170,7 +172,7 @@ export default function LekkagesOplossenPage() {
           >
             <h2 className="text-3xl font-bold mb-6">Heeft u een lekkageprobleem?</h2>
             <p className="text-lg mb-6">
-              Neem vandaag nog contact met ons op en wij zorgen ervoor dat uw probleem snel en professioneel wordt opgelost.
+              Neem vandaag nog contact met ons op en laat onze experts uw lekkage snel en professioneel oplossen. Wij bieden een 24/7 spoedservice met duurzame en kosteneffectieve oplossingen.
             </p>
             <Link
               href="/contact"
@@ -191,3 +193,5 @@ export default function LekkagesOplossenPage() {
     </>
   );
 }
+
+

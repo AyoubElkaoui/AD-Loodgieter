@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 export const metadata = {
   title: 'Lekkages Oplossen - AD Loodgietersbedrijf',
-  description: 'Laat lekkages snel en efficiënt repareren door ons professionele team in Utrecht, Amersfoort, Nieuwegein en omgeving.',
-  keywords: 'Lekkages Oplossen, loodgieter Utrecht, lekkage repareren, Utrecht, Amersfoort, Nieuwegein',
+  description: 'Laat lekkages snel en efficiënt repareren door ons professionele team in Utrecht, Amersfoort, Nieuwegein en omgeving. Ontdek onze 24/7 spoedservice en duurzame oplossingen voor lekkagedetectie en -herstel.',
+  keywords: 'Lekkages Oplossen, lekkagedetectie, lekkage repareren, loodgieter Utrecht, Amersfoort, Nieuwegein, spoedservice, duurzame lekkage oplossingen',
 };
 
 export default function Layout({ children }) {
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
               "@context": "https://schema.org",
               "@type": "Service",
               "name": "Lekkages Oplossen",
-              "description": "Laat lekkages snel en efficiënt repareren door ons professionele team in Utrecht en omgeving.",
+              "description": "Laat lekkages snel en efficiënt repareren door ons professionele team in Utrecht, Amersfoort en Nieuwegein, met behulp van geavanceerde detectietechnieken en duurzame reparatiemethoden.",
               "provider": {
                 "@type": "LocalBusiness",
                 "name": "AD-Loodgietersbedrijf",
@@ -28,11 +28,11 @@ export default function Layout({ children }) {
                   "streetAddress": "Spechtenkamp 334",
                   "addressLocality": "Maarssen",
                   "postalCode": "3607 KT",
-                  "addressCountry": "NL",
+                  "addressCountry": "NL"
                 },
               },
               "areaServed": ["Utrecht", "Amersfoort", "Nieuwegein"],
-              "serviceType": "Lekkages Oplossen",
+              "serviceType": "Lekkages Oplossen"
             }),
           }}
         />
