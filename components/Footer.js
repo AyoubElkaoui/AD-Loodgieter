@@ -92,7 +92,7 @@ export default function Footer() {
 
           <div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm sm:text-base">
               <p className="text-gray-400">
-                  &copy; {new Date().getFullYear()} AD-Loodgietersbedrijf. Alle rechten voorbehouden.
+                  &copy; {new Date().getFullYear()} AD-Loodgietersbedrijf. Alle rechten voorbehouden. | <a className="text-gray-400" href="https://akwebsolutions.nl">Build by AK Web Solutions</a>
               </p>
           </div>
       </footer>
