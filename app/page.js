@@ -38,6 +38,27 @@ const ContactForm = dynamic(() => import('../components/ContactForm'), { ssr: fa
 
 export default function Home() {
   const isMobile = useIsMobile();
+
+  // Unieke FAQ-items voor de homepage
+  const homepageFAQItems = [
+    {
+      question: 'Wat maakt AD-Loodgietersbedrijf uniek?',
+      answer: 'Wij bieden snelle service, deskundige oplossingen en werken 24/7 om uw loodgietersproblemen snel op te lossen.',
+    },
+    {
+      question: 'Welke diensten bieden jullie aan?',
+      answer: 'Van lekkages en verstoppingen tot installaties en preventief onderhoud, wij dekken het volledige spectrum.',
+    },
+    {
+      question: 'Hoe snel zijn jullie ter plaatse?',
+      answer: 'In de meeste gevallen zijn wij binnen 30 tot 60 minuten op locatie, zodat u snel geholpen wordt.',
+    },
+    {
+      question: 'Bieden jullie garantie op het werk?',
+      answer: 'Ja, al onze werkzaamheden worden uitgevoerd met garantie, zodat u verzekerd bent van duurzame oplossingen.',
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -119,7 +140,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-3xl font-bold mb-4 break-words">
             Betrouwbare Loodgieter in Maarssen en Regio Utrecht
           </h1>
-          <p className="text-base sm:text-lg px-2 ">
+          <p className="text-base sm:text-lg px-2">
             Wij staan dag en nacht klaar voor al uw loodgietersproblemen. Van verstoppingen tot lekkages: snelle service gegarandeerd. Met meer dan 10 jaar ervaring bieden wij betrouwbare, duurzame en professionele oplossingen voor zowel particuliere als zakelijke klanten in de regio Utrecht en daarbuiten.
           </p>
           <div className="flex space-x-4 justify-center p-4">
@@ -321,7 +342,12 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <FAQSection />
+      {/* FAQ SECTION met unieke homepage FAQ-items */}
+      <section className="py-16 bg-gray-50 text-black">
+        <div className="container max-w-4xl mx-auto px-4 md:px-6">
+          <FAQSection faqItems={homepageFAQItems} />
+        </div>
+      </section>
 
       {/* Contact Form Sectie */}
       <section className="py-16 bg-gray-900 text-white max-sm:p-8">
