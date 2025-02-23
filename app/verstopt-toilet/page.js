@@ -22,7 +22,7 @@ export default function VerstoptToiletPage() {
     name: 'AD-Loodgietersbedrijf',
     url: 'https://adloodgietersbedrijf.nl/verstopt-toilet',
     description:
-      'AD-Loodgietersbedrijf biedt vakkundige en snelle oplossingen voor een verstopt toilet. Onze experts staan 24/7 paraat om uw verstopping effectief te verhelpen.',
+      'AD-Loodgietersbedrijf biedt vakkundige en snelle oplossingen voor een verstopt toilet. Onze experts staan 24/7 paraat om uw verstopping effectief te verhelpen en verdere schade te voorkomen.',
     telephone: '+31640961848',
     address: {
       '@type': 'PostalAddress',
@@ -36,7 +36,7 @@ export default function VerstoptToiletPage() {
       latitude: 52.370216,
       longitude: 4.895168,
     },
-    openingHours: ['Ma-Zo 00:00-23:59'],
+    openingHours: ['Ma-Su 00:00-23:59'],
   };
 
   // ================
@@ -68,6 +68,7 @@ export default function VerstoptToiletPage() {
   return (
     <>
       <Head>
+        {/* Basis Meta, Canonical en Open Graph Tags */}
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="canonical" href="https://adloodgietersbedrijf.nl/verstopt-toilet" />
@@ -75,16 +76,15 @@ export default function VerstoptToiletPage() {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:url" content="https://adloodgietersbedrijf.nl/verstopt-toilet" />
         <meta property="og:type" content="website" />
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </Head>
 
-      {/* ===================
-          HERO SECTION
-      ==================== */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* =================== HERO SECTION =================== */}
+      <header className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
@@ -100,15 +100,10 @@ export default function VerstoptToiletPage() {
           />
         </motion.div>
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        <motion.div
-          className="relative z-10 text-center text-white px-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
+        <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Verstopt Toilet</h1>
           <p className="text-base md:text-lg max-w-2xl mx-auto">
-            Heeft u een verstopt toilet dat voor overlast zorgt? Onze specialisten zorgen voor een snelle en efficiënte oplossing, zodat u snel weer normaal kunt doorspoelen.
+            Heeft u een verstopt toilet dat voor overlast zorgt? Onze specialisten staan 24/7 paraat om uw verstopping snel en efficiënt op te lossen.
           </p>
           <div className="mt-6">
             <Link
@@ -118,84 +113,127 @@ export default function VerstoptToiletPage() {
               Bel Direct
             </Link>
           </div>
-        </motion.div>
-      </section>
-
-      {/* ===================
-          MAIN CONTENT
-      ==================== */}
-      <section className="py-16 bg-white text-black">
-        <div className="container max-w-5xl mx-auto px-4 md:px-6 leading-relaxed text-base md:text-lg">
-          <motion.h2
-            className="text-3xl font-bold mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Snel en Vakkundig Uw Verstopt Toilet Verholpen
-          </motion.h2>
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <p>
-              Een verstopt toilet kan voor veel ongemak zorgen en leiden tot onnodige waterschade. Bij AD-Loodgietersbedrijf zorgen wij voor een snelle diagnose en een duurzame oplossing, zodat u snel weer kunt genieten van een goed functionerend toilet.
-            </p>
-            <p>
-              Onze ervaren loodgieters gebruiken moderne technieken en hoogwaardige materialen om de verstopping te verhelpen. Met onze 24/7 service bent u verzekerd van directe hulp, zelfs in spoedsituaties.
-            </p>
-            <h3 className="text-2xl font-bold mt-6">Waarom Kiezen voor Onze Toiletservice?</h3>
-            <ul className="list-disc list-inside space-y-3">
-              <li>
-                <strong className="text-blue-500">Snelle Interventie:</strong> Wij reageren direct op uw melding om verdere schade te voorkomen.
-              </li>
-              <li>
-                <strong className="text-blue-500">Duurzame Oplossingen:</strong> Wij zorgen voor een langdurige oplossing zodat verstoppingen in de toekomst worden geminimaliseerd.
-              </li>
-              <li>
-                <strong className="text-blue-500">Deskundig Advies:</strong> Onze specialisten geven u waardevolle tips om toekomstige verstoppingen te voorkomen.
-              </li>
-            </ul>
-            <p>
-              Heeft u vragen over onze service of wilt u direct een afspraak maken? Neem dan gerust contact met ons op voor een gratis en vrijblijvende offerte.
-            </p>
-          </motion.div>
         </div>
-      </section>
+      </header>
 
-      {/* =====================
-          FAQ SECTION
-      ====================== */}
+      {/* =================== MAIN CONTENT =================== */}
+      <main className="py-16 bg-white text-black">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          {/* Sectie 1: Introductie */}
+          <section>
+            <h2 className="text-3xl font-bold mb-6">Snel en Vakkundig Uw Verstopt Toilet Verholpen</h2>
+            <article className="space-y-6">
+              <p>
+                Een verstopt toilet is niet alleen hinderlijk, het kan ook leiden tot extra waterverbruik en onnodige stress. Bij <strong className="text-blue-500">AD-Loodgietersbedrijf</strong> begrijpen we hoe belangrijk het is om snel te handelen. Wij bieden een complete service waarbij we niet alleen de verstopping verhelpen, maar ook de onderliggende oorzaak aanpakken.
+              </p>
+              <p>
+                Onze experts maken gebruik van de nieuwste technologieën, waaronder camera-inspecties en hogedrukreinigers, om de oorzaak van de verstopping nauwkeurig te bepalen. Hierdoor kunnen wij gericht ingrijpen zonder onnodige schade aan uw sanitair.
+              </p>
+              <h3 className="text-2xl font-bold">Preventie en Onderhoud</h3>
+              <p>
+                Naast directe reparatie adviseren wij u ook over preventieve maatregelen. Regelmatig onderhoud kan toekomstige verstoppingen voorkomen en uw sanitairsysteem optimaal laten functioneren. Meer informatie over onderhoudstips vindt u op onze{' '}
+                <Link href="/blogs" className="text-blue-500 font-semibold hover:underline">
+                  blogpagina
+                </Link>.
+              </p>
+              <p>
+                Wilt u meer weten over hoe u verstoppingen kunt voorkomen? Bezoek dan ook de website van{' '}
+                <a
+                  href="https://www.nibud.nl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold hover:underline"
+                >
+                  Nibud
+                </a>{' '}
+                voor tips over waterbesparing en duurzaam onderhoud.
+              </p>
+              <p>
+                Onze werkwijze is transparant: na een grondige inspectie ontvangt u altijd een vrijblijvende offerte en een gedetailleerd reparatieplan. Dit geeft u volledige zekerheid over de kosten en het verloop van de werkzaamheden.
+              </p>
+            </article>
+          </section>
+
+          {/* Sectie 2: Veelvoorkomende Oorzaken */}
+          <section className="mt-10">
+            <h2 className="text-3xl font-bold mb-6">Veelvoorkomende Oorzaken van Verstoppingen</h2>
+            <article className="space-y-6">
+              <p>
+                Verstoppingen in toiletten ontstaan vaak door een combinatie van factoren. Overmatig gebruik van toiletpapier, het doorspoelen van ongewenste voorwerpen of een slechte afvoerconstructie kunnen allemaal bijdragen aan het ontstaan van een verstopping.
+              </p>
+              <ul className="list-disc list-inside space-y-3">
+                <li>
+                  <strong className="text-blue-500">Te veel toiletpapier</strong> – kan leiden tot blokkades in de afvoer.
+                </li>
+                <li>
+                  <strong className="text-blue-500">Ongewenste voorwerpen</strong> – het doorspoelen van voorwerpen die niet bedoeld zijn voor het toilet.
+                </li>
+                <li>
+                  <strong className="text-blue-500">Slechte afvoerconstructie</strong> – oudere systemen die niet meer optimaal functioneren.
+                </li>
+              </ul>
+              <p>
+                Voor aanvullende informatie over hoe u verstoppingen kunt voorkomen, raadpleeg de{' '}
+                <a
+                  href="https://www.consumentenbond.nl/wonen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold hover:underline"
+                >
+                  Consumentenbond
+                </a>.
+              </p>
+            </article>
+          </section>
+
+          {/* Sectie 3: Reparatie, Onderhoud en Verzekering */}
+          <section className="mt-10">
+            <h2 className="text-3xl font-bold mb-6">Reparatie, Onderhoud en Verzekering</h2>
+            <article className="space-y-6">
+              <p>
+                Of het nu gaat om een kleine verstopping of een complete herinstallatie van uw toilet, wij zorgen voor een snelle en duurzame oplossing. Onze professionals werken volgens hoge kwaliteitsnormen en gebruiken alleen materialen van de hoogste kwaliteit.
+              </p>
+              <p>
+                Wij adviseren u ook over preventief onderhoud, zodat u in de toekomst niet voor onverwachte verstoppingen komt te staan. Bovendien kan een gedetailleerd reparatierapport u helpen bij het indienen van een claim bij uw opstal- of inboedelverzekering. Lees meer over verzekeringskwesties op de website van de{' '}
+                <a
+                  href="https://www.rijksoverheid.nl/onderwerpen/wonen-en-hypotheken"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold hover:underline"
+                >
+                  Rijksoverheid
+                </a>.
+              </p>
+              <p>
+                Voor een overzicht van al onze diensten, bezoek onze{' '}
+                <Link href="/diensten" className="text-blue-500 font-semibold hover:underline">
+                  Diensten-pagina
+                </Link>.
+              </p>
+            </article>
+          </section>
+        </div>
+      </main>
+
+      {/* ===================== FAQ SECTION ====================== */}
       <section className="py-16 bg-gray-50 text-black">
         <div className="container max-w-4xl mx-auto px-4 md:px-6">
           <FAQSection faqItems={faqItems} />
         </div>
       </section>
 
-      {/* =====================
-          CTA / CONTACT SECTION
-      ====================== */}
-      <section className="py-16 bg-gray-900 text-white">
+      {/* ===================== CTA / CONTACT SECTION ====================== */}
+      <footer className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            className="pr-8"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
+          <div className="pr-8">
             <h2 className="text-3xl font-bold mb-4">Neem Direct Contact Op</h2>
             <p className="text-lg mb-6">
               Laat een verstopt toilet uw dag niet verpesten! Bel ons direct en onze experts zorgen voor een snelle en effectieve oplossing.
             </p>
-            <ul className="space-y-3 mb-4">
+            <ul className="list-disc list-inside mb-4 space-y-2">
               <li className="font-bold">• 24/7 spoedservice</li>
-              <li className="font-bold">• Snelle en vakkundige reparaties</li>
-              <li className="font-bold">• Persoonlijk en professioneel advies</li>
+              <li className="font-bold">• Snelle interventie</li>
+              <li className="font-bold">• Deskundig en persoonlijk advies</li>
             </ul>
             <Link
               href="tel:+31640961848"
@@ -203,18 +241,12 @@ export default function VerstoptToiletPage() {
             >
               Bel Nu
             </Link>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="p-6 rounded-lg shadow"
-          >
+          </div>
+          <div className="p-6 rounded-lg shadow">
             <ContactForm />
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </footer>
     </>
   );
 }

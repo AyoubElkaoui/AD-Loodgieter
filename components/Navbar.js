@@ -75,6 +75,11 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
+              <Link href="/publicaties" className="hover:text-blue-400 transition">
+                Publicaties
+              </Link>
+            </li>
+            <li>
               <Link href="/blogs" className="hover:text-blue-400 transition">
                 Blogs
               </Link>
@@ -115,6 +120,11 @@ export default function Navbar() {
               <li>
                 <Link href="/diensten" className="hover:text-blue-400 transition" onClick={toggleMenu}>
                   Diensten
+                </Link>
+              </li>
+              <li>
+                <Link href="/publicaties" className="hover:text-blue-400 transition" onClick={toggleMenu}>
+                  Publicaties
                 </Link>
               </li>
               <li>

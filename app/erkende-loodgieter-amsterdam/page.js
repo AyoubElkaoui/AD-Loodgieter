@@ -14,7 +14,7 @@ export default function ErkendeLoodgieterAmsterdamPage() {
   const pageTitle =
     'Erkende Loodgieter Amsterdam | Gecertificeerd & Betrouwbaar - AD-Loodgietersbedrijf';
   const pageDescription =
-    'Zoekt u een erkende loodgieter in Amsterdam? AD-Loodgietersbedrijf is gecertificeerd en biedt professionele loodgietersdiensten voor zowel spoedsituaties als regulier onderhoud. Neem direct contact op voor betrouwbare service.';
+    'Zoekt u een erkende loodgieter in Amsterdam? AD-Loodgietersbedrijf is gecertificeerd en biedt professionele loodgietersdiensten voor spoedsituaties en regulier onderhoud. Neem direct contact op voor betrouwbare service.';
 
   // Gestructureerde data (LocalBusiness):
   const structuredData = {
@@ -47,17 +47,17 @@ export default function ErkendeLoodgieterAmsterdamPage() {
     {
       question: 'Wat betekent het dat u een erkende loodgieter bent?',
       answer:
-        'Een erkende loodgieter voldoet aan strenge kwaliteits- en veiligheidsnormen en is gecertificeerd door relevante brancheorganisaties, wat garant staat voor vakmanschap en betrouwbaarheid.',
+        'Een erkende loodgieter voldoet aan strenge kwaliteits- en veiligheidsnormen en is gecertificeerd door relevante brancheorganisaties. Dit garandeert dat u kunt vertrouwen op vakmanschap en professionele uitvoering van alle werkzaamheden.',
     },
     {
       question: 'Welke diensten biedt u als erkende loodgieter in Amsterdam?',
       answer:
-        'Wij verzorgen onder andere lekkage reparaties, installatie van sanitair, reparatie van defecte kranen en preventief onderhoud – allemaal volgens de hoogste kwaliteitsnormen.',
+        'Wij verzorgen onder andere lekkage reparaties, de installatie van sanitair, reparatie van defecte kranen, en preventief onderhoud. Al deze diensten worden uitgevoerd volgens de hoogste kwaliteitsnormen en met de nieuwste technieken.',
     },
     {
       question: 'Wat zijn de voordelen van werken met een erkende loodgieter?',
       answer:
-        'U profiteert van hoogwaardige service, professionele aanpak en de zekerheid dat alle werkzaamheden voldoen aan de geldende normen en regelgeving.',
+        'U profiteert van hoogwaardige service, een professionele aanpak en de zekerheid dat alle werkzaamheden voldoen aan de geldende normen en regelgeving. Dit zorgt voor duurzame oplossingen en minder risico op toekomstige problemen.',
     },
     {
       question: 'Hoe snel kan uw team reageren in een noodgeval?',
@@ -137,46 +137,51 @@ export default function ErkendeLoodgieterAmsterdamPage() {
       ==================== */}
       <section className="py-16 bg-white text-black">
         <div className="container max-w-5xl mx-auto px-4 md:px-6 leading-relaxed text-base md:text-lg">
-          <motion.h2
-            className="text-3xl font-bold mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Gecertificeerde Loodgietersdiensten in Amsterdam
-          </motion.h2>
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <p>
-              Als erkende loodgieter in Amsterdam bieden wij een breed scala aan diensten die zowel spoedinterventies als regulier onderhoud omvatten. Onze gecertificeerde experts werken volgens de hoogste kwaliteitsnormen om ervoor te zorgen dat al uw loodgietersklussen vakkundig worden uitgevoerd.
-            </p>
-            <p>
-              Of het nu gaat om het verhelpen van lekkages, het installeren van nieuw sanitair of het uitvoeren van preventief onderhoud – bij ons bent u verzekerd van een duurzame en professionele service.
-            </p>
-            <h3 className="text-2xl font-bold mt-6">
-              Waarom Kiezen voor een Erkende Loodgieter?
-            </h3>
-            <ul className="list-disc list-inside space-y-3">
-              <li>
-                <strong className="text-blue-500">Gecertificeerde Expertise:</strong> Wij voldoen aan strenge kwaliteitsnormen en beschikken over alle benodigde certificeringen.
-              </li>
-              <li>
-                <strong className="text-blue-500">Betrouwbare Service:</strong> Onze klanten kunnen rekenen op een snelle, professionele en duurzame oplossing voor al hun loodgietersklussen.
-              </li>
-              <li>
-                <strong className="text-blue-500">24/7 Beschikbaarheid:</strong> Wij zijn dag en nacht bereikbaar voor spoedsituaties, zodat u altijd op ons kunt bouwen.
-              </li>
-            </ul>
-            <p>
-              Heeft u vragen over onze gecertificeerde diensten of wilt u direct een afspraak maken? Neem dan vrijblijvend contact met ons op en ontdek hoe wij u kunnen helpen.
-            </p>
-          </motion.div>
+          <h2 className="text-3xl font-bold mb-6">Gecertificeerde Loodgietersdiensten in Amsterdam</h2>
+          <p className="mb-4">
+            Als erkende loodgieter in Amsterdam leveren wij een compleet pakket aan loodgietersdiensten. Of u nu te maken heeft met een kleine lekkage in uw keuken, een verstopte afvoer in de badkamer of een grote renovatie van uw sanitair, onze gecertificeerde vakmensen helpen u snel en efficiënt. Wij begrijpen hoe vervelend een plotseling probleem kan zijn en staan daarom dag en nacht voor u klaar.
+          </p>
+          <p className="mb-4">
+            Amsterdam kent veel oudere gebouwen en woningen, waardoor leidingen en afvoeren soms verouderd kunnen zijn. Een erkende loodgieter zoals AD-Loodgietersbedrijf heeft de expertise om deze uitdagingen te tackelen, ongeacht de leeftijd of complexiteit van uw installatie. Wij gebruiken moderne technieken en hoogwaardige materialen om een duurzame oplossing te bieden die aansluit op uw wensen.
+          </p>
+          <p className="mb-4">
+            Bent u benieuwd naar onze andere locaties en diensten? Neem dan eens een kijkje op onze{' '}
+            <Link href="/diensten" className="text-blue-500 font-semibold hover:underline">
+              dienstenpagina
+            </Link>{' '}
+            of lees meer over ons team op de{' '}
+            <Link href="/over-ons" className="text-blue-500 font-semibold hover:underline">
+              Over Ons
+            </Link>{' '}
+            pagina. Zo krijgt u een volledig beeld van onze aanpak, certificeringen en specialisaties.
+          </p>
+
+          <h3 className="text-2xl font-bold mt-8 mb-4">Waarom Kiezen voor een Erkende Loodgieter?</h3>
+          <ul className="list-disc list-inside mb-6 space-y-3">
+            <li>
+              <strong className="text-blue-500">Gecertificeerde Expertise:</strong> Onze vakmensen volgen regelmatig bijscholing en werken volgens strikte kwaliteitsnormen. Dit betekent dat u kunt rekenen op kennis van de nieuwste technieken en materialen.
+            </li>
+            <li>
+              <strong className="text-blue-500">Transparante Werkwijze:</strong> Wij geloven in eerlijkheid en openheid over prijzen en werkwijze. U ontvangt altijd een duidelijke offerte, zodat u precies weet waar u aan toe bent.
+            </li>
+            <li>
+              <strong className="text-blue-500">Duurzame Oplossingen:</strong> Of het nu gaat om reparaties of nieuwe installaties, wij zetten in op energiezuinige en milieuvriendelijke materialen die lang meegaan.
+            </li>
+            <li>
+              <strong className="text-blue-500">24/7 Service:</strong> Een noodsituatie komt vaak onverwacht. Met onze spoedservice bent u verzekerd van snelle hulp, ook in het weekend en tijdens feestdagen.
+            </li>
+          </ul>
+          <p className="mb-4">
+            Dankzij deze aanpak kunt u met een gerust hart de zorg voor uw leidingen, sanitair en installaties aan ons overlaten. Wij pakken elk probleem grondig aan en geven u graag advies over hoe u toekomstige ongemakken kunt voorkomen.
+          </p>
+
+          <h3 className="text-2xl font-bold mt-8 mb-4">Onze Werkwijze</h3>
+          <p className="mb-4">
+            Voorafgaand aan elke klus voeren wij eerst een grondige inspectie uit. Op basis daarvan stellen we een heldere diagnose en bespreken we de mogelijke oplossingen met u. Vervolgens ontvangt u een vrijblijvende offerte, zodat u niet voor verrassingen komt te staan.
+          </p>
+          <p>
+            Zodra u akkoord gaat, gaan wij snel aan de slag. Bij spoedklussen, zoals grote lekkages of verstoppingen, streven we ernaar binnen 30 tot 60 minuten ter plaatse te zijn. Kwaliteit en klanttevredenheid staan voorop: we laten de werkplek netjes achter en geven u tips om toekomstige problemen te voorkomen. Heeft u na afloop nog vragen? Dan staan we altijd voor u klaar.
+          </p>
         </div>
       </section>
 
@@ -205,10 +210,10 @@ export default function ErkendeLoodgieterAmsterdamPage() {
             <p className="text-lg mb-6">
               Bent u op zoek naar een erkende en gecertificeerde loodgieter in Amsterdam? Bel ons direct voor een snelle en professionele service.
             </p>
-            <ul className="space-y-3 mb-4">
-              <li className="font-bold">• Gecertificeerde vakmensen</li>
-              <li className="font-bold">• 24/7 bereikbaar voor spoedgevallen</li>
-              <li className="font-bold">• Persoonlijk en betrouwbaar advies</li>
+            <ul className="list-disc list-inside mb-4 space-y-2">
+              <li className="font-bold">Gecertificeerde vakmensen</li>
+              <li className="font-bold">24/7 bereikbaar voor spoedgevallen</li>
+              <li className="font-bold">Persoonlijk en betrouwbaar advies</li>
             </ul>
             <Link
               href="tel:+31640961848"

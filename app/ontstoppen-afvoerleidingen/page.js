@@ -36,7 +36,7 @@ export default function OntstoppenAfvoerleidingenPage() {
       latitude: 52.370216,
       longitude: 4.895168,
     },
-    openingHours: ['Ma-Zo 00:00-23:59'],
+    openingHours: ['Ma-Su 00:00-23:59'],
   };
 
   // ================
@@ -71,22 +71,18 @@ export default function OntstoppenAfvoerleidingenPage() {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="canonical" href="https://adloodgietersbedrijf.nl/ontstoppen-afvoerleidingen" />
-        {/* Open Graph */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:url" content="https://adloodgietersbedrijf.nl/ontstoppen-afvoerleidingen" />
         <meta property="og:type" content="website" />
-        {/* Gestructureerde data JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </Head>
 
-      {/* ===================
-          HERO SECTION
-      ==================== */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* =================== HEADER / HERO SECTION =================== */}
+      <header className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
@@ -102,12 +98,7 @@ export default function OntstoppenAfvoerleidingenPage() {
           />
         </motion.div>
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        <motion.div
-          className="relative z-10 text-center text-white px-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
+        <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Ontstoppen Afvoerleidingen</h1>
           <p className="text-base md:text-lg max-w-2xl mx-auto">
             Heeft u last van verstopte afvoerleidingen? Onze experts zorgen voor een snelle en effectieve ontstopservice zodat uw afvoer weer vrij kan stromen.
@@ -120,81 +111,140 @@ export default function OntstoppenAfvoerleidingenPage() {
               Bel Direct
             </Link>
           </div>
-        </motion.div>
-      </section>
-
-      {/* ===================
-          MAIN CONTENT
-      ==================== */}
-      <section className="py-16 bg-white text-black">
-        <div className="container max-w-5xl mx-auto px-4 md:px-6 leading-relaxed text-base md:text-lg">
-          <motion.h2
-            className="text-3xl font-bold mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Professionele Ontstopservice voor Uw Afvoerleidingen
-          </motion.h2>
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <p>
-              Verstopte afvoerleidingen kunnen snel voor grote overlast zorgen en leiden tot onnodige waterschade. Bij AD-Loodgietersbedrijf zorgen wij voor een directe en duurzame ontstopting van uw leidingen.
-            </p>
-            <p>
-              Onze ervaren technici maken gebruik van de nieuwste technieken en hoogwaardige apparatuur om de verstopping snel te lokaliseren en te verhelpen. Hierdoor bent u verzekerd van een efficiënte service en een langdurig resultaat.
-            </p>
-            <h3 className="text-2xl font-bold mt-6">Onze Werkwijze</h3>
-            <ul className="list-disc list-inside space-y-3">
-              <li>
-                <strong className="text-blue-500">Snelle Respons:</strong> Wij reageren direct op uw melding, zodat verdere schade wordt voorkomen.
-              </li>
-              <li>
-                <strong className="text-blue-500">Moderne Apparatuur:</strong> Met behulp van hogedrukreinigers en camera-inspecties detecteren we de oorzaak van de verstopping.
-              </li>
-              <li>
-                <strong className="text-blue-500">Duurzame Oplossingen:</strong> Wij zorgen voor een effectieve en langdurige oplossing zodat uw afvoerleidingen vrij blijven stromen.
-              </li>
-            </ul>
-            <p>
-              Heeft u vragen over onze ontstopservice of wilt u een vrijblijvende offerte ontvangen? Neem dan contact met ons op en ontdek hoe wij uw afvoerproblemen snel kunnen oplossen.
-            </p>
-          </motion.div>
         </div>
-      </section>
+      </header>
 
-      {/* =====================
-          FAQ SECTION
-      ====================== */}
+      {/* =================== MAIN CONTENT =================== */}
+      <main className="py-16 bg-white text-black">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6">
+          {/* Sectie 1: Introductie */}
+          <section>
+            <h2 className="text-3xl font-bold mb-6">Professionele Ontstopservice voor Uw Afvoerleidingen</h2>
+            <article className="space-y-6">
+              <p>
+                Verstopte afvoerleidingen kunnen snel leiden tot ernstige overlast en hoge reparatiekosten. Zelfs een kleine verstopping kan resulteren in waterschade en ongemak in uw dagelijkse leven. Daarom is het essentieel om direct in te grijpen zodra u problemen merkt.
+              </p>
+              <p>
+                Bij <strong className="text-blue-500">AD-Loodgietersbedrijf</strong> in Nieuwegein combineren wij traditionele vakkennis met moderne technologieën. Met behulp van hogedrukreinigers en camera-inspecties kunnen we de oorzaak van de verstopping snel en nauwkeurig achterhalen. Dit minimaliseert de ingreep en zorgt ervoor dat uw afvoer snel weer optimaal functioneert.
+              </p>
+              <h3 className="text-2xl font-bold">Directe Interventie en Preventie</h3>
+              <p>
+                Onze aanpak is gericht op snelle interventie en duurzame oplossingen. Zodra we de verstopping hebben opgespoord, starten we direct met de reparatie. Daarnaast adviseren wij u over preventieve maatregelen zodat toekomstige problemen worden voorkomen. Voor meer informatie over ons onderhoudsaanbod, bezoekt u onze{' '}
+                <Link href="/diensten" className="text-blue-500 font-semibold hover:underline">
+                  Diensten-pagina
+                </Link>.
+              </p>
+              <p>
+                Wil je meer weten over waterbeheer en hoe verstopte leidingen voorkomen kunnen worden? Neem een kijkje op externe bronnen zoals{' '}
+                <a
+                  href="https://www.waternet.nl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold hover:underline"
+                >
+                  Waternet
+                </a>{' '}
+                en{' '}
+                <a
+                  href="https://www.consumentenbond.nl/wonen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold hover:underline"
+                >
+                  Consumentenbond
+                </a>{' '}
+                voor praktische adviezen en tips.
+              </p>
+            </article>
+          </section>
+
+          {/* Sectie 2: Veelvoorkomende Problemen */}
+          <section className="mt-10">
+            <h2 className="text-3xl font-bold mb-6">Veelvoorkomende Problemen met Afvoerleidingen</h2>
+            <article className="space-y-6">
+              <p>
+                In veel woningen ontstaan verstoppingen door het ophopen van vet, zeepresten en vuil. Dit kan leiden tot terugslag en overstromingen, wat niet alleen voor overlast zorgt maar ook voor structurele schade aan uw woning kan leiden.
+              </p>
+              <ul className="list-disc list-inside space-y-3">
+                <li>
+                  <strong className="text-blue-500">Vetophoping</strong> – langdurig gebruik kan zorgen voor ophoping in de leidingen.
+                </li>
+                <li>
+                  <strong className="text-blue-500">Zeepresten en vuil</strong> – resulteren vaak in verstoppingen die de waterdoorstroming belemmeren.
+                </li>
+                <li>
+                  <strong className="text-blue-500">Verouderd leidingwerk</strong> – oudere systemen zijn vatbaarder voor verstoppingen en lekkages.
+                </li>
+              </ul>
+              <p>
+                Voor tips over het voorkomen van verstoppingen en onderhoud, raadpleeg u externe informatiebronnen zoals{' '}
+                <a
+                  href="https://www.milieucentraal.nl/bewust-wonen/water-besparen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold hover:underline"
+                >
+                  Milieu Centraal
+                </a>.
+              </p>
+            </article>
+          </section>
+
+          {/* Sectie 3: Reparatie, Onderhoud en Verzekering */}
+          <section className="mt-10">
+            <h2 className="text-3xl font-bold mb-6">Reparatie, Onderhoud en Verzekering</h2>
+            <article className="space-y-6">
+              <p>
+                Of het nu gaat om een kleine reparatie of een volledige reiniging van uw afvoerleidingen, ons team werkt snel en volgens hoge kwaliteitsnormen. Wij zorgen voor een duurzame oplossing en bieden u tevens een gedetailleerd reparatierapport. Dit rapport kunt u gebruiken bij uw verzekeraar om (gedeeltelijke) schade vergoed te krijgen.
+              </p>
+              <p>
+                Voor meer informatie over de dekking van waterschade en de verschillen tussen opstal- en inboedelverzekeringen, bezoekt u de websites van de{' '}
+                <a
+                  href="https://www.consumentenbond.nl/verzekering"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold hover:underline"
+                >
+                  Consumentenbond
+                </a>{' '}
+                en de{' '}
+                <a
+                  href="https://www.rijksoverheid.nl/onderwerpen/wonen-en-hypotheken"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold hover:underline"
+                >
+                  Rijksoverheid
+                </a>.
+              </p>
+              <p>
+                Wilt u meer weten over onze uitgebreide dienstverlening? Bezoek dan onze{' '}
+                <Link href="/diensten" className="text-blue-500 font-semibold hover:underline">
+                  Diensten-pagina
+                </Link>{' '}
+                of neem direct contact met ons op voor een vrijblijvend advies.
+              </p>
+            </article>
+          </section>
+        </div>
+      </main>
+
+      {/* ===================== FAQ SECTION ====================== */}
       <section className="py-16 bg-gray-50 text-black">
         <div className="container max-w-4xl mx-auto px-4 md:px-6">
           <FAQSection faqItems={faqItems} />
         </div>
       </section>
 
-      {/* =====================
-          CTA / CONTACT SECTION
-      ====================== */}
-      <section className="py-16 bg-gray-900 text-white">
+      {/* ===================== CTA / CONTACT SECTION ====================== */}
+      <footer className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            className="pr-8"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
+          <div className="pr-8">
             <h2 className="text-3xl font-bold mb-4">Neem Direct Contact Op</h2>
             <p className="text-lg mb-6">
-              Laat verstopte afvoerleidingen uw dag niet verpesten! Bel ons direct en onze experts zorgen voor een snelle en effectieve ontstopting, zodat u weer zorgeloos gebruik kunt maken van uw afvoersysteem.
+              Laat een verstopte afvoer u niet in de weg staan. Bel ons direct en onze experts zorgen voor een snelle en effectieve ontstopservice, zodat u weer zorgeloos gebruik kunt maken van uw afvoer.
             </p>
-            <ul className="space-y-3 mb-4">
+            <ul className="list-disc list-inside mb-4 space-y-2">
               <li className="font-bold">• Snelle interventie</li>
               <li className="font-bold">• Moderne technieken</li>
               <li className="font-bold">• Duurzame resultaten</li>
@@ -205,18 +255,12 @@ export default function OntstoppenAfvoerleidingenPage() {
             >
               Bel Nu
             </Link>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="p-6 rounded-lg shadow"
-          >
+          </div>
+          <div className="p-6 rounded-lg shadow">
             <ContactForm />
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </footer>
     </>
   );
 }

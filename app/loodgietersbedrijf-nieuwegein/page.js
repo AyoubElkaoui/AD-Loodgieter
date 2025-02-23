@@ -90,10 +90,8 @@ export default function LoodgieterNieuwegeinPage() {
         />
       </Head>
 
-      {/* ===================
-          HERO SECTION
-      ==================== */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* =================== HEADER / HERO SECTION =================== */}
+      <header className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
@@ -109,12 +107,7 @@ export default function LoodgieterNieuwegeinPage() {
           />
         </motion.div>
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-        <motion.div
-          className="relative z-10 text-center text-white px-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
+        <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Loodgietersbedrijf in Nieuwegein
           </h1>
@@ -129,81 +122,109 @@ export default function LoodgieterNieuwegeinPage() {
               Direct Contact
             </Link>
           </div>
-        </motion.div>
-      </section>
-
-      {/* ===================
-          MAIN CONTENT
-      ==================== */}
-      <section className="py-16 bg-white text-black">
-        <div className="container max-w-5xl mx-auto px-4 md:px-6 leading-relaxed text-base md:text-lg">
-          <motion.h2
-            className="text-3xl font-bold mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Uw Specialist voor Loodgietersdiensten
-          </motion.h2>
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <p>
-              Als toonaangevend loodgietersbedrijf in Nieuwegein bieden wij een breed scala aan diensten. Of het nu gaat om een snelle lekkage reparatie, het verhelpen van verstoppingen of het installeren van nieuw sanitair, ons deskundige team staat voor u klaar.
-            </p>
-            <p>
-              Wij begrijpen hoe belangrijk het is om snel en effectief te handelen bij loodgietersproblemen. Daarom kunt u altijd op ons rekenen voor een professionele en tijdige oplossing.
-            </p>
-            <h3 className="text-2xl font-bold mt-6">
-              Veelvoorkomende Loodgietersklussen
-            </h3>
-            <ul className="list-disc list-inside space-y-3">
-              <li>
-                <strong className="text-blue-500">Lekkages</strong> – van kleine druppels tot grote waterschade.
-              </li>
-              <li>
-                <strong className="text-blue-500">Verstoppingen</strong> – snel en effectief opgelost.
-              </li>
-              <li>
-                <strong className="text-blue-500">Installaties</strong> – nieuw sanitair en leidingwerk.
-              </li>
-              <li>
-                <strong className="text-blue-500">Onderhoud</strong> – preventief onderhoud voor langdurige zekerheid.
-              </li>
-            </ul>
-            <p>
-              Bent u benieuwd naar de mogelijkheden of heeft u direct een vraag? Neem gerust contact met ons op voor vrijblijvend advies.
-            </p>
-          </motion.div>
         </div>
-      </section>
+      </header>
 
-      {/* =====================
-          FAQ SECTION
-      ====================== */}
+      {/* =================== MAIN CONTENT =================== */}
+      <main className="py-16 bg-white text-black">
+        <div className="container max-w-5xl mx-auto px-4 md:px-6 leading-relaxed text-base md:text-lg">
+          {/* Sectie 1: Introductie */}
+          <section>
+            <h2 className="text-3xl font-bold mb-6">
+              Uw Specialist voor Loodgietersdiensten in Nieuwegein
+            </h2>
+            <article className="space-y-6">
+              <p>
+                <strong className="text-blue-500">AD-Loodgietersbedrijf</strong> is een ervaren en betrouwbaar loodgietersbedrijf in <strong className="text-blue-500">Nieuwegein</strong>. Wij bieden een breed scala aan diensten, van snelle lekkagereparaties tot volledige installaties van sanitair. Dankzij onze 24/7 spoedservice kunt u ons dag en nacht bereiken, zodat u niet lang met een probleem blijft zitten.
+              </p>
+              <p>
+                Onze aanpak is altijd gericht op kwaliteit en transparantie. Voordat we aan de slag gaan, ontvangt u een heldere offerte en een duidelijke uitleg van de werkzaamheden. Zo weet u precies wat u kunt verwachten en komt u niet voor verrassingen te staan. Meer weten over onze werkwijze? Neem een kijkje op onze{' '}
+                <Link href="/over-ons" className="text-green-600 font-semibold underline hover:text-green-800">
+                  Over Ons-pagina
+                </Link>.
+              </p>
+              <h3 className="text-2xl font-bold">Waarom Kiezen voor AD-Loodgietersbedrijf?</h3>
+              <p>
+                Wij onderscheiden ons door onze snelle respons, deskundige kennis en klantgerichte aanpak. Of het nu gaat om een kleine reparatie of een groot renovatieproject, ons team van vakkundige loodgieters staat voor u klaar. Daarnaast delen wij regelmatig nuttige tips en adviezen op onze{' '}
+                <Link href="/blogs" className="text-green-600 font-semibold underline hover:text-green-800">
+                  blogpagina
+                </Link>
+                , zodat u op de hoogte blijft van de nieuwste ontwikkelingen en onderhoudstips.
+              </p>
+            </article>
+          </section>
+
+          {/* Sectie 2: Veelvoorkomende Loodgietersklussen */}
+          <section className="mt-10">
+            <h2 className="text-3xl font-bold mb-6">
+              Veelvoorkomende Loodgietersklussen
+            </h2>
+            <article className="space-y-6">
+              <p>
+                In <strong className="text-blue-500">Nieuwegein</strong> zien we regelmatig dezelfde soorten problemen. Door tijdig in te grijpen, voorkomt u onnodige kosten en overlast:
+              </p>
+              <ul className="list-disc list-inside space-y-3">
+                <li><strong className="text-blue-500">Lekkages</strong> – van kleine druppels tot grote waterschade.</li>
+                <li><strong className="text-blue-500">Verstoppingen</strong> – snel en effectief opgelost.</li>
+                <li><strong className="text-blue-500">Installaties</strong> – nieuw sanitair, leidingen of cv-ketels.</li>
+                <li><strong className="text-blue-500">Onderhoud</strong> – preventief onderhoud voor langdurige zekerheid.</li>
+              </ul>
+              <p>
+                Wilt u weten hoe u waterschade en lekkages kunt voorkomen? Bezoek de website van{' '}
+                <a
+                  href="https://www.wateroverlastlandelijk.nl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold underline hover:text-green-800"
+                >
+                  Wateroverlast Landelijk
+                </a>{' '}
+                voor praktische adviezen en preventietips.
+              </p>
+            </article>
+          </section>
+
+          {/* Sectie 3: Reparaties, Verzekeringen en Advies */}
+          <section className="mt-10">
+            <h2 className="text-3xl font-bold mb-6">
+              Reparaties, Verzekeringen en Deskundig Advies
+            </h2>
+            <article className="space-y-6">
+              <p>
+                Of het nu gaat om een <strong className="text-blue-500">kleine reparatie</strong> of een uitgebreide verbouwing, ons team werkt snel en volgens hoge kwaliteitsnormen. Heeft u vragen over de vergoeding van waterschade via uw verzekering? Vaak worden deze kosten (deels) vergoed, afhankelijk van uw polis.
+              </p>
+              <p>
+                Voor meer informatie kunt u ook terecht op de website van de{' '}
+                <a
+                  href="https://www.consumentenbond.nl/verzekering"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 font-semibold underline hover:text-green-800"
+                >
+                  Consumentenbond
+                </a>
+                . Bij grotere reparaties of lekkages kunnen wij een uitgebreid rapport opstellen, dat u bij uw verzekeraar kunt indienen. Heeft u nog meer vragen over onze diensten? Neem gerust een kijkje op onze{' '}
+                <Link href="/diensten" className="text-green-600 font-semibold underline hover:text-green-800">
+                  Diensten-pagina
+                </Link>
+                .
+              </p>
+            </article>
+          </section>
+        </div>
+      </main>
+
+      {/* ===================== FAQ SECTION ====================== */}
       <section className="py-16 bg-gray-50 text-black">
         <div className="container max-w-4xl mx-auto px-4 md:px-6">
           <FAQSection faqItems={faqItems} />
         </div>
       </section>
 
-      {/* =====================
-          CTA / CONTACT SECTION
-      ====================== */}
-      <section className="py-16 bg-gray-900 text-white">
+      {/* ===================== CTA / CONTACT SECTION ====================== */}
+      <footer className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            className="pr-8"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
+          <div className="pr-8">
             <h2 className="text-3xl font-bold mb-4">Neem Direct Contact Op</h2>
             <p className="text-lg mb-6">
               Heeft u direct hulp nodig bij een lekkage of ander loodgietersprobleem in Nieuwegein? Ons ervaren team staat 24/7 voor u klaar.
@@ -219,18 +240,12 @@ export default function LoodgieterNieuwegeinPage() {
             >
               Bel Nu
             </Link>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="p-6 rounded-lg shadow"
-          >
+          </div>
+          <div className="p-6 rounded-lg shadow">
             <ContactForm />
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </footer>
     </>
   );
 }

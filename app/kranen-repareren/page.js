@@ -145,25 +145,36 @@ export default function KranenReparerenPage() {
             transition={{ duration: 1 }}
           >
             <p>
-              Een defecte kraan kan niet alleen vervelend zijn, maar ook leiden tot onnodig waterverlies en extra kosten. Bij AD-Loodgietersbedrijf zorgen wij voor een snelle diagnose en een duurzame reparatie, zodat u snel weer kunt genieten van een goed functionerende kraan.
+              Een defecte kraan is niet alleen een bron van irritatie, maar kan ook leiden tot onnodig waterverlies en hogere kosten. Bovendien kan een aanhoudende lekkage op termijn leiden tot vochtproblemen en zelfs schimmelvorming. Bij AD-Loodgietersbedrijf begrijpen we hoe belangrijk het is om snel te handelen, zodat u deze ongewenste gevolgen voorkomt. Wij bieden daarom een professionele en snelle service voor het repareren van alle soorten kranen, van keukenkraan tot badkamermengkraan.
             </p>
             <p>
-              Onze ervaren monteurs maken gebruik van hoogwaardige materialen en moderne technieken om de oorzaak van het probleem te verhelpen. Of het nu gaat om een lekkende kraan of een kraan die niet meer goed functioneert, wij bieden de perfecte oplossing.
+              Onze ervaren monteurs maken gebruik van hoogwaardige materialen en moderne technieken om de oorzaak van het probleem te achterhalen. Of het nu gaat om een kapot binnenwerk, een versleten ring of een defecte cartridge, wij zorgen voor een duurzame oplossing die perfect aansluit op uw situatie. We laten u precies zien welke onderdelen vervangen moeten worden en werken altijd met transparante offertes. Zo komt u nooit voor verrassingen te staan.
             </p>
+            <p>
+              Bij ons kunt u terecht voor meer dan alleen reparaties. Wilt u een nieuwe kraan installeren of is er een upgrade nodig van uw bestaande kraan? Ook dan helpen wij u graag. Onze loodgieters adviseren u over de beste opties, zodat u een kraan krijgt die past bij uw stijl en gebruiksbehoeften. Voor een overzicht van al onze diensten, bekijk gerust onze{' '}
+              <Link href="/diensten" className="text-blue-500 font-semibold hover:underline">
+                Dienstenpagina
+              </Link>
+              .
+            </p>
+
             <h3 className="text-2xl font-bold mt-6">Onze Specialisaties in Kranen Repareren</h3>
             <ul className="list-disc list-inside space-y-3">
               <li>
-                <strong className="text-blue-500">Lekkages Verhelpen:</strong> Snel ingrijpen om waterschade te minimaliseren.
+                <strong className="text-blue-500">Lekkages Verhelpen:</strong> Snel ingrijpen om waterschade te minimaliseren en uw waterverbruik te beperken.
               </li>
               <li>
-                <strong className="text-blue-500">Mechanische Reparaties:</strong> Vervanging van versleten onderdelen voor een optimale werking.
+                <strong className="text-blue-500">Mechanische Reparaties:</strong> Het vervangen of repareren van versleten onderdelen voor een optimale werking en een langere levensduur.
               </li>
               <li>
-                <strong className="text-blue-500">Preventief Onderhoud:</strong> Advies en onderhoud om toekomstige problemen te voorkomen.
+                <strong className="text-blue-500">Preventief Onderhoud:</strong> Regulier onderhoud en check-ups om toekomstige problemen te voorkomen, zodat u jarenlang zorgeloos van uw kraan kunt genieten.
               </li>
             </ul>
             <p>
-              Heeft u vragen over onze werkwijze of wilt u een vrijblijvende offerte? Neem contact met ons op en ontdek hoe wij uw kraan snel en effectief kunnen repareren.
+              Of u nu te maken heeft met een klein druppeltje of een volledig defecte kraan, wij hebben de expertise in huis om het probleem snel te verhelpen. Zo voorkomt u verdere schade en onnodige kosten op de lange termijn.
+            </p>
+            <p>
+              Heeft u vragen over onze werkwijze of wilt u een vrijblijvende offerte? Neem dan gerust contact met ons op. Wij staan 24/7 voor u klaar, ook in spoedsituaties. Bij AD-Loodgietersbedrijf bent u verzekerd van kwaliteit, transparantie en een vakkundige aanpak.
             </p>
           </motion.div>
         </div>
