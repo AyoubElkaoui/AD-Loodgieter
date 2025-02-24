@@ -18,49 +18,6 @@ import Link from 'next/link';
 export default function AboutUsPage() {
   return (
     <>
-      {/* Structured Data for Enhanced SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "name": "Over AD-Loodgietersbedrijf",
-            "description":
-              "Meer dan 10 jaar ervaring in hoogwaardige en duurzame loodgietersdiensten in Maarssen, Utrecht en omgeving. Betrouwbaar, snel en klantgericht.",
-            "url": "https://adloodgietersbedrijf.nl/over-ons",
-            "publisher": {
-              "@type": "Organization",
-              "name": "AD-Loodgietersbedrijf",
-              "url": "https://adloodgietersbedrijf.nl",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://adloodgietersbedrijf.nl/logo.png"
-              }
-            },
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "AD-Loodgietersbedrijf",
-              "description":
-                "AD-Loodgietersbedrijf is uw betrouwbare partner voor alle loodgietersdiensten in Maarssen, Utrecht en de omliggende regio's.",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Voorbeeldstraat 123",
-                "addressLocality": "Maarssen",
-                "postalCode": "3601 AB",
-                "addressCountry": "NL"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "customer service",
-                "telephone": "+31-20-1234567",
-                "email": "info@adloodgietersbedrijf.nl"
-              }
-            }
-          }),
-        }}
-      />
-
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden px-4 sm:px-8">
         <Image
@@ -98,13 +55,13 @@ export default function AboutUsPage() {
           >
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Wie zijn wij?</h2>
             <p className="text-gray-600 mb-4">
-              Met meer dan <strong>10 jaar ervaring</strong> in de loodgietersbranche staat <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> bekend om zijn expertise in spoedreparaties, installatie van verwarmingssystemen en onderhoudswerkzaamheden. Ons team van gecertificeerde loodgieters combineert traditioneel vakmanschap met de nieuwste technologieën.
+              Met meer dan <strong>10 jaar ervaring</strong> in de loodgietersbranche staat <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> bekend als dé expert op het gebied van spoedreparaties, onderhoud en installatie.
             </p>
             <p className="text-gray-600 mb-6">
-              Wij leveren hoogwaardige en duurzame oplossingen die voldoen aan de strengste veiligheids- en milieunormen. Of het nu gaat om <strong>lekkages opsporen</strong>, <strong>reparaties uitvoeren</strong> of <strong>preventief onderhoud</strong>, u kunt altijd rekenen op onze snelle en professionele aanpak.
+              Onze gecertificeerde loodgieters combineren traditioneel vakmanschap met moderne technologieën om duurzame en efficiënte oplossingen te bieden voor al uw loodgietersproblemen.
             </p>
             <p className="text-gray-600">
-              Ons werkgebied omvat <strong>Maarssen</strong>, <strong>Utrecht</strong> en omliggende regio’s. Bekijk bijvoorbeeld onze diensten zoals{' '}
+              Ons werkgebied omvat <strong>Maarssen</strong>, <strong>Utrecht</strong> en omliggende regio’s. Ontdek ook onze specifieke diensten zoals{' '}
               <Link href="/diensten/wc-ontstoppen" className="text-blue-500 hover:underline">
                 WC ontstoppen
               </Link>{' '}
@@ -112,7 +69,7 @@ export default function AboutUsPage() {
               <Link href="/diensten/lekkages-oplossen" className="text-blue-500 hover:underline">
                 lekkages oplossen
               </Link>
-              , en ontdek hoe wij u van dienst kunnen zijn.
+              .
             </p>
           </motion.div>
           <motion.div
@@ -133,9 +90,9 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Onze Geschiedenis en Aanpak */}
+      {/* Nieuwe SEO-gericht Gedeelte */}
       <section className="py-16 bg-white max-sm:p-8">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-6">
           <motion.h2
             className="text-3xl font-bold text-gray-800 mb-4"
             initial={{ opacity: 0, y: -50 }}
@@ -143,16 +100,24 @@ export default function AboutUsPage() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            Onze Geschiedenis en Aanpak
+            Onze Expertise in Loodgietersdiensten
           </motion.h2>
-          <p className="text-gray-600 mb-4">
-            AD-Loodgietersbedrijf is opgericht in [jaar] in het hart van Maarssen. In de afgelopen jaren zijn we uitgegroeid van een klein lokaal bedrijf tot een toonaangevende specialist in loodgietersdiensten in de regio Utrecht.
+          <p className="text-gray-600 mb-6">
+            Bij <strong className="text-blue-500">AD-Loodgietersbedrijf</strong> draait alles om het leveren van topkwaliteit loodgietersdiensten. Wij zijn gespecialiseerd in het oplossen van verstoppingen, het repareren van lekkages en het uitvoeren van installaties en onderhoud. Onze snelle responstijd en efficiënte aanpak maken ons de ideale keuze voor zowel particuliere als zakelijke klanten.
           </p>
-          <p className="text-gray-600 mb-4">
-            Onze aanpak is gebaseerd op vakmanschap, innovatie en een klantgerichte service. Wij investeren voortdurend in de nieuwste technologieën en trainingen voor onze medewerkers. Hierdoor kunnen we altijd garanderen dat onze oplossingen zowel effectief als duurzaam zijn.
+          <p className="text-gray-600 mb-6">
+            Onze klanten waarderen onze deskundigheid en klantgerichte service. Wilt u weten hoe wij u kunnen helpen met spoedreparaties of preventief onderhoud? Bekijk dan onze{' '}
+            <Link href="/diensten" className="text-blue-500 hover:underline">
+              dienstenpagina
+            </Link>{' '}
+            voor een compleet overzicht van onze oplossingen. Voor direct contact en een vrijblijvende offerte kunt u altijd onze{' '}
+            <Link href="/contact" className="text-blue-500 hover:underline">
+              contactpagina
+            </Link>{' '}
+            bezoeken.
           </p>
           <p className="text-gray-600">
-            Transparantie en betrouwbaarheid staan bij ons voorop. We werken nauw samen met onze klanten om hun specifieke wensen te begrijpen en te realiseren. Deze toewijding heeft geleid tot langdurige samenwerkingen en een groot aantal tevreden klanten, zowel in de particuliere als zakelijke sector.
+            Wij blijven ons continu ontwikkelen door te investeren in de nieuwste technologieën en trainingen. Zo garanderen we dat onze service altijd up-to-date is en voldoet aan de hoogste veiligheids- en milieunormen.
           </p>
         </div>
       </section>

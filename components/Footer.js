@@ -1,10 +1,9 @@
 'use client';
+
 import { faPhoneAlt, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { sendGTMEvent } from '@next/third-parties/google';
-
-
 
 export default function Footer() {
     return (
@@ -14,29 +13,33 @@ export default function Footer() {
               <div>
                   <h3 className="text-lg font-bold mb-4">Contactgegevens</h3>
                   <ul className="space-y-2 text-sm sm:text-base">
-                      <li>
+                      <li className="flex items-center">
                           <FontAwesomeIcon icon={faPhoneAlt} className="mr-2 text-green-500" />
-                          <Link href="tel:+31640961848"
-                             onClick={() =>
-                             sendGTMEvent({ event: 'buttonClicked', value:'phone button'})
-                             }>
-                              +31 6 40 96 18 48</Link>
+                          <Link
+                            href="tel:+31640961848"
+                            onClick={() =>
+                              sendGTMEvent({ event: 'buttonClicked', category: 'Link', label: 'Footer Telefoon' })
+                            }
+                            className="hover:underline"
+                          >
+                              +31 6 40 96 18 48
+                          </Link>
                       </li>
-                      <li>
+                      <li className="flex items-center">
                           <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-green-500" />
-                          <Link href="mailto:info@adloodgietersbedrijf.nl"
-                                onClick={() =>
-                                  sendGTMEvent({
-                                      event: 'buttonClicked',
-                                      category: 'Link',
-                                      label: 'Contact knop - email Footer',
-                                  })
-                                }>
-                              info@adloodgietersbedrijf.nl</Link>
+                          <Link
+                            href="mailto:info@adloodgietersbedrijf.nl"
+                            onClick={() =>
+                              sendGTMEvent({ event: 'buttonClicked', category: 'Link', label: 'Footer Email' })
+                            }
+                            className="hover:underline"
+                          >
+                              info@adloodgietersbedrijf.nl
+                          </Link>
                       </li>
-                      <li>
+                      <li className="flex items-center">
                           <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 text-green-500" />
-                          Maarssen, Nederland
+                          <span>Spechtenkamp 334, 3607 KT Maarssen</span>
                       </li>
                   </ul>
               </div>
@@ -68,11 +71,11 @@ export default function Footer() {
                   </ul>
               </div>
 
-              {/* Nieuwsbrief */}
+              {/* Nieuwsbrief en Extra Info */}
               <div>
                   <h3 className="text-lg font-bold mb-4">Blijf op de hoogte</h3>
                   <p className="text-gray-400 mb-4 text-sm sm:text-base">
-                      Schrijf u in voor onze nieuwsbrief en blijf op de hoogte van onze laatste updates en aanbiedingen.
+                      Schrijf u in voor onze nieuwsbrief en ontvang het laatste nieuws en aanbiedingen.
                   </p>
                   <form className="flex space-x-2">
                       <input
@@ -92,7 +95,10 @@ export default function Footer() {
 
           <div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm sm:text-base">
               <p className="text-gray-400">
-                  &copy; {new Date().getFullYear()} AD-Loodgietersbedrijf. Alle rechten voorbehouden. | <a className="text-gray-400" href="https://akwebsolutions.nl">Build by AK Web Solutions</a>
+                  &copy; {new Date().getFullYear()} AD-Loodgietersbedrijf. Alle rechten voorbehouden. |{' '}
+                  <Link href="https://akwebsolutions.nl" className="text-gray-400 hover:underline">
+                      Build by AK Web Solutions
+                  </Link>
               </p>
           </div>
       </footer>

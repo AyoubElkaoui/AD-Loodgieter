@@ -12,7 +12,13 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        {/* Algemene Structured Data */}
+        <link rel="canonical" href="https://www.adloodgietersbedrijf.nl/diensten" />
+        <meta property="og:title" content="Diensten - AD Loodgietersbedrijf - Utrecht & Omgeving" />
+        <meta property="og:description" content="Ontdek onze professionele loodgietersdiensten in Utrecht, Amersfoort, Nieuwegein en omgeving. Snelle en duurzame oplossingen door ervaren loodgieters." />
+        <meta property="og:url" content="https://www.adloodgietersbedrijf.nl/diensten" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.adloodgietersbedrijf.nl/images/hero.webp" />
+        {/* Voeg hier eventueel de Google Tag Manager-code toe als deze niet globaal wordt geladen */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -20,7 +26,7 @@ export default function Layout({ children }) {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "AD-Loodgietersbedrijf",
-              "url": "https://adloodgietersbedrijf.nl",
+              "url": "https://www.adloodgietersbedrijf.nl",
               "description":
                 "Professionele loodgietersdiensten in Utrecht, Amersfoort, Nieuwegein en omgeving. Wij bieden spoedservice, preventief onderhoud, installaties en reparaties met duurzame oplossingen.",
               "telephone": "+31640961848",
@@ -31,7 +37,7 @@ export default function Layout({ children }) {
                 "postalCode": "3607 KT",
                 "addressCountry": "NL",
               },
-              "image": "https://adloodgietersbedrijf.nl/images/hero.webp",
+              "image": "https://www.adloodgietersbedrijf.nl/images/hero.webp",
               "priceRange": "€€",
               "openingHours": ["Mo-Su 00:00-23:59"],
               "geo": {

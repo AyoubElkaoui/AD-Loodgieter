@@ -68,7 +68,7 @@ export default function Home() {
           content="AD-Loodgietersbedrijf staat 24/7 voor u klaar in Maarssen en de regio Utrecht voor lekkages, verstoppingen en installaties. Snel op locatie!"
           key="description"
         />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/" />
+        {/* Canonical-tag verwijderd, want die staat in RootLayout */}
       </Head>
       <meta property="og:title" content="Betrouwbare Loodgieter in Maarssen | AD-Loodgietersbedrijf" />
       <meta
@@ -140,7 +140,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-3xl font-bold mb-4 break-words">
             Betrouwbare Loodgieter in Maarssen en Regio Utrecht
           </h1>
-          <p className="text-base sm:text-lg px-2">
+          <p className="text-base sm:text-lg px-2 break-words w-1/2 mx-auto">
             Wij staan dag en nacht klaar voor al uw loodgietersproblemen. Van verstoppingen tot lekkages: snelle service gegarandeerd. Met meer dan 10 jaar ervaring bieden wij betrouwbare, duurzame en professionele oplossingen voor zowel particuliere als zakelijke klanten in de regio Utrecht en daarbuiten.
           </p>
           <div className="flex space-x-4 justify-center p-4">
@@ -169,10 +169,10 @@ export default function Home() {
               <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> is een toegewijd loodgietersbedrijf met 10 jaar ervaring in de sector. Wij leveren hoogwaardige loodgietersdiensten voor zowel bedrijven als particulieren, met specialisaties in renovatie, nieuwbouw en service-installaties. Onze ervaren professionals gebruiken de nieuwste technologieën om elke klus tot in de puntjes af te werken.
             </p>
             <p className="text-gray-600 mb-6">
-              Ons team van hoogopgeleide loodgieters staat paraat om uw projecten aan te pakken, van eenvoudige reparaties tot complexe installaties. Wij streven naar maatwerkoplossingen, kwaliteit en betrouwbaarheid, zodat u altijd kunt rekenen op een snelle en professionele service. Onze innovatieve aanpak en aandacht voor detail zorgen ervoor dat wij voor elke situatie de optimale oplossing vinden.
+              Ons team staat paraat voor alles, van eenvoudige reparaties tot complexe installaties. Wij streven naar maatwerkoplossingen, kwaliteit en betrouwbaarheid.
             </p>
             <p className="text-gray-600">
-              Gevestigd in <strong>Maarssen</strong>, bedienen wij niet alleen de regio Utrecht, maar ook omliggende steden zoals <strong>Nieuwegein</strong>, <strong>Amersfoort</strong>, <strong>Houten</strong> en <strong>Zeist</strong>. Ons brede netwerk en onze lokale expertise stellen ons in staat om snel en efficiënt op locatie te zijn, waar u ook woont. Wij leveren tevens energiezuinige en duurzame oplossingen die voldoen aan de hoogste kwaliteitsnormen.
+              Gevestigd in <strong>Maarssen</strong> bedienen wij de regio Utrecht en omliggende steden. Onze lokale expertise zorgt voor snelle service op locatie.
             </p>
             <Link href="/over-ons" className="text-blue-500 font-semibold hover:underline">
               Lees meer over ons
@@ -202,10 +202,7 @@ export default function Home() {
           <div className="text-center max-w-7xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Onze Diensten</h2>
             <p className="text-gray-600 mb-4">
-              Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> bieden we een breed scala aan professionele loodgietersdiensten. Of het nu gaat om spoedreparaties, preventief onderhoud of complexe installaties, ons ervaren team staat 24/7 voor u klaar. Wij zorgen voor een complete service waarbij kwaliteit en duurzaamheid centraal staan, zodat uw sanitair en leidingsystemen optimaal functioneren.
-            </p>
-            <p className="text-gray-600">
-              Wij zijn gespecialiseerd in alles van wc-ontstoppingen tot het oplossen van hardnekkige lekkages. Onze duurzame oplossingen en klantgerichte aanpak garanderen niet alleen een snelle service, maar ook langdurige resultaten. Door gebruik te maken van de nieuwste technieken en hoogwaardige materialen, bieden wij oplossingen die zowel kosteneffectief als milieuvriendelijk zijn.
+              Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> bieden wij een breed scala aan professionele loodgietersdiensten.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -214,31 +211,37 @@ export default function Home() {
                 icon: faToilet,
                 title: 'WC Ontstoppen',
                 description: 'Snel en professioneel uw toilet weer vrij van verstoppingen.',
+                linkText: 'Lees meer over WC ontstoppen',
               },
               {
                 icon: faSink,
                 title: 'Afvoer Ontstoppen',
                 description: 'Wij zorgen ervoor dat uw afvoer weer vrij en goed doorloopt.',
+                linkText: 'Lees meer over afvoer ontstoppen',
               },
               {
                 icon: faWrench,
                 title: 'Reparaties',
                 description: 'Efficiënte oplossingen voor al uw loodgietersproblemen.',
+                linkText: 'Lees meer over reparaties',
               },
               {
                 icon: faShower,
                 title: 'Douche Ontstoppen',
                 description: 'Wij zorgen ervoor dat uw douche weer probleemloos werkt.',
+                linkText: 'Lees meer over douche ontstoppen',
               },
               {
                 icon: faHandHoldingWater,
                 title: 'Vaatwasser Ontstoppen',
                 description: 'De beste en snelste oplossing voor vaatwasserproblemen.',
+                linkText: 'Lees meer over vaatwasser ontstoppen',
               },
               {
                 icon: faWater,
                 title: 'Lekkages Oplossen',
                 description: 'Laat lekkages snel en efficiënt repareren door ons professionele team.',
+                linkText: 'Lees meer over lekkages oplossen',
               },
             ].map((dienst, index) => (
               <motion.div
@@ -255,7 +258,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{dienst.title}</h3>
                 <p className="text-gray-600 mb-2">{dienst.description}</p>
                 <Link href="/diensten" className="text-blue-500 font-semibold hover:underline">
-                  Meer info
+                  {dienst.linkText}
                 </Link>
               </motion.div>
             ))}
@@ -275,14 +278,11 @@ export default function Home() {
           <div className="max-sm:-ml-3">
             <h2 className="text-4xl font-bold text-gray-800 mb-6">AD-Loodgietersbedrijf: Actief in heel Nederland</h2>
             <p className="text-lg text-gray-600 mb-4">
-              Wij bedienen niet alleen de regio Utrecht, maar hebben ook een uitgebreid netwerk in heel Nederland. Of u nu in een grote stad of een klein dorp woont, onze snelle en efficiënte service is altijd binnen handbereik. Onze lokale expertise en brede dekking zorgen ervoor dat wij elk loodgietersprobleem snel kunnen oplossen.
-            </p>
-            <p className="text-lg text-gray-600 mb-6">
-              Dankzij onze landelijke dekking zijn wij actief in steden zoals Amersfoort, Nieuwegein, Maarssen, Culemborg en vele andere locaties. Wij zorgen ervoor dat u altijd op tijd geholpen wordt, ongeacht waar u zich bevindt. Bovendien bieden wij energiezuinige en duurzame oplossingen die passen bij zowel stedelijke als landelijke omgevingen.
+              Wij bedienen niet alleen de regio Utrecht, maar hebben ook een uitgebreid netwerk in heel Nederland.
             </p>
             <ul className="space-y-3">
               {[
-                'Actief in Utrecht, Amersfoort, Nieuwegein, Maarssen en Culemborg',
+                'Actief in Utrecht, Amersfoort, Nieuwegein, Maarssen en Culemborg en meer',
                 'Landelijke dekking in heel Nederland',
                 'Snel op locatie, 24/7 beschikbaar',
               ].map((text, index) => (
@@ -294,7 +294,7 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Kaart */}
+          {/* Kaart met CSS-klasse voor border verwijderen */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -308,14 +308,12 @@ export default function Home() {
               width="100%"
               id="iframe-page"
               height="350"
-              style={{ border: 0 }}
-              allowFullScreen=""
+              className="rounded-lg shadow-lg iframe-no-border"
+              allowFullScreen
               loading="lazy"
-              className="rounded-lg shadow-lg"
             ></iframe>
           </motion.div>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -323,15 +321,9 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="mt-10 bg-white p-8 rounded-lg shadow-md w-3/4 mx-auto max-sm:w-full"
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">Wij zijn actief in de volgende regio’s:</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Hulp nodig?</h3>
           <p className="text-lg text-gray-600">
             Naast onze hoofdlocatie in Utrecht bedienen wij ook diverse steden en dorpen in Nederland.
-          </p>
-          <p className="text-lg text-gray-600 mt-2 font-semibold">
-            Amersfoort, Nieuwegein, Maarssen, Culemborg, Houten, Zeist, Woerden, De Bilt, IJsselstein, Vleuten, en vele andere.
-          </p>
-          <p className="text-gray-600 mt-2">
-            Dankzij onze landelijke aanwezigheid kunnen wij snel reageren op noodoproepen en optimale service garanderen, ongeacht uw locatie.
           </p>
           <Link
             href="/contact"
@@ -342,12 +334,9 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* FAQ SECTION met unieke homepage FAQ-items */}
-      <section className="py-16 bg-gray-50 text-black">
-        <div className="container max-w-4xl mx-auto px-4 md:px-6">
-          <FAQSection faqItems={homepageFAQItems} />
-        </div>
-      </section>
+      {/* FAQ SECTION */}
+      <FAQSection faqItems={homepageFAQItems} bannerImage="/loodgieter-staand.webp"/>
+
 
       {/* Contact Form Sectie */}
       <section className="py-16 bg-gray-900 text-white max-sm:p-8">
@@ -361,7 +350,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-4">Neem contact op met ons</h2>
             <p className="text-lg mb-6">
-              Heeft u een vraag of wilt u een afspraak maken? Vul het formulier in en wij nemen zo snel mogelijk contact met u op. Ons klantvriendelijke team staat klaar om u deskundig advies te geven en oplossingen op maat te bieden.
+              Heeft u een vraag of wilt u een afspraak maken? Vul het formulier in en wij nemen zo snel mogelijk contact met u op.
             </p>
             <ul className="space-y-3">
               <li className="flex items-center">

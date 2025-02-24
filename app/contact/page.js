@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import ContactForm from '@/components/ContactForm';
 import { sendGTMEvent } from '@next/third-parties/google';
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
 const contactDetails = [
     {
@@ -22,9 +22,9 @@ const contactDetails = [
     },
     {
         icon: faMapMarkerAlt,
-        title: 'Locatie',
-        content: 'Maarssen, Nederland',
-        link: 'https://www.google.com/maps?q=Maarssen',
+        title: 'Adres',
+        content: 'Spechtenkamp 334, 3607 KT Maarssen',
+        link: 'https://www.google.com/maps?q=Spechtenkamp+334,+3607+KT+Maarssen',
     },
 ];
 
@@ -41,12 +41,12 @@ export default function ContactPage() {
                     transition={{ duration: 1.5 }}
                   >
                       <Image
+                        src="/front-view-man-working-as-plumber.webp"
+                        alt="Neem contact op – Professionele loodgietersdiensten"
                         fill
                         className="object-cover"
                         priority
                         sizes="(max-width: 768px) 40vw, (max-width: 1200px) 50vw, 33vw"
-                        src="/front-view-man-working-as-plumber.webp"
-                        alt="Neem contact op – Professionele loodgietersdiensten"
                       />
                   </motion.div>
               </div>
@@ -57,9 +57,11 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
-                  <h1 className="text-5xl font-bold mb-4">Neem Contact Met Ons Op</h1>
+                  <h1 className="text-5xl font-bold mb-4">
+                      Neem <strong>Contact</strong> met Ons Op
+                  </h1>
                   <p className="text-lg max-w-2xl mx-auto">
-                      Wij staan 24/7 voor u klaar in Maarssen en omgeving. Heeft u vragen over onze professionele loodgietersdiensten of wilt u een afspraak maken? Neem contact met ons op voor direct advies en snelle service.
+                      Wij zijn 24/7 beschikbaar in <strong>Maarssen</strong> en omgeving. Heeft u vragen over onze <strong>professionele loodgietersdiensten</strong> of wilt u direct een afspraak maken?
                   </p>
               </motion.div>
           </section>
@@ -71,7 +73,7 @@ export default function ContactPage() {
                       <div>
                           <h2 className="text-3xl font-bold text-gray-800 mb-6">Onze Contactgegevens</h2>
                           <p className="text-lg text-gray-600 mb-8">
-                              Heeft u een vraag, wilt u direct een afspraak maken of behoefte aan advies? Neem gerust contact met ons op via de onderstaande gegevens.
+                              Heeft u vragen, wilt u direct een afspraak maken of zoekt u deskundig advies? Neem contact met ons op via de onderstaande gegevens.
                           </p>
                           <ul className="space-y-6">
                               {contactDetails.map((detail, index) => (
@@ -84,7 +86,7 @@ export default function ContactPage() {
                                   transition={{ duration: 0.5, delay: index * 0.2 }}
                                 >
                                     <FontAwesomeIcon icon={detail.icon} className="text-blue-500 text-2xl" />
-                                    <span className="font-bold text-gray-800 mr-2">{detail.title}:</span>
+                                    <span className="font-bold text-gray-800">{detail.title}:</span>
                                     <Link
                                       href={detail.link}
                                       className="hover:underline"
@@ -101,6 +103,9 @@ export default function ContactPage() {
                                 </motion.li>
                               ))}
                           </ul>
+                          <p className="mt-8 text-gray-600">
+                              Lees meer over onze <Link href="/diensten" className="text-blue-500 hover:underline">diensten</Link> of ontdek wie wij zijn op onze <Link href="/over-ons" className="text-blue-500 hover:underline">Over Ons</Link> pagina.
+                          </p>
                       </div>
                       <motion.div
                         initial={{ opacity: 0, x: 50 }}
@@ -134,7 +139,7 @@ export default function ContactPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                       >
-                          Stuur ons een bericht
+                          Stuur Ons Een Bericht
                       </motion.h2>
                       <motion.p
                         className="text-lg text-gray-600 max-w-2xl mx-auto"
@@ -143,7 +148,7 @@ export default function ContactPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                       >
-                          Vul onderstaand formulier in en wij nemen zo snel mogelijk contact met u op voor deskundig advies en een vrijblijvende offerte.
+                          Vul het onderstaande formulier in voor snel en deskundig contact. Wij reageren direct op uw aanvraag.
                       </motion.p>
                   </div>
                   <ContactForm />
@@ -152,5 +157,3 @@ export default function ContactPage() {
       </>
     );
 }
-
-

@@ -117,7 +117,7 @@ export default function DienstenPage() {
                   <div className="relative h-56">
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={`${service.title} - AD Loodgietersbedrijf dienst`}
                       fill
                       className="object-cover"
                     />
@@ -129,7 +129,7 @@ export default function DienstenPage() {
                       href={service.link}
                       className="text-blue-500 font-semibold hover:underline mt-4 block"
                     >
-                      Lees meer
+                      Lees meer over {service.title}
                     </Link>
                   </div>
                 </motion.div>
@@ -149,7 +149,7 @@ export default function DienstenPage() {
                   <div className="relative h-56">
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={`${service.title} - AD Loodgietersbedrijf dienst`}
                       fill
                       className="object-cover"
                     />
@@ -161,7 +161,7 @@ export default function DienstenPage() {
                       href={service.link}
                       className="text-blue-500 font-semibold hover:underline mt-4 block"
                     >
-                      Lees meer
+                      Lees meer over {service.title}
                     </Link>
                   </div>
                 </motion.div>
@@ -267,5 +267,3 @@ export default function DienstenPage() {
     </>
   );
 }
-
-

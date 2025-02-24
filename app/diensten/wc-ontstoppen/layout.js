@@ -10,7 +10,14 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        {/* Structured Data */}
+        {/* Voeg een canonical-tag toe zodat zoekmachines weten welke URL de voorkeur heeft */}
+        <link rel="canonical" href="https://www.adloodgietersbedrijf.nl/diensten/wc-ontstoppen" />
+        <meta property="og:title" content="WC Ontstoppen - AD Loodgietersbedrijf" />
+        <meta property="og:description" content="Snel en professioneel uw toilet weer vrij van verstoppingen in Utrecht, Amersfoort, Nieuwegein en omgeving. 24/7 spoedservice met moderne technieken." />
+        <meta property="og:url" content="https://www.adloodgietersbedrijf.nl/diensten/wc-ontstoppen" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.adloodgietersbedrijf.nl/images/hero.webp" />
+        {/* Structured Data voor de service */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -1,36 +1,75 @@
+import Head from 'next/head';
+
 export const metadata = {
   title: 'Over AD-Loodgietersbedrijf | Ervaren Loodgieters in Maarssen en Utrecht',
   description:
-    'AD-Loodgietersbedrijf biedt al meer dan 10 jaar hoogwaardige en duurzame loodgietersdiensten in Maarssen, Utrecht en omliggende regio’s. Lees meer over onze geschiedenis, aanpak en wat onze klanten over ons zeggen. Onze klantgerichte service en 24/7 bereikbaarheid garanderen een snelle en betrouwbare oplossing.',
-  keywords:
-    'loodgieters, AD-Loodgietersbedrijf, loodgieter Maarssen, loodgieter Utrecht, spoed loodgieter, WC ontstoppen, lekkages oplossen, duurzaam, betrouwbaar, 24/7 service, geschiedenis, klantbeoordelingen, testimonials',
-  openGraph: {
-    title: 'Over AD-Loodgietersbedrijf | Ervaren Loodgieters in Maarssen en Utrecht',
-    description:
-      'Meer dan 10 jaar ervaring in loodgietersdiensten. Wij bieden snelle, duurzame en betrouwbare oplossingen voor al uw loodgietersproblemen. Lees meer over onze geschiedenis en wat onze klanten over ons zeggen.',
-    url: 'https://adloodgietersbedrijf.nl/over-ons',
-    images: [
-      {
-        url: 'https://adloodgietersbedrijf.nl/plumbing-tools.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Professionele loodgietersdiensten en spoedreparaties',
-      },
-    ],
-    site_name: 'AD Loodgietersbedrijf',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Over AD-Loodgietersbedrijf | Ervaren Loodgieters in Maarssen en Utrecht',
-    description:
-      'Meer dan 10 jaar ervaring in loodgietersdiensten. Snel, betrouwbaar en 24/7 beschikbaar. Lees meer over onze geschiedenis en klantbeoordelingen.',
-    image: 'https://adloodgietersbedrijf.nl/plumbing-tools.webp',
-  },
+    'Meer dan 10 jaar ervaring in loodgietersdiensten. Lees meer over onze geschiedenis, aanpak en klantbeoordelingen.',
 };
 
 export default function OverOnsLayout({ children }) {
   return (
     <>
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="canonical" href="https://adloodgietersbedrijf.nl/over-ons" />
+
+        {/* Open Graph tags */}
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:url" content="https://adloodgietersbedrijf.nl/over-ons" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://adloodgietersbedrijf.nl/plumbing-tools.webp" />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content="https://adloodgietersbedrijf.nl/plumbing-tools.webp" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "Over AD-Loodgietersbedrijf",
+              "description":
+                "Meer dan 10 jaar ervaring in hoogwaardige en duurzame loodgietersdiensten in Maarssen, Utrecht en omgeving. Betrouwbaar, snel en klantgericht.",
+              "url": "https://adloodgietersbedrijf.nl/over-ons",
+              "publisher": {
+                "@type": "Organization",
+                "name": "AD-Loodgietersbedrijf",
+                "url": "https://adloodgietersbedrijf.nl",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://adloodgietersbedrijf.nl/logo.png"
+                }
+              },
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "AD-Loodgietersbedrijf",
+                "description":
+                  "AD-Loodgietersbedrijf is uw betrouwbare partner voor alle loodgietersdiensten in Maarssen, Utrecht en de omliggende regio's.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Voorbeeldstraat 123",
+                  "addressLocality": "Maarssen",
+                  "postalCode": "3601 AB",
+                  "addressCountry": "NL"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "contactType": "customer service",
+                  "telephone": "+31-20-1234567",
+                  "email": "info@adloodgietersbedrijf.nl"
+                }
+              }
+            }),
+          }}
+        />
+      </Head>
       {children}
     </>
   );

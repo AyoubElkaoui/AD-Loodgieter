@@ -28,6 +28,7 @@
     "aos": "^2.3.4",
     "contentful-management": "^11.40.5",
     "critters": "^0.0.23",
+    "daisyui": "^4.12.23",
     "framer-motion": "^11.17.0",
     "gray-matter": "^4.0.3",
     "next": "15.1.3",

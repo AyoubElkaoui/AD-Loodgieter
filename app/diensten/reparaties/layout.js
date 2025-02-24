@@ -2,14 +2,22 @@ import Head from 'next/head';
 
 export const metadata = {
   title: 'Reparaties - AD Loodgietersbedrijf',
-  description: 'Snelle en vakkundige reparaties aan leidingen en verwarmingssystemen in Utrecht, Amersfoort, Nieuwegein en omgeving. Ontdek onze 24/7 spoedservice met duurzame oplossingen.',
-  keywords: 'Reparaties, loodgieter Utrecht, leidingen repareren, verwarmingssystemen, spoed reparatie, Amersfoort, Nieuwegein, duurzame reparatie',
+  description: 'Snelle en duurzame reparaties aan leidingen en verwarmingssystemen in Utrecht, Amersfoort en Nieuwegein. 24/7 spoedservice door gecertificeerde experts.',
+  keywords: 'Reparaties, loodgieter Utrecht, leidingen repareren, verwarmingssystemen, spoed reparatie, duurzame oplossingen',
 };
 
 export default function Layout({ children }) {
   return (
     <>
       <Head>
+        {/* Canonical en Open Graph */}
+        <link rel="canonical" href="https://www.adloodgietersbedrijf.nl/diensten/reparaties" />
+        <meta property="og:title" content="Reparaties - AD Loodgietersbedrijf" />
+        <meta property="og:description" content="Snelle en duurzame reparaties aan leidingen en verwarmingssystemen in Utrecht, Amersfoort en Nieuwegein. 24/7 spoedservice door gecertificeerde experts." />
+        <meta property="og:url" content="https://www.adloodgietersbedrijf.nl/diensten/reparaties" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.adloodgietersbedrijf.nl/images/loodgieter-reparatie.webp" />
+
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -36,6 +44,9 @@ export default function Layout({ children }) {
             }),
           }}
         />
+
+        {/* (Optioneel) Voeg hier Google Tag Manager code toe als hij niet elders staat */}
+        {/* <script dangerouslySetInnerHTML={{ __html: `(...)` }} /> */}
       </Head>
       {children}
     </>

@@ -4,10 +4,36 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faTools, faClock, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faTools, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import { sendGTMEvent } from '@next/third-parties/google';
+import FAQSections from '@/components/FAQ/FAQSection'; // Zorg dat dit pad klopt met jouw projectstructuur
 
 export default function AfvoerOntstoppenPage() {
+  const faqItems = [
+    {
+      question: "Welke methoden gebruikt u voor het ontstoppen van afvoeren?",
+      answer: "Wij maken gebruik van hogedrukreiniging, roterende afvoerspiralen en waterstraaltechnieken om zelfs de hardnekkigste verstoppingen grondig te verwijderen."
+    },
+    {
+      question: "Hoe snel kunnen jullie ter plaatse zijn?",
+      answer: "Met onze 24/7 spoedservice zijn wij doorgaans binnen 30 minuten op locatie, zelfs bij acute situaties."
+    },
+    {
+      question: "Wat kost het om een afvoer te ontstoppen?",
+      answer: "De kosten variëren afhankelijk van de complexiteit van de verstopping, maar wij hanteren altijd transparante tarieven. U ontvangt vooraf een duidelijke offerte."
+    },
+    {
+      question: "Bieden jullie ook preventief onderhoud?",
+      answer: "Ja, wij adviseren u graag over preventief onderhoud om toekomstige verstoppingen te voorkomen."
+    },
+    {
+      question: "Bedient u ook commerciële panden?",
+      answer: "Absoluut, wij bieden onze diensten aan voor zowel particuliere als commerciële panden in de regio."
+    }
+  ];
+
+  const bannerImage = "/faq-banner.webp";
+
   return (
     <>
       {/* Hero Section */}
@@ -23,8 +49,11 @@ export default function AfvoerOntstoppenPage() {
               src="/riool-afvoer-ontstoppen.webp"
               alt="Afvoer Ontstoppen – Professionele reiniging en onderhoud"
               fill
-              priority
+              sizes="(max-width: 768px) 100vw,
+                     (max-width: 1200px) 50vw,
+                     33vw"
               className="object-cover"
+              priority
             />
           </motion.div>
         </div>
@@ -42,46 +71,62 @@ export default function AfvoerOntstoppenPage() {
         </motion.div>
       </section>
 
-      {/* Dienst Details */}
+      {/* Introductie & Probleemstelling */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">
+            Waarom uw afvoer direct laten ontstoppen?
+          </h2>
+          <p className="text-gray-700 mb-4 leading-relaxed">
+            Een verstopte afvoer kan leiden tot overstromingen, onaangename geuren en zelfs structurele schade aan uw pand. Bij
+            <span className="font-bold text-blue-500"> AD-Loodgietersbedrijf</span> begrijpen we dat u snel een oplossing nodig heeft. Met onze
+            <strong> 24/7 spoedservice</strong> en moderne reinigingstechnieken garanderen wij een efficiënte en duurzame oplossing.
+          </p>
+          <p className="text-gray-700 mb-4 leading-relaxed">
+            Of het nu gaat om een verstopte keukenafvoer of een hardnekkige verstopping in de badkamer, wij zorgen ervoor dat u snel weer normaal kunt functioneren.
+          </p>
+        </div>
+      </section>
+
+      {/* Dienst Details / Werkwijze */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Waarom kiezen voor onze afvoerdiensten?
+              Onze werkwijze: van diagnose tot oplossing
             </h2>
-            <p className="text-gray-600 mb-4">
-              Een verstopte afvoer kan leiden tot overstromingen, nare geuren en structurele schade aan uw pand. Bij <span className="font-bold text-blue-500">AD-Loodgietersbedrijf</span> zetten wij onze uitgebreide expertise in om verstoppingen snel en grondig te verhelpen. Wij maken gebruik van geavanceerde reinigingstechnieken, zoals hogedrukreiniging en roterende afvoerspiralen, om hardnekkige verstoppingen effectief op te lossen.
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Wij maken gebruik van geavanceerde technieken zoals hogedrukreiniging en roterende afvoerspiralen om verstoppingen snel en grondig te verwijderen. Zodra de oorzaak is vastgesteld, kiezen wij de meest efficiënte methode voor een langdurige oplossing.
             </p>
-            <p className="text-gray-600 mb-4">
-              Onze service is 24/7 beschikbaar in regio Utrecht, Amersfoort, Nieuwegein en omstreken, zodat u altijd kunt rekenen op een directe interventie en een duurzame oplossing.
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Na de interventie krijgt u van ons preventief advies zodat toekomstige verstoppingen voorkomen kunnen worden. Wij zorgen voor transparantie in elke stap en bieden u een duidelijke offerte vooraf.
             </p>
             <Link
               href="/contact"
-              className="bg-blue-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 transition"
+              className="inline-block bg-blue-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 transition font-bold"
+              onClick={() =>
+                sendGTMEvent({
+                  event: 'buttonClicked',
+                  category: 'Link',
+                  label: 'Contact knop - Afvoer Ontstoppen',
+                })
+              }
             >
-              Neem contact op
+              Neem direct contact op
             </Link>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
-          >
+          </div>
+          <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/ontstoppingsveer.webp"
-              alt="Verstopte afvoer – professionele reiniging"
+              alt="Verstopte afvoer – professionele reinigingstechniek in actie"
               fill
-              priority
+              sizes="(max-width: 768px) 100vw,
+                     (max-width: 1200px) 50vw,
+                     33vw"
               className="object-cover"
+              priority
             />
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -94,7 +139,7 @@ export default function AfvoerOntstoppenPage() {
               {
                 icon: faClock,
                 title: 'Snel Ter Plaatse',
-                text: 'Onze experts zijn binnen korte tijd ter plaatse om de verstopping grondig te verhelpen.',
+                text: 'Onze experts zijn binnen korte tijd op locatie om de verstopping grondig te verhelpen.',
               },
               {
                 icon: faTools,
@@ -117,58 +162,35 @@ export default function AfvoerOntstoppenPage() {
               >
                 <FontAwesomeIcon icon={item.icon} className="text-blue-500 text-4xl mb-4" />
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.text}</p>
+                <p className="text-gray-700">{item.text}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Extra Informatie Sectie */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Veelgestelde vragen over afvoer ontstoppen</h2>
-            <p className="text-gray-600 mb-4">
-              Heeft u vragen over onze afvoerdiensten? Hier beantwoorden wij enkele van de meest gestelde vragen, zodat u precies weet wat u kunt verwachten.
-            </p>
-            <ul className="list-disc list-inside text-gray-600">
-              <li>
-                <strong>Welke methoden gebruiken jullie?</strong> Wij zetten moderne technieken in, zoals hogedrukreiniging en roterende afvoerspiralen, voor een grondige reiniging.
-              </li>
-              <li>
-                <strong>Wat zijn de kosten?</strong> De tarieven zijn afhankelijk van de complexiteit van de verstopping, maar wij hanteren altijd transparante prijzen zonder verrassingen.
-              </li>
-              <li>
-                <strong>Kunnen jullie dezelfde dag nog helpen?</strong> Ja, met onze 24/7 spoedservice zijn wij vaak binnen enkele uren op locatie.
-              </li>
-            </ul>
-            <p className="text-gray-600 mt-4">
-              Neem gerust contact met ons op voor meer informatie of een vrijblijvende offerte.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg"
-          >
-            <Image
-              src="/afvoer-verstopping.webp"
-              alt="FAQ over Afvoer Ontstoppen"
-              fill
-              priority
-              className="object-cover"
-            />
-          </motion.div>
+      {/* FAQ Component (DaisyUI versie) */}
+      <FAQSections faqItems={faqItems} bannerImage="/loodgieter-lekkage.webp" />
+
+      {/* Externe Link */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Meer weten over afvoerproblemen?</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto mb-6 leading-relaxed">
+            Lees meer over veelvoorkomende afvoerproblemen en oplossingen op de website van{' '}
+            <a
+              href="https://www.rijksoverheid.nl/onderwerpen/water"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline font-bold"
+            >
+              de Rijksoverheid over water
+            </a>.
+          </p>
         </div>
       </section>
+
+
 
       {/* Contact Section */}
       <section className="py-16 bg-gray-900 text-white">
@@ -185,12 +207,12 @@ export default function AfvoerOntstoppenPage() {
             </p>
             <Link
               href="/contact"
-              className="bg-green-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition"
+              className="bg-green-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-green-600 transition font-bold"
               onClick={() =>
                 sendGTMEvent({
                   event: 'buttonClicked',
                   category: 'Link',
-                  label: 'Contact knop - Afvoer ontstoppen',
+                  label: 'Contact knop - Afvoer Ontstoppen',
                 })
               }
             >
@@ -202,5 +224,3 @@ export default function AfvoerOntstoppenPage() {
     </>
   );
 }
-
-
