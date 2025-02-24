@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import ContactForm from '../../components/ContactForm';
+import ContactForm from '../../components/ContactForm/ContactForm';
 import FAQSection from '@/components/FAQ/FAQSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -14,6 +14,7 @@ import {
   faSmile,
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function AboutUsPage() {
   return (
@@ -227,7 +228,7 @@ export default function AboutUsPage() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <ContactForm />
+            <ContactFormWrapper />
           </motion.div>
         </div>
       </section>

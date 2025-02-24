@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FAQSection from '@/components/FAQ/FAQSection';
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '@/components/ContactForm/ContactForm';
+import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function LoodgieterNieuwegeinPage() {
   // ================
@@ -242,7 +243,7 @@ export default function LoodgieterNieuwegeinPage() {
             </Link>
           </div>
           <div className="p-6 rounded-lg shadow">
-            <ContactForm />
+            <ContactFormWrapper />
           </div>
         </div>
       </footer>

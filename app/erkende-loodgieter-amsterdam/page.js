@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FAQSection from '@/components/FAQ/FAQSection';
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '@/components/ContactForm/ContactForm';
+import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function ErkendeLoodgieterAmsterdamPage() {
   // ================
@@ -229,7 +230,7 @@ export default function ErkendeLoodgieterAmsterdamPage() {
             transition={{ duration: 1 }}
             className="p-6 rounded-lg shadow"
           >
-            <ContactForm />
+            <ContactFormWrapper />
           </motion.div>
         </div>
       </section>

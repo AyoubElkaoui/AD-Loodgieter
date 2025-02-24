@@ -18,6 +18,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import DiscountPopup from "@/components/PopUp";
 import Head from "next/head";
+import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
@@ -34,7 +35,7 @@ function useIsMobile() {
 
 // Dynamisch importeren
 const FAQSection = dynamic(() => import('../components/FAQ/FAQSection'), { ssr: false });
-const ContactForm = dynamic(() => import('../components/ContactForm'), { ssr: false });
+const ContactForm = dynamic(() => import('../components/ContactForm/ContactForm'), { ssr: false });
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -373,7 +374,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <ContactForm />
+            <ContactFormWrapper />
           </motion.div>
         </div>
       </section>

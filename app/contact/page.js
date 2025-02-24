@@ -2,10 +2,11 @@
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '@/components/ContactForm/ContactForm';
 import { sendGTMEvent } from '@next/third-parties/google';
 import Link from 'next/link';
 import Image from 'next/image';
+import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 const contactDetails = [
     {
@@ -151,7 +152,7 @@ export default function ContactPage() {
                           Vul het onderstaande formulier in voor snel en deskundig contact. Wij reageren direct op uw aanvraag.
                       </motion.p>
                   </div>
-                  <ContactForm />
+                  <ContactFormWrapper />
               </div>
           </section>
       </>
