@@ -278,7 +278,7 @@ export default function LekkageOpsporenMaarssenPage() {
       ======================*/}
       <section className="py-16 bg-gray-50 text-black">
         <div className="container max-w-4xl mx-auto px-4 md:px-6">
-          <FAQSection faqItems={faqItems} />
+          <FAQSection faqItems={faqItems} bannerImage="/loodgieter-toilet.webp"/>
         </div>
       </section>
 

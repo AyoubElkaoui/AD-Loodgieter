@@ -65,7 +65,7 @@ export default function ErkendeLoodgieterAmsterdamPage() {
       answer:
         'Bij spoedsituaties streven wij ernaar binnen 30 tot 60 minuten bij u te zijn, zodat verdere schade wordt voorkomen en u snel weer gerust kunt zijn.',
     },
-  ];
+  ] ;
 
   return (
     <>

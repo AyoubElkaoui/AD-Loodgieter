@@ -59,8 +59,8 @@ export default function Footer() {
                           </Link>
                       </li>
                       <li>
-                          <Link href="/faq" className="hover:text-green-500 transition">
-                              Veelgestelde Vragen
+                          <Link href="/publicaties" className="hover:text-green-500 transition">
+                              Publicaties
                           </Link>
                       </li>
                       <li>

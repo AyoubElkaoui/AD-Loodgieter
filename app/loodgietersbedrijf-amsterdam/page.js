@@ -211,7 +211,7 @@ export default function LoodgieterAmsterdamPage() {
       {/* ===================== FAQ SECTION ====================== */}
       <section className="py-16 bg-gray-50 text-black">
         <div className="container max-w-4xl mx-auto px-4 md:px-6">
-          <FAQSection faqItems={faqItems} />
+          <FAQSection faqItems={faqItems} bannerImage="/loodgieter-repareren.webp"/>
         </div>
       </section>
 

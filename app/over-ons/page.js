@@ -193,7 +193,7 @@ export default function AboutUsPage() {
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50 max-sm:p-8">
         <div className="container mx-auto">
-          <FAQSection />
+          <FAQSection bannerImage="/loodgieter-toilet.webp"/>
         </div>
       </section>
 
