@@ -1,4 +1,4 @@
-import Head from 'next/head';
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -6,37 +6,6 @@ import FAQSection from '@/components/FAQ/FAQSection';
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function VerstoptToiletPage() {
-  // ================
-  // 1. SEO Info
-  // ================
-  const pageTitle = 'Verstopt Toilet | Snel en Efficiënt Verholpen | AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Heeft u een verstopt toilet? AD-Loodgietersbedrijf biedt snelle en professionele oplossingen voor uw verstopping. Neem direct contact op voor een snelle interventie!';
-
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/verstopt-toilet',
-    description:
-      'AD-Loodgietersbedrijf biedt vakkundige en snelle oplossingen voor een verstopt toilet. Onze experts staan 24/7 paraat om uw verstopping effectief te verhelpen en verdere schade te voorkomen.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Toiletstraat 1',
-      addressLocality: 'Uw Stad',
-      postalCode: '1234 AB',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.370216,
-      longitude: 4.895168,
-    },
-    openingHours: ['Ma-Su 00:00-23:59'],
-  };
-
   // ================
   // 2. FAQ-items
   // ================
@@ -65,22 +34,6 @@ export default function VerstoptToiletPage() {
 
   return (
     <>
-      <Head>
-        {/* Basis Meta, Canonical en Open Graph Tags */}
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/verstopt-toilet" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content="https://adloodgietersbedrijf.nl/verstopt-toilet" />
-        <meta property="og:type" content="website" />
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
-
       {/* =================== HERO SECTION =================== */}
       <header className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <motion.div

@@ -1,4 +1,4 @@
-import Head from 'next/head';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -7,37 +7,6 @@ import ContactForm from '@/components/ContactForm/ContactForm';
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function LoodgieterAmersfoortPage() {
-  // ================
-  // 1. SEO Info
-  // ================
-  const pageTitle =
-    'Loodgieter in Amersfoort | 24/7 Direct Hulp | AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Heeft u een dringende lekkage of een andere loodgietersnoodsituatie in Amersfoort? AD-Loodgietersbedrijf biedt 24/7 professionele service. Neem direct contact met ons op!';
-
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/loodgieter-amersfoort',
-    description:
-      'Topkwaliteit loodgietersservice in Amersfoort met snelle respons, vakkundige reparaties, installatie en preventief onderhoud.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Kerkstraat 25',
-      addressLocality: 'Amersfoort',
-      postalCode: '3811 XX',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.1561,
-      longitude: 5.3878,
-    },
-    openingHours: ['Ma-Su 00:00-23:59'],
-  };
 
   // ================
   // 2. FAQ-items
@@ -67,19 +36,6 @@ export default function LoodgieterAmersfoortPage() {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/loodgieter-amersfoort" />
-        {/* Open Graph Tags */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content="https://adloodgietersbedrijf.nl/loodgieter-amersfoort" />
-        <meta property="og:type" content="website" />
-        {/* Structured Data JSON-LD */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      </Head>
-
       {/* =================== HERO SECTION =================== */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <motion.div

@@ -1,4 +1,4 @@
-import Head from 'next/head';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -7,36 +7,7 @@ import ContactForm from '@/components/ContactForm/ContactForm';
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function KranenReparerenPage() {
-  // ================
-  // 1. SEO Info
-  // ================
-  const pageTitle = 'Kranen Repareren | Professionele Kranen Service | AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Heeft u last van een lekkende of defecte kraan? AD-Loodgietersbedrijf is gespecialiseerd in het repareren van kranen. Wij zorgen voor een snelle, duurzame en efficiënte oplossing. Bel ons direct voor reparatie!';
 
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/kranen-repareren',
-    description:
-      'AD-Loodgietersbedrijf biedt snelle en professionele reparaties van kranen. Of uw kraan nu lekkert, piept of geheel defect is, wij staan 24/7 voor u klaar met duurzame oplossingen.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Kranenstraat 12',
-      addressLocality: 'Uw Stad',
-      postalCode: '1234 AB',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.370216,
-      longitude: 4.895168,
-    },
-    openingHours: ['Ma-Zo 00:00-23:59'],
-  };
 
   // ================
   // 2. FAQ-items
@@ -66,22 +37,6 @@ export default function KranenReparerenPage() {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/kranen-repareren" />
-        {/* Open Graph */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content="https://adloodgietersbedrijf.nl/kranen-repareren" />
-        <meta property="og:type" content="website" />
-        {/* Gestructureerde data JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
-
       {/* ===================
           HERO SECTION
       ==================== */}

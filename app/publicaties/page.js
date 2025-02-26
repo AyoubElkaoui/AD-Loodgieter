@@ -1,4 +1,4 @@
-import Head from 'next/head';
+"use client";
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -80,15 +80,6 @@ const landingPages = [
 export default function PublicatiesPage() {
   return (
     <>
-      <Head>
-        <title>Publicaties | AD-Loodgietersbedrijf</title>
-        <meta
-          name="description"
-          content="Bekijk ons overzicht van alle landingspagina's met gedetailleerde informatie over onze loodgietersdiensten en installaties. Ontdek de oplossing die bij u past."
-        />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/publicaties" />
-      </Head>
-
       <section className="py-16 lg:py-20 xl:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">

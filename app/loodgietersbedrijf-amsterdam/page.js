@@ -1,4 +1,4 @@
-import Head from 'next/head';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -6,36 +6,7 @@ import FAQSection from '@/components/FAQ/FAQSection';
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function LoodgieterAmsterdamPage() {
-  // ================
-  // 1. SEO Info
-  // ================
-  const pageTitle = 'Loodgieter in Amsterdam | 24/7 Spoed & Installaties | AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Op zoek naar een ervaren loodgieter in Amsterdam? AD-Loodgietersbedrijf biedt 24/7 spoedservice voor lekkages, verstoppingen en installaties. Neem direct contact op voor snelle en vakkundige hulp!';
 
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/loodgieter-amsterdam',
-    description:
-      'Betrouwbare loodgietersdiensten in Amsterdam met 24/7 spoedservice, installatie en onderhoud. Wij zorgen dat uw sanitair en leidingwerk optimaal functioneren.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Keizersgracht 234',
-      addressLocality: 'Amsterdam',
-      postalCode: '1015 CJ',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.3731,
-      longitude: 4.8922,
-    },
-    openingHours: ['Ma-Zo 00:00-23:59'],
-  };
 
   // ================
   // 2. FAQ-items
@@ -65,22 +36,6 @@ export default function LoodgieterAmsterdamPage() {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/loodgieter-amsterdam" />
-        {/* Open Graph */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content="https://adloodgietersbedrijf.nl/loodgieter-amsterdam" />
-        <meta property="og:type" content="website" />
-        {/* Gestructureerde data JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
-
       {/* =================== HEADER / HERO SECTION =================== */}
       <header className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <motion.div

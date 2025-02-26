@@ -1,5 +1,4 @@
-
-import Head from 'next/head';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -7,37 +6,6 @@ import FAQSection from '@/components/FAQ/FAQSection';
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function LoodgieterMaarssenPage() {
-  // ================
-  // 1. SEO Info
-  // ================
-  const pageTitle = 'Loodgieter in Maarssen | 24/7 Service | AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Direct een professionele loodgieter nodig in Maarssen? AD-Loodgietersbedrijf staat 24/7 paraat. Bel ons nu voor onderhoud, reparaties of noodgevallen!';
-
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/loodgieter-maarssen',
-    description:
-      'Lokale loodgieter in Maarssen met 24/7 service. Specialist in reparaties, installatie en onderhoud aan leidingen en sanitair.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Spechtenkamp 334',
-      addressLocality: 'Maarssen',
-      postalCode: '3607 KT',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.1319,
-      longitude: 5.0419,
-    },
-    openingHours: ['Ma-Zo 00:00-23:59'],
-  };
-
   // ================
   // 2. FAQ-items
   // ================
@@ -66,22 +34,6 @@ export default function LoodgieterMaarssenPage() {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/loodgieter-maarssen" />
-        {/* Open Graph */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content="https://adloodgietersbedrijf.nl/loodgieter-maarssen" />
-        <meta property="og:type" content="website" />
-        {/* Gestructureerde data JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
-
       {/* =================== HEADER / HERO SECTION =================== */}
       <header className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <motion.div

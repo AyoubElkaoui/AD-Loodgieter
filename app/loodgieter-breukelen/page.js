@@ -1,4 +1,4 @@
-import Head from 'next/head';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -7,37 +7,6 @@ import ContactForm from '@/components/ContactForm/ContactForm';
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function LoodgieterBreukelenPage() {
-  // ================
-  // 1. SEO Info
-  // ================
-  const pageTitle = 'Loodgieter in Breukelen | 24/7 Spoedservice | AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Zoekt u een deskundige loodgieter in Breukelen? AD-Loodgietersbedrijf is 24/7 bereikbaar voor lekkages, verstoppingen en alle loodgietersproblemen. Neem nu contact op voor snelle en professionele service.';
-
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/loodgieter-breukelen',
-    description:
-      'Professionele loodgietersdienst in Breukelen met snelle respons voor reparaties, installaties en preventief onderhoud. Wij bieden 24/7 spoedservice en deskundig advies.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Breukelein 12',
-      addressLocality: 'Breukelen',
-      postalCode: '3601 AB',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.2034,
-      longitude: 5.0877,
-    },
-    openingHours: ['Ma-Su 00:00-23:59'],
-  };
-
   // ================
   // 2. FAQ-items
   // ================
@@ -66,19 +35,6 @@ export default function LoodgieterBreukelenPage() {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/loodgieter-breukelen" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content="https://adloodgietersbedrijf.nl/loodgieter-breukelen" />
-        <meta property="og:type" content="website" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
 
       {/* =================== HEADER / HERO SECTION =================== */}
       <header className="relative h-[70vh] flex items-center justify-center overflow-hidden">

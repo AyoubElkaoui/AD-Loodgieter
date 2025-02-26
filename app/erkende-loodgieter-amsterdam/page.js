@@ -1,4 +1,4 @@
-import Head from 'next/head';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -7,37 +7,7 @@ import ContactForm from '@/components/ContactForm/ContactForm';
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function ErkendeLoodgieterAmsterdamPage() {
-  // ================
-  // 1. SEO Info
-  // ================
-  const pageTitle =
-    'Erkende Loodgieter Amsterdam | Gecertificeerd & Betrouwbaar - AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Zoekt u een erkende loodgieter in Amsterdam? AD-Loodgietersbedrijf is gecertificeerd en biedt professionele loodgietersdiensten voor spoedsituaties en regulier onderhoud. Neem direct contact op voor betrouwbare service.';
 
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/erkende-loodgieter-amsterdam',
-    description:
-      'AD-Loodgietersbedrijf is een erkende en gecertificeerde loodgieter in Amsterdam, gespecialiseerd in reparaties, installaties en preventief onderhoud. Onze experts leveren betrouwbare service en voldoen aan de hoogste kwaliteitsnormen.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Amsterdamse Straat 45',
-      addressLocality: 'Amsterdam',
-      postalCode: '1017 HL',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.370216,
-      longitude: 4.895168,
-    },
-    openingHours: ['Ma-Zo 00:00-23:59'],
-  };
 
   // ================
   // 2. FAQ-items
@@ -67,27 +37,6 @@ export default function ErkendeLoodgieterAmsterdamPage() {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link
-          rel="canonical"
-          href="https://adloodgietersbedrijf.nl/erkende-loodgieter-amsterdam"
-        />
-        {/* Open Graph */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta
-          property="og:url"
-          content="https://adloodgietersbedrijf.nl/erkende-loodgieter-amsterdam"
-        />
-        <meta property="og:type" content="website" />
-        {/* Gestructureerde data JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
 
       {/* ===================
           HERO SECTION

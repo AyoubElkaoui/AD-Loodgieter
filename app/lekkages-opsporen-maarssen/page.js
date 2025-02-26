@@ -1,4 +1,4 @@
-import Head from 'next/head';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -8,36 +8,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function LekkageOpsporenMaarssenPage() {
-  // ===========
-  // SEO Info
-  // ===========
-  const pageTitle = 'Lekkage Opsporen in Maarssen | AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Laat lekkages in Maarssen niet escaleren. Onze experts sporen de bron snel op en repareren vakkundig. Bel dag en nacht voor directe hulp!';
-
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/lekkage-opsporen-maarssen',
-    description:
-      'Lekkage opsporen in Maarssen met moderne lekdetectie. 24/7 beschikbaar. Bel ons voor directe hulp bij waterschade en reparaties.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Spechtenkamp 334',
-      addressLocality: 'Maarssen',
-      postalCode: '3607 KT',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.1319,
-      longitude: 5.0419,
-    },
-    openingHours: ['Mo-Su 00:00-23:59'],
-  };
 
   // FAQ-items
   const faqItems = [
@@ -55,28 +25,6 @@ export default function LekkageOpsporenMaarssenPage() {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link
-          rel="canonical"
-          href="https://adloodgietersbedrijf.nl/lekkage-opsporen-maarssen"
-        />
-        {/* Open Graph */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta
-          property="og:url"
-          content="https://adloodgietersbedrijf.nl/lekkage-opsporen-maarssen"
-        />
-        <meta property="og:type" content="website" />
-
-        {/* Gestructureerde data JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
 
       {/* ================
           HERO

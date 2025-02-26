@@ -1,4 +1,4 @@
-import Head from 'next/head';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -6,37 +6,6 @@ import FAQSection from '@/components/FAQ/FAQSection';
 import ContactForm from '@/components/ContactForm/ContactForm';
 
 export default function ADInstallatiesLandingPage() {
-  // ================
-  // 1. SEO Info
-  // ================
-  const pageTitle =
-    'AD Installaties - Complete Installatiediensten | AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Hoewel wij bekendstaan als AD-Loodgietersbedrijf, bieden wij ook hoogwaardige installatieservices onder de naam AD Installaties. Van water- en verwarmingsinstallaties tot ventilatie en duurzame energie, wij leveren maatwerk. Vraag nu een vrijblijvende offerte aan!';
-
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/ad-installaties',
-    description:
-      'AD-Loodgietersbedrijf biedt naast eersteklas loodgietersdiensten ook een complete installatieservice. Ontdek AD Installaties voor water-, verwarmings-, ventilatie- en duurzame energieoplossingen op maat.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Installatiepark 5',
-      addressLocality: 'Uw Stad',
-      postalCode: '1234 AB',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.370216,
-      longitude: 4.895168,
-    },
-    openingHours: ['Ma-Zo 00:00-23:59'],
-  };
 
   // ================
   // 2. FAQ-items
@@ -66,22 +35,6 @@ export default function ADInstallatiesLandingPage() {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/ad-installaties" />
-        {/* Open Graph */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content="https://adloodgietersbedrijf.nl/ad-installaties" />
-        <meta property="og:type" content="website" />
-        {/* Gestructureerde data JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
-
       {/* ===================
           HERO SECTION
       ==================== */}

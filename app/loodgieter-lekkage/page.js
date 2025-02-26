@@ -1,5 +1,4 @@
-
-import Head from 'next/head';
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -8,36 +7,6 @@ import ContactForm from '@/components/ContactForm/ContactForm';
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 
 export default function LoodgieterLekkagePage() {
-  // ================
-  // SEO Info
-  // ================
-  const pageTitle = 'Loodgieter Lekkage | Direct Hulp bij Wateroverlast | AD-Loodgietersbedrijf';
-  const pageDescription =
-    'Ervaart u wateroverlast door een lekkage? AD-Loodgietersbedrijf biedt directe en professionele oplossingen voor alle lekkageproblemen. Onze experts zijn 24/7 inzetbaar om schade te beperken en uw lekkage snel te verhelpen.';
-
-  // Gestructureerde data (LocalBusiness):
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'AD-Loodgietersbedrijf',
-    url: 'https://adloodgietersbedrijf.nl/loodgieter-lekkage',
-    description:
-      'AD-Loodgietersbedrijf biedt specialistische lekkage reparatie met directe interventie en duurzame oplossingen. Wij staan 24/7 klaar om uw wateroverlast snel en effectief te verhelpen.',
-    telephone: '+31640961848',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Lekkagestraat 10',
-      addressLocality: 'Uw Stad',
-      postalCode: '1234 AB',
-      addressCountry: 'NL',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 52.370216,
-      longitude: 4.895168,
-    },
-    openingHours: ['Ma-Su 00:00-23:59'],
-  };
 
   // ================
   // FAQ-items
@@ -67,19 +36,6 @@ export default function LoodgieterLekkagePage() {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href="https://adloodgietersbedrijf.nl/loodgieter-lekkage" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:url" content="https://adloodgietersbedrijf.nl/loodgieter-lekkage" />
-        <meta property="og:type" content="website" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-      </Head>
 
       {/* =================== HERO SECTION =================== */}
       <header className="relative h-[70vh] flex items-center justify-center overflow-hidden">
