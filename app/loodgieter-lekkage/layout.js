@@ -1,66 +1,75 @@
-// app/loodgieter-lekkage/layout.js
+import Head from 'next/head';
 
 export const metadata = {
   title: 'Loodgieter Lekkage | Direct Hulp bij Wateroverlast | AD-Loodgietersbedrijf',
   description:
     'Ervaart u wateroverlast door een lekkage? AD-Loodgietersbedrijf biedt directe en professionele oplossingen voor alle lekkageproblemen. Onze experts zijn 24/7 inzetbaar om schade te beperken en uw lekkage snel te verhelpen.',
-  alternates: {
-    canonical: 'https://adloodgietersbedrijf.nl/loodgieter-lekkage'
-  },
-  openGraph: {
-    title: 'Loodgieter Lekkage | Direct Hulp bij Wateroverlast | AD-Loodgietersbedrijf',
-    description:
-      'Ervaart u wateroverlast door een lekkage? AD-Loodgietersbedrijf biedt directe en professionele oplossingen voor alle lekkageproblemen. Onze experts zijn 24/7 inzetbaar om schade te beperken en uw lekkage snel te verhelpen.',
-    url: 'https://adloodgietersbedrijf.nl/loodgieter-lekkage',
-    type: 'website',
-    images: [
-      {
-        url: 'https://adloodgietersbedrijf.nl/loodgieter-lekkage.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Loodgieter Lekkage - AD-Loodgietersbedrijf'
-      }
-    ]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Loodgieter Lekkage | Direct Hulp bij Wateroverlast | AD-Loodgietersbedrijf',
-    description:
-      'Ervaart u wateroverlast door een lekkage? AD-Loodgietersbedrijf biedt directe en professionele oplossingen voor alle lekkageproblemen. Onze experts zijn 24/7 inzetbaar om schade te beperken en uw lekkage snel te verhelpen.',
-    images: ['https://adloodgietersbedrijf.nl/loodgieter-lekkage.webp']
-  }
-};
-
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'AD-Loodgietersbedrijf',
-  url: 'https://adloodgietersbedrijf.nl/loodgieter-lekkage',
-  description:
-    'AD-Loodgietersbedrijf biedt specialistische lekkage reparatie met directe interventie en duurzame oplossingen. Wij staan 24/7 klaar om uw wateroverlast snel en effectief te verhelpen.',
-  telephone: '+31640961848',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Lekkagestraat 10',
-    addressLocality: 'Uw Stad',
-    postalCode: '1234 AB',
-    addressCountry: 'NL'
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 52.370216,
-    longitude: 4.895168
-  },
-  openingHours: ['Ma-Su 00:00-23:59']
 };
 
 export default function LoodgieterLekkageLayout({ children }) {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="canonical" href="https://adloodgietersbedrijf.nl/loodgieter-lekkage" />
+
+        {/* Open Graph tags */}
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:url" content="https://adloodgietersbedrijf.nl/loodgieter-lekkage" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://adloodgietersbedrijf.nl/loodgieter-lekkage.webp" />
+
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content="https://adloodgietersbedrijf.nl/loodgieter-lekkage.webp" />
+
+        {/* Structured Data met bedrijfsgegevens */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Loodgieter Lekkage",
+              "description":
+                "Ervaart u wateroverlast door een lekkage? AD-Loodgietersbedrijf biedt directe en professionele oplossingen voor alle lekkageproblemen. Onze experts zijn 24/7 inzetbaar om schade te beperken en uw lekkage snel te verhelpen.",
+              "url": "https://adloodgietersbedrijf.nl/loodgieter-lekkage",
+              "publisher": {
+                "@type": "Organization",
+                "name": "AD-Loodgietersbedrijf",
+                "url": "https://adloodgietersbedrijf.nl",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://adloodgietersbedrijf.nl/logo.png"
+                }
+              },
+              "mainEntity": {
+                "@type": "LocalBusiness",
+                "name": "AD-Loodgietersbedrijf",
+                "description":
+                  "AD-Loodgietersbedrijf biedt specialistische lekkage reparatie met directe interventie en duurzame oplossingen. Wij staan 24/7 klaar om uw wateroverlast snel en effectief te verhelpen.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Lekkagestraat 10",
+                  "addressLocality": "Uw Stad",
+                  "postalCode": "1234 AB",
+                  "addressCountry": "NL"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "contactType": "customer service",
+                  "telephone": "+31 6 40 96 18 48",
+                  "email": "info@adloodgietersbedrijf.nl"
+                }
+              }
+            })
+          }}
+        />
+      </Head>
       {children}
     </>
   );

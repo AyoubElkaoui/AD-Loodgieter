@@ -142,7 +142,7 @@ export default function LoodgieterAmsterdamPage() {
               <p>
                 Wilt u meer weten over hoe verzekeringen omgaan met waterschade of lekkages? Kijk dan op de site van de{' '}
                 <a
-                  href="https://www.consumentenbond.nl/verzekering"
+                  href="https://www.consumentenbond.nl/opstalverzekering/waterschade"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-green-600 font-semibold underline hover:text-green-800"
