@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 export const metadata = {
   title: 'Verstopt Toilet | Snel en Efficiënt Verholpen | AD-Loodgietersbedrijf',
   description:
@@ -9,7 +7,7 @@ export const metadata = {
 export default function VerstoptToiletLayout({ children }) {
   return (
     <>
-      <Head>
+      <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <link rel="canonical" href="https://adloodgietersbedrijf.nl/verstopt-toilet" />
@@ -69,7 +67,7 @@ export default function VerstoptToiletLayout({ children }) {
             }),
           }}
         />
-      </Head>
+      </head>
       {children}
     </>
   );
