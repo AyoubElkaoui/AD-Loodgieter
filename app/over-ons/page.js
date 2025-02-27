@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import ContactForm from '../../components/ContactForm/ContactForm';
 import FAQSection from '@/components/FAQ/FAQSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

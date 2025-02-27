@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FAQSection from '@/components/FAQ/FAQSection';
-import ContactForm from '@/components/ContactForm/ContactForm';
 import { FaPhoneAlt } from "react-icons/fa";
 import ContactFormWrapper from "@/components/ContactForm/ContactFormWrapper";
 

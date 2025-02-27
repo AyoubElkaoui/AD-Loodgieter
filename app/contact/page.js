@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import ContactForm from '@/components/ContactForm/ContactForm';
 import { sendGTMEvent } from '@next/third-parties/google';
 import Link from 'next/link';
 import Image from 'next/image';

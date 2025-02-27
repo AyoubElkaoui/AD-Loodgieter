@@ -86,7 +86,7 @@ export default function PublicatiesPage() {
             Publicaties
           </h1>
           <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">
-            Hier vindt u een compleet overzicht van alle diensten die AD-Loodgietersbedrijf aanbiedt. Klik op een van de onderstaande pagina's om meer te ontdekken over onze loodgietersdiensten, installaties en spoedservice. Wij staan 24/7 voor u klaar!
+            Hier vindt u een compleet overzicht van alle diensten die AD-Loodgietersbedrijf aanbiedt. Klik op een van de onderstaande pagina&#39;s om meer te ontdekken over onze loodgietersdiensten, installaties en spoedservice. Wij staan 24/7 voor u klaar!
           </p>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

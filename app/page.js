@@ -13,7 +13,6 @@ import {
   faHandHoldingWater,
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
-import { sendGTMEvent } from "@next/third-parties/google";
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import DiscountPopup from "@/components/PopUp";
@@ -35,7 +34,6 @@ function useIsMobile() {
 
 // Dynamisch importeren
 const FAQSection = dynamic(() => import('../components/FAQ/FAQSection'), { ssr: false });
-const ContactForm = dynamic(() => import('../components/ContactForm/ContactForm'), { ssr: false });
 
 export default function Home() {
   const isMobile = useIsMobile();

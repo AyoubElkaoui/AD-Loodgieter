@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import ContactForm from '@/components/ContactForm/ContactForm';
 import KlantBeoordelingen from '@/components/KlantBeoordelingen';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faWrench, faShieldAlt, faSmile } from '@fortawesome/free-solid-svg-icons';
