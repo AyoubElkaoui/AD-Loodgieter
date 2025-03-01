@@ -209,7 +209,7 @@ export default function ContactForm() {
             </div>
           </div>
           <div className="mt-4">
-            <label className="block text-sm mb-2">Wilt u foto's toevoegen?</label>
+            <label className="block text-sm mb-2">Wilt u foto&#39;s toevoegen?</label>
             <input
                 type="file"
                 accept="image/*"
