@@ -9,7 +9,7 @@ export async function POST(req) {
     const email = data.get('email');
     const postalCode = data.get('postalCode');
     const houseNumber = data.get('houseNumber');
-    const houseNumberAddition = data.get('houseNumberAddition') || ''; // Kan leeg zijn
+    const houseNumberAddition = data.get('houseNumberAddition') || '';
     const phone = data.get('phone');
     const message = data.get('message');
     const files = data.getAll('files');
@@ -20,7 +20,7 @@ export async function POST(req) {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
-        secret: process.env.RECAPTCHA_SECRET_KEY, // reCAPTCHA secret key
+        secret: process.env.RECAPTCHA_SECRET_KEY,
         response: recaptchaToken,
       }),
     });
@@ -59,30 +59,32 @@ export async function POST(req) {
 
     // Verwerk bestanden als buffers
     const attachments = await Promise.all(
-      files.map(async (file) => {
-        const arrayBuffer = await file.arrayBuffer();
-        const buffer = Buffer.from(arrayBuffer);
-        return {
-          filename: file.name,
-          content: buffer,
-        };
-      })
+        files.map(async (file) => {
+          const arrayBuffer = await file.arrayBuffer();
+          const buffer = Buffer.from(arrayBuffer);
+          return {
+            filename: file.name,
+            content: buffer,
+          };
+        })
     );
 
-    // Nodemailer configuratie
+    // Nodemailer configuratie voor Vimexx SMTP
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: process.env.EMAIL_HOST, // Bijvoorbeeld: 'mail.adloodgietersbedrijf.nl'
+      port: Number(process.env.EMAIL_PORT), // Bijvoorbeeld: 465 voor SSL
+      secure: process.env.EMAIL_SECURE === 'true', // true voor SSL op poort 465, false voor TLS (meestal op poort 587)
       auth: {
-        user: process.env.EMAIL_USER,
+        user: process.env.EMAIL_USER, // Bijvoorbeeld: 'info@adloodgietersbedrijf.nl'
         pass: process.env.EMAIL_PASS,
       },
     });
 
     const mailOptions = {
-      from: email,
+      from: process.env.EMAIL_USER, // Verstuur vanaf je eigen werkmailadres
       to: process.env.EMAIL_TO,
       subject: `Nieuw contactformulier van ${name}`,
-      text: `Naam: ${name}\nEmail: ${email}\nTelefoon: ${phone}\nPostcode: ${postalCode} \nHuisnummer: ${houseNumber} ${houseNumberAddition}\n\nBericht:\n${message}`,
+      text: `Naam: ${name}\nEmail: ${email}\nTelefoon: ${phone}\nPostcode: ${postalCode}\nHuisnummer: ${houseNumber} ${houseNumberAddition}\n\nBericht:\n${message}`,
       attachments: attachments,
     };
 

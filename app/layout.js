@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
 import WhatsAppButton from "@/components/WhatsappButton";
 import ParallaxWrapper from "@/components/ParallaxWrapper";
+import CookiebotWrapper from "@/components/CookiebotWrapper";
 
 export const metadata = {
   metadataBase: new URL("https://adloodgietersbedrijf.nl"),
@@ -44,6 +45,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="nl">
+    <CookiebotWrapper />
     <GoogleTagManager async gtmId="GTM-57S9L8VS" />
     <body className="bg-gray-50 text-gray-800">
     <Navbar />
